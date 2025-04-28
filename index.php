@@ -1,3 +1,47 @@
+<?php
+// Include konfigurasi
+require_once 'config.php';
+
+// Cek apakah pengguna sudah login
+requireLogin();
+
+// Ambil data karyawan yang login
+$id_karyawan = getKaryawanId();
+$nama = getUserName();
+$outlet = getOutlet();
+
+// Query untuk mengambil jadwal karyawan untuk 7 hari ke depan
+$today = date('Y-m-d');
+
+// Cek apakah hari ini adalah Senin, jika ya hapus jadwal minggu sebelumnya
+$hari_ini = date('N'); // 1 (Senin) sampai 7 (Minggu)
+if ($hari_ini == 1) {
+    // Hapus jadwal minggu sebelumnya (lebih dari 7 hari kebelakang)
+    $seminggu_lalu = date('Y-m-d', strtotime('-7 days'));
+    $query_hapus = "DELETE FROM jadwal WHERE tanggal < '$seminggu_lalu' AND id_karyawan = '$id_karyawan'";
+    mysqli_query($koneksi, $query_hapus);
+}
+
+// Ambil jadwal 7 hari ke depan
+$query = "SELECT j.*, s.nama_shift, s.jam_mulai, s.jam_selesai,
+          a.check_in, a.check_out, a.status_check_in, a.status_check_out
+          FROM jadwal j
+          LEFT JOIN shift s ON j.id_shift = s.id
+          LEFT JOIN absensi a ON j.id_karyawan = a.id_karyawan AND j.tanggal = a.tanggal
+          WHERE j.id_karyawan = '$id_karyawan'
+          AND j.tanggal >= '$today'
+          ORDER BY j.tanggal ASC
+          LIMIT 7";
+
+$result = mysqli_query($koneksi, $query);
+$jadwal_array = [];
+
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $jadwal_array[] = $row;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,8 +70,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="index.php"><img src="images/logo.svg" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.php"><img src="images/logo-mini.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -103,7 +147,7 @@
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="logout.php">
                 <i class="ti-power-off text-primary"></i>
                 Logout
               </a>
@@ -296,7 +340,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="index.php">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -318,7 +362,7 @@
                 <li class="nav-item"> <a class="nav-link" href="pages/user/akun.html"> Akun Saya </a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/user/riwayat_shift.html"> Riwayat Shift </a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/user/riwayat_cuti.html"> Riwayat Cuti </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/user/riwayat_izin.html"> Riwayat Izin </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/user/riwayat_izin.php"> Riwayat Izin </a></li>
               </ul>
             </div>
           </li>
@@ -344,69 +388,111 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Welcome</h3>
+                  <h3 class="font-weight-bold">Selamat Datang, <?php echo $nama; ?></h3>
                 </div>
                 <div class="col-12 col-xl-4">
                  <div class="justify-content-end d-flex">
                   <div class="dropdown flex-md-grow-1 flex-xl-grow-0">  
+                    <a href="pages/user/riwayat_izin.php" class="btn btn-info">Lihat Riwayat Izin</a>
                   </div>
                  </div>
                 </div>
               </div>
             </div>
           </div>
+          
+          <?php if (isset($_GET['status']) && isset($_GET['jenis'])): ?>
+            <?php if ($_GET['status'] === 'success'): ?>
+              <div class="alert alert-success alert-dismissible fade show" role="alert" id="alertMessage">
+                <?php if ($_GET['jenis'] === 'izin'): ?>
+                  Pengajuan izin berhasil disimpan dan sedang menunggu persetujuan.
+                <?php elseif ($_GET['jenis'] === 'check_in' || $_GET['jenis'] === 'check_out'): ?>
+                  Absensi <?php echo ($_GET['jenis'] === 'check_in') ? 'masuk' : 'pulang'; ?> berhasil disimpan.
+                <?php endif; ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <?php elseif ($_GET['status'] === 'error'): ?>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alertMessage">
+                Terjadi kesalahan. Silakan coba lagi nanti.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <?php endif; ?>
+          <?php endif; ?>
+
+          <script>
+            // Auto hide alert after 3 seconds
+            setTimeout(function() {
+              var alert = document.getElementById('alertMessage');
+              if (alert) {
+                alert.style.display = 'none';
+              }
+            }, 3000);
+          </script>
           <!-- Card Absensi -->
           <div class="col-12">
             <div class="row">
-              <!-- Card untuk setiap hari -->
-              <div class="col-md-4 mb-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Senin, 01/01/2023</h5>
-                    <p>ID Karyawan: 001</p>
-                    <p>Nama Karyawan: John Doe</p>
-                    <p>Outlet: Bintaro</p>
-                    <p>Shift: Pagi</p>
-                    <p>Status Check in: <span class="badge badge-danger">Belum Absen</span></p>
-                    <p>Status Check Out: <span class="badge badge-danger">Belum Absen</span></p>
-                    <button class="btn btn-primary absen-btn" data-date="2023-01-01">Absen</button>
-                    <button class="btn btn-primary izin-btn" data-date="2023-01-02">Ajukan Libur</button>
+              <!-- Card untuk setiap jadwal dari database -->
+              <?php if (count($jadwal_array) > 0): ?>
+                <?php foreach ($jadwal_array as $jadwal): ?>
+                  <div class="col-md-4 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title"><?php echo date('l', strtotime($jadwal['tanggal'])) . ', ' . formatTanggal($jadwal['tanggal']); ?></h5>
+                        <p>ID Karyawan: <?php echo $id_karyawan; ?></p>
+                        <p>Nama Karyawan: <?php echo $nama; ?></p>
+                        <p>Outlet: <?php echo $outlet; ?></p>
+                        <p>Shift: <?php echo isset($jadwal['nama_shift']) ? $jadwal['nama_shift'] . ' (' . formatWaktu($jadwal['jam_mulai']) . ' - ' . formatWaktu($jadwal['jam_selesai']) . ')' : 'Belum ditentukan'; ?></p>
+                        
+                        <?php 
+                        // Logika untuk menentukan status absensi
+                        $status_checkin = 'Belum Absen';
+                        $status_checkout = 'Belum Absen';
+                        $badge_checkin = 'badge-danger';
+                        $badge_checkout = 'badge-danger';
+                        
+                        if (isset($jadwal['check_in']) && !empty($jadwal['check_in'])) {
+                            $status_checkin = $jadwal['status_check_in'];
+                            $badge_checkin = ($status_checkin == 'tepat waktu') ? 'badge-success' : 'badge-warning';
+                        }
+                        
+                        if (isset($jadwal['check_out']) && !empty($jadwal['check_out'])) {
+                            $status_checkout = $jadwal['status_check_out'];
+                            $badge_checkout = ($status_checkout == 'tepat waktu') ? 'badge-success' : 'badge-warning';
+                        }
+                        ?>
+                        
+                        <p>Status Check in: <span class="badge <?php echo $badge_checkin; ?>"><?php echo ucfirst($status_checkin); ?></span></p>
+                        <p>Status Check Out: <span class="badge <?php echo $badge_checkout; ?>"><?php echo ucfirst($status_checkout); ?></span></p>
+                        
+                        <?php if ($jadwal['status'] == 'masuk'): ?>
+                          <?php if (isset($jadwal['check_in']) && !empty($jadwal['check_in']) && isset($jadwal['check_out']) && !empty($jadwal['check_out'])): ?>
+                            <button class="btn btn-secondary" disabled>Sudah Absen</button>
+                          <?php else: ?>
+                            <button class="btn btn-primary absen-btn" data-date="<?php echo $jadwal['tanggal']; ?>" data-shift="<?php echo $jadwal['id_shift']; ?>" data-checkin="<?php echo !empty($jadwal['check_in']) ? '1' : '0'; ?>" data-checkout="<?php echo !empty($jadwal['check_out']) ? '1' : '0'; ?>">Absen</button>
+                          <?php endif; ?>
+                          <button class="btn btn-primary izin-btn" data-date="<?php echo $jadwal['tanggal']; ?>">Ajukan Libur</button>
+                        <?php else: ?>
+                          <span class="badge badge-info"><?php echo ucfirst($jadwal['status']); ?></span>
+                        <?php endif; ?>
+                      </div>
+                    </div>
+                  </div>
+                <?php endforeach; ?>
+              <?php else: ?>
+                <div class="col-12">
+                  <div class="alert alert-info">
+                    Tidak ada jadwal untuk beberapa hari ke depan. Silakan hubungi supervisor Anda.
                   </div>
                 </div>
-              </div>
-              <div class="col-md-4 mb-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Selasa, 02/01/2023</h5>
-                    <p>ID Karyawan: 002</p>
-                    <p>Nama Karyawan: Jane Smith</p>
-                    <p>Outlet: Bintaro</p>
-                    <p>Shift: Siang</p>
-                    <p>Status Check in: <span class="badge badge-danger">Belum Absen</span></p>
-                    <p>Status Check Out: <span class="badge badge-danger">Belum Absen</span></p>
-                    <button class="btn btn-primary absen-btn" data-date="2023-01-02">Absen</button>
-                    <button class="btn btn-primary izin-btn" data-date="2023-01-02">Ajukan Libur</button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Rabu, 03/01/2023</h5>
-                    <p>ID Karyawan: 003</p>
-                    <p>Nama Karyawan: Michael Johnson</p>
-                    <p>Outlet: Bintaro</p>
-                    <p>Shift: Malam</p>
-                    <p>Status Check in: <span class="badge badge-danger">Belum Absen</span></p>
-                    <p>Status Check Out: <span class="badge badge-danger">Belum Absen</span></p>
-                    <button class="btn btn-primary absen-btn" data-date="2023-01-03">Absen</button>
-                    <button class="btn btn-primary izin-btn" data-date="2023-01-02">Ajukan Libur</button>
-                  </div>
-                </div>
-              </div>
+              <?php endif; ?>
             </div>
           </div>
         </div>
+        
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <!-- partial -->
@@ -438,94 +524,117 @@
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
-
-  <!-- Modal HTML -->
+  <script src="js/absensi.js"></script>
+  
+  <!-- Modal HTML untuk Absensi -->
   <div class="modal fade" id="absenModal" tabindex="-1" role="dialog" aria-labelledby="absenModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="absenModalLabel">Ketentuan Absensi</h5>
+          <h5 class="modal-title" id="absenModalLabel">Absensi</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <!-- Tulisan ketentuan peringatan terkait absensi akan ditulis di sini -->
-          <ol>
-            <li>Absensi Checkin akan dibuka 15 menit sebelum shift dimulai dan Checkout dibuka setelah shift Selesai</li>
-            <li>Lakukan absensi dengan mengirimkan foto saat ini (Bukan foto lama)</li>
-            <li>Sistem akan mendeteksi waktu dan lokasi dari foto tersebut diambil</li>
-            <li>Sistem akan memberikan toleransi keterlambatan selama 5 menit dari waktu shift dimulai</li>
-            <li>Seluruh karyawan wajib untuk melakukan absensi check in dan check out jika salah satu tidak valid maka akan ada pengurangan gaji</li>
-            <li>Segala bentuk kecurangan akan ada sanksi dari manajemen</li>
-          </ol>
-          <button class="btn btn-success mt-3">Check-in</button>
-          <button class="btn btn-danger mt-3">Check-out</button>
+          <!-- Informasi Ketentuan Absensi -->
+          <div class="alert alert-info">
+            <h6>Ketentuan Absensi:</h6>
+            <ol>
+              <li>Absensi Checkin akan dibuka 15 menit sebelum shift dimulai dan Checkout dibuka setelah shift Selesai</li>
+              <li>Lakukan absensi dengan mengirimkan foto saat ini (Bukan foto lama)</li>
+              <li>Sistem akan mendeteksi waktu dan lokasi dari foto tersebut diambil</li>
+              <li>Absensi hanya dapat dilakukan jika Anda berada di lokasi kantor atau outlet dalam radius yang ditentukan</li>
+              <li>Sistem akan memberikan toleransi keterlambatan selama 5 menit dari waktu shift dimulai</li>
+              <li>Seluruh karyawan wajib untuk melakukan absensi check in dan check out jika salah satu tidak valid maka akan ada pengurangan gaji</li>
+              <li>Segala bentuk kecurangan akan ada sanksi dari manajemen</li>
+            </ol>
+          </div>
+          
+          <!-- Tombol Check-in dan Check-out -->
+          <div class="text-center mb-3">
+            <button id="btnCheckIn" class="btn btn-success">Check-in</button>
+            <button id="btnCheckOut" class="btn btn-danger">Check-out</button>
+          </div>
+          
+          <!-- Video dari webcam -->
+          <div class="text-center">
+            <video id="webcam" width="320" height="240" autoplay></video>
+            <canvas id="canvas" width="320" height="240" style="display: none;"></canvas>
+            <div id="locationStatus" class="alert alert-warning mt-2" style="display: none;">
+              <small>Memperoleh lokasi Anda...</small>
+            </div>
+            <button id="btnCapture" class="btn btn-primary mt-2" style="display: none;">Ambil Foto</button>
+          </div>
+          
+          <!-- Form untuk data absensi -->
+          <form id="absenForm" method="post" action="absen.php" enctype="multipart/form-data">
+            <input type="hidden" id="inputTanggal" name="tanggal">
+            <input type="hidden" id="inputShift" name="id_shift">
+            <input type="hidden" id="jenisAbsensi" name="jenis_absensi">
+            <input type="hidden" id="inputFoto" name="foto">
+          </form>
         </div>
       </div>
     </div>
   </div>
 
-<!-- Modal HTML -->
-<div class="modal fade" id="izinModal" tabindex="-1" role="dialog" aria-labelledby="izinModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="izinModalLabel">Form Pengajuan Izin</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="izinDate">Tanggal Izin</label>
-            <input type="date" class="form-control" id="izinDate" required>
-          </div>
-          <div class="form-group">
-            <label for="izinType">Jenis Izin</label>
-            <select class="form-control" id="izinType" required>
-              <option value="">Pilih Jenis Izin</option>
-              <option value="sakit">Sakit</option>
-              <option value="izin">Izin</option>
-              <option value="lainnya">Lainnya</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="izinReason">Keterangan</label>
-            <textarea class="form-control" id="izinReason" rows="3" required></textarea>
-          <div class="form-group" id="sakitForm" style="display: none;">
-            <label for="suratSakit">Upload Surat Sakit</label>
-            <input type="file" class="form-control-file" id="suratSakit" accept=".pdf,.jpg,.jpeg,.png">
-            <small class="form-text text-muted">Format file yang diterima: PDF, JPG, JPEG, PNG</small>
-          </div>
-          <div class="form-group">
-            <label for="solutionType">Solusi Pengganti</label>
-            <select class="form-control" id="izinType" required>
-              <option value="">Pilih Pengganti</option>
-              <option value="Shift">Tukaran Shift</option>
-              <option value="libur">Tukaran Libur</option>
-              <option value="cuti">Potong Cuti</option>
-              <option value="gaji">Potong Gaji</option>
-            </select>
-          </div>
-          <script>
-            document.getElementById('izinType').addEventListener('change', function() {
-              const sakitForm = document.getElementById('sakitForm');
-              if (this.value === 'sakit') {
-                sakitForm.style.display = 'block';
-              } else {
-                sakitForm.style.display = 'none';
-              }
-            });
-          </script>
-          </div>
-          <button type="submit" class="btn btn-primary">Ajukan Izin</button>
-        </form>
+  <!-- Modal HTML untuk Izin -->
+  <div class="modal fade" id="izinModal" tabindex="-1" role="dialog" aria-labelledby="izinModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="izinModalLabel">Form Pengajuan Izin</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="post" action="izin.php" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="tanggal_mulai">Tanggal Mulai</label>
+              <input type="date" class="form-control" id="izinDate" name="tanggal_mulai" required>
+            </div>
+            <div class="form-group">
+              <label for="tanggal_selesai">Tanggal Selesai</label>
+              <input type="date" class="form-control" id="tanggal_selesai" name="tanggal_selesai">
+              <small class="text-muted">Kosongkan jika hanya 1 hari</small>
+            </div>
+            <div class="form-group">
+              <label for="jenis_izin">Jenis Izin</label>
+              <select class="form-control" id="izinType" name="jenis_izin" required>
+                <option value="">Pilih Jenis Izin</option>
+                <option value="sakit">Sakit</option>
+                <option value="izin">Izin</option>
+                <option value="cuti">Cuti</option>
+                <option value="lainnya">Lainnya</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="keterangan">Keterangan</label>
+              <textarea class="form-control" id="keterangan" name="keterangan" rows="3" required></textarea>
+            </div>
+            <div class="form-group" id="sakitForm" style="display: none;">
+              <label for="bukti_file">Upload Surat Sakit</label>
+              <input type="file" class="form-control-file" id="bukti_file" name="bukti_file" accept=".pdf,.jpg,.jpeg,.png">
+              <small class="form-text text-muted">Format file yang diterima: PDF, JPG, JPEG, PNG</small>
+            </div>
+            <div class="form-group">
+              <label for="solusi_pengganti">Solusi Pengganti</label>
+              <select class="form-control" id="solusi_pengganti" name="solusi_pengganti" required>
+                <option value="">Pilih Pengganti</option>
+                <option value="shift">Tukaran Shift</option>
+                <option value="libur">Tukaran Libur</option>
+                <option value="cuti">Potong Cuti</option>
+                <option value="gaji">Potong Gaji</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Ajukan Izin</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
   <script>
     // JavaScript untuk menampilkan modal ketika tombol 'Absen' diklik
@@ -544,8 +653,6 @@
       });
     });
 </script>
-
 </body>
 
 </html>
-

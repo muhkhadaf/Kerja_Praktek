@@ -1,0 +1,18 @@
+-- Menambahkan kolom lokasi pada tabel absensi
+ALTER TABLE absensi 
+ADD COLUMN IF NOT EXISTS latitude_in DECIMAL(10,7) DEFAULT NULL,
+ADD COLUMN IF NOT EXISTS longitude_in DECIMAL(10,7) DEFAULT NULL, 
+ADD COLUMN IF NOT EXISTS latitude_out DECIMAL(10,7) DEFAULT NULL,
+ADD COLUMN IF NOT EXISTS longitude_out DECIMAL(10,7) DEFAULT NULL;
+
+-- Menambahkan kolom status lokasi dan info lokasi
+ALTER TABLE absensi
+ADD COLUMN IF NOT EXISTS location_status_in VARCHAR(10) DEFAULT NULL,
+ADD COLUMN IF NOT EXISTS location_info_in VARCHAR(255) DEFAULT NULL,
+ADD COLUMN IF NOT EXISTS location_status_out VARCHAR(10) DEFAULT NULL,
+ADD COLUMN IF NOT EXISTS location_info_out VARCHAR(255) DEFAULT NULL;
+
+-- Update struktur kolom foto
+ALTER TABLE absensi
+MODIFY COLUMN foto_check_in VARCHAR(255) DEFAULT NULL,
+MODIFY COLUMN foto_check_out VARCHAR(255) DEFAULT NULL; 

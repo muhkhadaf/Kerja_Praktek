@@ -1,0 +1,27 @@
+2025-04-26 02:39:43 - Berhasil: check_in
+2025-04-26 02:43:33 - Berhasil: check_out - Status Lokasi: invalid
+2025-04-26 02:44:19 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 16:35:35 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 16:36:00 - Berhasil: check_out - Status Lokasi: invalid
+2025-04-26 16:42:29 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 16:42:54 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 16:43:01 - Berhasil: check_out - Status Lokasi: invalid
+2025-04-26 16:43:44 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 16:45:59 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 17:21:18 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 17:21:30 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 17:25:33 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 17:25:43 - Berhasil: check_out - Status Lokasi: invalid
+2025-04-26 17:26:06 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 17:26:17 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 17:28:30 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 17:31:40 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 17:32:54 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 20:09:23 - Berhasil: check_out - Status Lokasi: invalid
+2025-04-26 20:09:45 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 20:29:28 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 20:43:56 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 20:45:34 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-26 20:45:47 - Berhasil: check_out - Status Lokasi: invalid
+2025-04-26 20:47:07 - Berhasil: check_out - Status Lokasi: invalid
+2025-04-26 21:09:23 - Berhasil: check_out - Status Lokasi: valid
