@@ -311,3 +311,60 @@
                 location_status_out = 'valid',
                 location_info_out = 'Wakacao Bintaro'
                 WHERE id_karyawan = '001' AND tanggal = '2025-04-27'
+2025-04-29 21:25:58 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_status_in, location_info_in)
+                VALUES 
+                ('090903', '2025-04-29', '1', '2025-04-29 21:25:58', 'uploads/absensi/090903_2025-04-29_check_in_1745936758.jpg', 'terlambat (lokasi invalid)', 
+                '-6.346369999999999', '106.69209', 'invalid', 'Wakacao BSD (6958m dari lokasi, melebihi radius 80m)')
+2025-04-29 22:17:53 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_status_in, location_info_in)
+                VALUES 
+                ('1313123123', '2025-04-29', '2', '2025-04-29 22:17:53', 'uploads/absensi/1313123123_2025-04-29_check_in_1745939873.jpg', 'terlambat (lokasi invalid)', 
+                '-6.22592', '106.8302336', 'invalid', 'Wakacao Bintaro (13763m dari lokasi, melebihi radius 100m)')
+2025-04-29 22:19:41 - Query: UPDATE absensi SET 
+                check_out = '2025-04-29 22:19:41',
+                foto_check_out = 'uploads/absensi/1313123123_2025-04-29_check_out_1745939981.jpg',
+                status_check_out = 'lebih awal (lokasi invalid)',
+                latitude_out = '-6.22592',
+                longitude_out = '106.8302336',
+                location_status_out = 'invalid',
+                location_info_out = 'Wakacao Bintaro (13763m dari lokasi, melebihi radius 100m)'
+                WHERE id_karyawan = '1313123123' AND tanggal = '2025-04-29'
+2025-04-29 22:26:33 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_status_in, location_info_in)
+                VALUES 
+                ('1313123123', '2025-04-30', '3', '2025-04-29 22:26:33', 'uploads/absensi/1313123123_2025-04-30_check_in_1745940393.jpg', 'tepat waktu (lokasi invalid)', 
+                '-6.22592', '106.8302336', 'invalid', 'Wakacao Bintaro (13763m dari lokasi, melebihi radius 100m)')
+2025-04-29 22:30:07 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_status_in, location_info_in)
+                VALUES 
+                ('1313123123', '2025-05-01', '1', '2025-04-29 22:30:07', 'uploads/absensi/1313123123_2025-05-01_check_in_1745940607.jpg', 'terlambat', 
+                '-6.3468975', '106.6923333', 'valid', 'unpam')
+2025-04-29 22:30:29 - Query: UPDATE absensi SET 
+                check_out = '2025-04-29 22:30:29',
+                foto_check_out = 'uploads/absensi/1313123123_2025-05-01_check_out_1745940629.jpg',
+                status_check_out = 'tepat waktu',
+                latitude_out = '-6.3468975',
+                longitude_out = '106.6923333',
+                location_status_out = 'valid',
+                location_info_out = 'unpam'
+                WHERE id_karyawan = '1313123123' AND tanggal = '2025-05-01'
+2025-04-29 22:30:59 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_status_in, location_info_in)
+                VALUES 
+                ('1313123123', '2025-05-02', '1', '2025-04-29 22:30:59', 'uploads/absensi/1313123123_2025-05-02_check_in_1745940659.jpg', 'terlambat', 
+                '-6.3468975', '106.6923333', 'valid', 'unpam')
+2025-04-29 22:34:09 - Query: UPDATE absensi SET 
+                check_out = '2025-04-29 22:34:09',
+                foto_check_out = 'uploads/absensi/090903_2025-04-29_check_out_1745940849.jpg',
+                status_check_out = 'tepat waktu',
+                latitude_out = '-6.3468128',
+                longitude_out = '106.6922721',
+                location_status_out = 'valid',
+                location_info_out = 'unpam'
+                WHERE id_karyawan = '090903' AND tanggal = '2025-04-29'

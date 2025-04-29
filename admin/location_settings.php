@@ -15,15 +15,15 @@ $alert_type = '';
 // Proses penyimpanan atau update lokasi
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $outlet_name = sanitize($_POST['outlet_name']);
-    $latitude = sanitize($_POST['latitude']);
-    $longitude = sanitize($_POST['longitude']);
+    $latitude = floatval(sanitize($_POST['latitude']));
+    $longitude = floatval(sanitize($_POST['longitude']));
     $radius = (int)sanitize($_POST['radius']);
     $active = isset($_POST['active']) ? 1 : 0;
     $location_id = isset($_POST['location_id']) ? (int)$_POST['location_id'] : 0;
     
     // Validasi input
-    if (empty($outlet_name) || empty($latitude) || empty($longitude) || empty($radius)) {
-        $alert = "Semua field harus diisi!";
+    if (empty($outlet_name) || empty($_POST['latitude']) || empty($_POST['longitude']) || empty($radius)) {
+        $alert = "Semua field harus diisi dengan benar!";
         $alert_type = "danger";
     } else {
         // Cek apakah ini update atau insert baru
@@ -117,6 +117,8 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
   <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../images/favicon.png" />
+  <!-- Google Maps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
   <style>
     #map {
       height: 400px;
@@ -267,47 +269,43 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
             </div>
           </div>
           
-          <!-- Modal Tambah/Edit Lokasi -->
-          <div class="modal fade" id="<?php echo $editData ? 'editLocationModal' : 'addLocationModal'; ?>" tabindex="-1" role="dialog" aria-labelledby="locationModalLabel" aria-hidden="true" <?php echo $editData ? 'data-backdrop="static"' : ''; ?>>
+          <!-- Modal Tambah Lokasi -->
+          <div class="modal fade" id="addLocationModal" tabindex="-1" role="dialog" aria-labelledby="addLocationModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="locationModalLabel"><?php echo $editData ? 'Edit Lokasi Absensi' : 'Tambah Lokasi Absensi Baru'; ?></h5>
+                  <h5 class="modal-title" id="addLocationModalLabel">Tambah Lokasi Absensi Baru</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
                   <form method="POST" action="">
-                    <?php if ($editData): ?>
-                      <input type="hidden" name="location_id" value="<?php echo $editData['id']; ?>">
-                    <?php endif; ?>
-                    
                     <div class="form-group">
                       <label for="outlet_name">Nama Outlet</label>
-                      <input type="text" class="form-control" id="outlet_name" name="outlet_name" placeholder="Masukkan nama outlet" value="<?php echo $editData ? $editData['outlet_name'] : ''; ?>" required>
+                      <input type="text" class="form-control" id="outlet_name" name="outlet_name" placeholder="Masukkan nama outlet" required>
                     </div>
                     
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="latitude">Latitude</label>
-                        <input type="text" class="form-control" id="latitude" name="latitude" placeholder="Contoh: -6.123456" value="<?php echo $editData ? $editData['latitude'] : ''; ?>" required>
+                        <input type="text" class="form-control" id="latitude" name="latitude" placeholder="Contoh: -6.123456" required>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="longitude">Longitude</label>
-                        <input type="text" class="form-control" id="longitude" name="longitude" placeholder="Contoh: 106.123456" value="<?php echo $editData ? $editData['longitude'] : ''; ?>" required>
+                        <input type="text" class="form-control" id="longitude" name="longitude" placeholder="Contoh: 106.123456" required>
                       </div>
                     </div>
                     
                     <div class="form-group">
                       <label for="radius">Radius (meter)</label>
-                      <input type="number" class="form-control" id="radius" name="radius" placeholder="Contoh: 100" min="20" max="1000" value="<?php echo $editData ? $editData['radius'] : '100'; ?>" required>
+                      <input type="number" class="form-control" id="radius" name="radius" placeholder="Contoh: 100" min="20" max="1000" value="100" required>
                       <small class="form-text text-muted">Radius dalam meter, minimal 20 meter dan maksimal 1000 meter.</small>
                     </div>
                     
                     <div class="form-group">
                       <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="active" name="active" <?php echo ($editData && $editData['active']) ? 'checked' : ''; ?>>
+                        <input type="checkbox" class="custom-control-input" id="active" name="active">
                         <label class="custom-control-label" for="active">Aktifkan Lokasi</label>
                       </div>
                     </div>
@@ -317,18 +315,74 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
                       <div id="form-map" style="height: 300px; width: 100%;"></div>
                       <small class="form-text text-muted">Klik pada peta untuk memilih lokasi.</small>
                     </div>
-                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
                     <button type="submit" class="btn btn-primary">
-                      <i class="ti-save mr-1"></i> <?php echo $editData ? 'Update Lokasi' : 'Simpan Lokasi'; ?>
+                      <i class="ti-save mr-1"></i> Simpan Lokasi
                     </button>
-                    <?php if ($editData): ?>
-                      <a href="location_settings.php" class="btn btn-light">Batal</a>
-                    <?php endif; ?>
                   </form>
                 </div>
               </div>
             </div>
           </div>
+          
+          <!-- Modal Edit Lokasi -->
+          <?php if ($editData): ?>
+          <div class="modal fade" id="editLocationModal" tabindex="-1" role="dialog" aria-labelledby="editLocationModalLabel" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editLocationModalLabel">Edit Lokasi Absensi</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form method="POST" action="">
+                    <input type="hidden" name="location_id" value="<?php echo $editData['id']; ?>">
+                    
+                    <div class="form-group">
+                      <label for="edit_outlet_name">Nama Outlet</label>
+                      <input type="text" class="form-control" id="edit_outlet_name" name="outlet_name" placeholder="Masukkan nama outlet" value="<?php echo $editData['outlet_name']; ?>" required>
+                    </div>
+                    
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="edit_latitude">Latitude</label>
+                        <input type="text" class="form-control" id="edit_latitude" name="latitude" placeholder="Contoh: -6.123456" value="<?php echo $editData['latitude']; ?>" required>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="edit_longitude">Longitude</label>
+                        <input type="text" class="form-control" id="edit_longitude" name="longitude" placeholder="Contoh: 106.123456" value="<?php echo $editData['longitude']; ?>" required>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="edit_radius">Radius (meter)</label>
+                      <input type="number" class="form-control" id="edit_radius" name="radius" placeholder="Contoh: 100" min="20" max="1000" value="<?php echo $editData['radius']; ?>" required>
+                      <small class="form-text text-muted">Radius dalam meter, minimal 20 meter dan maksimal 1000 meter.</small>
+                    </div>
+                    
+                    <div class="form-group">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="edit_active" name="active" <?php echo $editData['active'] ? 'checked' : ''; ?>>
+                        <label class="custom-control-label" for="edit_active">Aktifkan Lokasi</label>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label>Pilih Lokasi di Peta</label>
+                      <div id="edit_form_map" style="height: 300px; width: 100%;"></div>
+                      <small class="form-text text-muted">Klik pada peta untuk memilih lokasi.</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                      <i class="ti-save mr-1"></i> Update Lokasi
+                    </button>
+                    <a href="location_settings.php" class="btn btn-light">Batal</a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php endif; ?>
           
         </div>
         <!-- content-wrapper ends -->
@@ -366,7 +420,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
   <script>
     // Data lokasi dari PHP
     const locations = <?php echo json_encode($locations); ?>;
-    let map, formMap, marker, circle;
+    let map, formMap, editFormMap, marker, editMarker, circle, editCircle;
     
     // Fungsi inisialisasi peta
     function initMap() {
@@ -383,6 +437,12 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
             lat: parseFloat(location.latitude), 
             lng: parseFloat(location.longitude) 
           };
+          
+          // Validasi koordinat
+          if (isNaN(position.lat) || isNaN(position.lng)) {
+            console.error('Invalid coordinates for location:', location.outlet_name);
+            return;
+          }
           
           const marker = new google.maps.Marker({
             position: position,
@@ -413,72 +473,58 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
         }
       });
       
-      // Peta untuk form tambah/edit
-      formMap = new google.maps.Map(document.getElementById('form-map'), {
-        center: { lat: -6.2088, lng: 106.8456 }, // Default Jakarta
-        zoom: 13
-      });
+      // Peta untuk form tambah
+      const formMapElement = document.getElementById('form-map');
+      if (formMapElement) {
+        formMap = new google.maps.Map(formMapElement, {
+          center: { lat: -6.2088, lng: 106.8456 }, // Default Jakarta
+          zoom: 13
+        });
+        
+        // Tambahkan marker ketika user klik pada peta
+        formMap.addListener('click', function(event) {
+          placeMarker(event.latLng, formMap, 'add');
+        });
+        
+        // Update radius ketika nilai radius berubah
+        document.getElementById('radius').addEventListener('input', function() {
+          if (circle) {
+            const radius = parseInt(this.value) || 100;
+            circle.setRadius(radius);
+          }
+        });
+      }
       
-      // Jika mode edit, set posisi sesuai data
-      <?php if ($editData): ?>
-      const editPosition = { 
-        lat: parseFloat('<?php echo $editData['latitude']; ?>'), 
-        lng: parseFloat('<?php echo $editData['longitude']; ?>') 
-      };
-      
-      formMap.setCenter(editPosition);
-      
-      marker = new google.maps.Marker({
-        position: editPosition,
-        map: formMap,
-        draggable: true
-      });
-      
-      circle = new google.maps.Circle({
-        map: formMap,
-        radius: parseInt('<?php echo $editData['radius']; ?>'),
-        fillColor: '#007bff',
-        fillOpacity: 0.1,
-        strokeColor: '#007bff',
-        strokeOpacity: 0.8,
-        strokeWeight: 2
-      });
-      
-      circle.bindTo('center', marker, 'position');
-      
-      // Update koordinat saat marker di-drag
-      marker.addListener('dragend', updateCoordinates);
-      <?php else: ?>
-      // Tambahkan marker ketika user klik pada peta
-      formMap.addListener('click', function(event) {
-        placeMarker(event.latLng);
-      });
-      <?php endif; ?>
-      
-      // Update radius ketika nilai radius berubah
-      document.getElementById('radius').addEventListener('input', function() {
-        if (circle) {
-          const radius = parseInt(this.value) || 100;
-          circle.setRadius(radius);
+      // Peta untuk form edit
+      const editFormMapElement = document.getElementById('edit_form_map');
+      if (editFormMapElement) {
+        <?php if ($editData): ?>
+        const editPosition = { 
+          lat: parseFloat('<?php echo $editData['latitude']; ?>'), 
+          lng: parseFloat('<?php echo $editData['longitude']; ?>') 
+        };
+        
+        // Validasi koordinat
+        if (isNaN(editPosition.lat) || isNaN(editPosition.lng)) {
+          editPosition.lat = -6.2088;
+          editPosition.lng = 106.8456;
+          console.error('Invalid edit coordinates, using default.');
         }
-      });
-    }
-    
-    // Fungsi untuk menempatkan marker di peta form
-    function placeMarker(location) {
-      if (marker) {
-        marker.setPosition(location);
-      } else {
-        marker = new google.maps.Marker({
-          position: location,
-          map: formMap,
+        
+        editFormMap = new google.maps.Map(editFormMapElement, {
+          center: editPosition,
+          zoom: 13
+        });
+        
+        editMarker = new google.maps.Marker({
+          position: editPosition,
+          map: editFormMap,
           draggable: true
         });
         
-        const radius = parseInt(document.getElementById('radius').value) || 100;
-        circle = new google.maps.Circle({
-          map: formMap,
-          radius: radius,
+        editCircle = new google.maps.Circle({
+          map: editFormMap,
+          radius: parseInt('<?php echo $editData['radius']; ?>'),
           fillColor: '#007bff',
           fillOpacity: 0.1,
           strokeColor: '#007bff',
@@ -486,20 +532,112 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
           strokeWeight: 2
         });
         
-        circle.bindTo('center', marker, 'position');
+        editCircle.bindTo('center', editMarker, 'position');
         
         // Update koordinat saat marker di-drag
-        marker.addListener('dragend', updateCoordinates);
+        editMarker.addListener('dragend', function() {
+          updateEditCoordinates();
+        });
+        
+        // Tambahkan marker ketika user klik pada peta
+        editFormMap.addListener('click', function(event) {
+          placeMarker(event.latLng, editFormMap, 'edit');
+        });
+        
+        // Update radius ketika nilai radius berubah
+        document.getElementById('edit_radius').addEventListener('input', function() {
+          if (editCircle) {
+            const radius = parseInt(this.value) || 100;
+            editCircle.setRadius(radius);
+          }
+        });
+        <?php endif; ?>
       }
-      
-      updateCoordinates();
     }
     
-    // Update nilai input latitude longitude
+    // Fungsi untuk menempatkan marker di peta form
+    function placeMarker(location, targetMap, mode) {
+      if (mode === 'add') {
+        if (marker) {
+          marker.setPosition(location);
+        } else {
+          marker = new google.maps.Marker({
+            position: location,
+            map: targetMap,
+            draggable: true
+          });
+          
+          const radius = parseInt(document.getElementById('radius').value) || 100;
+          circle = new google.maps.Circle({
+            map: targetMap,
+            radius: radius,
+            fillColor: '#007bff',
+            fillOpacity: 0.1,
+            strokeColor: '#007bff',
+            strokeOpacity: 0.8,
+            strokeWeight: 2
+          });
+          
+          circle.bindTo('center', marker, 'position');
+          
+          // Update koordinat saat marker di-drag
+          marker.addListener('dragend', updateCoordinates);
+        }
+        
+        updateCoordinates();
+      } else if (mode === 'edit') {
+        if (editMarker) {
+          editMarker.setPosition(location);
+        } else {
+          editMarker = new google.maps.Marker({
+            position: location,
+            map: targetMap,
+            draggable: true
+          });
+          
+          const radius = parseInt(document.getElementById('edit_radius').value) || 100;
+          editCircle = new google.maps.Circle({
+            map: targetMap,
+            radius: radius,
+            fillColor: '#007bff',
+            fillOpacity: 0.1,
+            strokeColor: '#007bff',
+            strokeOpacity: 0.8,
+            strokeWeight: 2
+          });
+          
+          editCircle.bindTo('center', editMarker, 'position');
+          
+          // Update koordinat saat marker di-drag
+          editMarker.addListener('dragend', updateEditCoordinates);
+        }
+        
+        updateEditCoordinates();
+      }
+    }
+    
+    // Update nilai input latitude longitude untuk form tambah
     function updateCoordinates() {
-      const position = marker.getPosition();
-      document.getElementById('latitude').value = parseFloat(position.lat().toFixed(8)).toString();
-      document.getElementById('longitude').value = parseFloat(position.lng().toFixed(8)).toString();
+      if (marker) {
+        const position = marker.getPosition();
+        // Pastikan nilai latitude dan longitude selalu string dengan 6 angka dibelakang koma
+        const lat = position.lat().toFixed(6);
+        const lng = position.lng().toFixed(6);
+        document.getElementById('latitude').value = lat;
+        document.getElementById('longitude').value = lng;
+      }
+    }
+    
+    // Update nilai input latitude longitude untuk form edit
+    function updateEditCoordinates() {
+      if (editMarker) {
+        const position = editMarker.getPosition();
+        // Pastikan nilai latitude dan longitude selalu string dengan 6 angka dibelakang koma
+        const lat = position.lat().toFixed(6);
+        const lng = position.lng().toFixed(6);
+        document.getElementById('edit_latitude').value = lat;
+        document.getElementById('edit_longitude').value = lng;
+      }
     }
     
     // Tampilkan modal edit jika ada

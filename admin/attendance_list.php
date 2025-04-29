@@ -124,6 +124,8 @@ if ($result_jadwal) {
 
 // Menggabungkan data absensi dan jadwal
 $merged_data = [];
+
+// 1. Tambahkan data dari jadwal
 foreach ($jadwal_list as $id_karyawan => $jadwal) {
     $absensi_data = null;
     foreach ($absensi_list as $absensi) {
@@ -157,6 +159,41 @@ foreach ($jadwal_list as $id_karyawan => $jadwal) {
         'location_info_out' => isset($absensi_data['location_info_out']) ? $absensi_data['location_info_out'] : null,
     ];
 }
+
+// 2. Tambahkan data absensi yang tidak memiliki jadwal
+$jadwal_karyawan_ids = array_keys($jadwal_list);
+foreach ($absensi_list as $absensi) {
+    if (!in_array($absensi['id_karyawan'], $jadwal_karyawan_ids)) {
+        $merged_data[] = [
+            'id_karyawan' => $absensi['id_karyawan'],
+            'nama' => $absensi['nama'],
+            'outlet' => $absensi['outlet'],
+            'id_shift' => $absensi['id_shift'],
+            'nama_shift' => $absensi['nama_shift'],
+            'jam_mulai' => $absensi['jam_mulai'],
+            'jam_selesai' => $absensi['jam_selesai'],
+            'check_in' => $absensi['check_in'],
+            'foto_check_in' => $absensi['foto_check_in'],
+            'check_out' => $absensi['check_out'],
+            'foto_check_out' => $absensi['foto_check_out'],
+            'status_check_in' => $absensi['status_check_in'],
+            'status_check_out' => $absensi['status_check_out'],
+            'latitude_in' => $absensi['latitude_in'],
+            'longitude_in' => $absensi['longitude_in'],
+            'latitude_out' => $absensi['latitude_out'],
+            'longitude_out' => $absensi['longitude_out'],
+            'location_status_in' => $absensi['location_status_in'],
+            'location_info_in' => $absensi['location_info_in'],
+            'location_status_out' => $absensi['location_status_out'],
+            'location_info_out' => $absensi['location_info_out'],
+        ];
+    }
+}
+
+// Urutkan data berdasarkan nama karyawan
+usort($merged_data, function($a, $b) {
+    return strcmp($a['nama'], $b['nama']);
+});
 
 // Mendapatkan tanggal kemarin dan besok
 $yesterday = date('Y-m-d', strtotime($filter_tanggal . ' -1 day'));

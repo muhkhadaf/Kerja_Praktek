@@ -1,3 +1,15 @@
+<?php
+// Start output buffering to prevent headers already sent error
+ob_start();
+// Include database configuration
+require_once '../../config.php';
+
+// Check if user is logged in
+requireLogin();
+
+// Get employee ID from session
+$id_karyawan = getKaryawanId();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +17,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Skydash Admin</title>
+  <title>Riwayat Cuti - User</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../../vendors/feather/feather.css">
   <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
@@ -101,16 +113,11 @@
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="../../logout.php">
                 <i class="ti-power-off text-primary"></i>
                 Logout
               </a>
             </div>
-          </li>
-          <li class="nav-item nav-settings d-none d-lg-flex">
-            <a class="nav-link" href="#">
-              <i class="icon-ellipsis"></i>
-            </a>
           </li>
         </ul>
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
@@ -139,156 +146,6 @@
           </div>
         </div>
       </div>
-      <div id="right-sidebar" class="settings-panel">
-        <i class="settings-close ti-close"></i>
-        <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
-          </li>
-        </ul>
-        <div class="tab-content" id="setting-content">
-          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
-            <div class="add-items d-flex px-3 mb-0">
-              <form class="form w-100">
-                <div class="form-group d-flex">
-                  <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
-                  <button type="submit" class="add btn btn-primary todo-list-add-btn" id="add-task">Add</button>
-                </div>
-              </form>
-            </div>
-            <div class="list-wrapper px-3">
-              <ul class="d-flex flex-column-reverse todo-list">
-                <li>
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="checkbox" type="checkbox">
-                      Team review meeting at 3.00 PM
-                    </label>
-                  </div>
-                  <i class="remove ti-close"></i>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="checkbox" type="checkbox">
-                      Prepare for presentation
-                    </label>
-                  </div>
-                  <i class="remove ti-close"></i>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="checkbox" type="checkbox">
-                      Resolve all the low priority tickets due today
-                    </label>
-                  </div>
-                  <i class="remove ti-close"></i>
-                </li>
-                <li class="completed">
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="checkbox" type="checkbox" checked>
-                      Schedule meeting for next week
-                    </label>
-                  </div>
-                  <i class="remove ti-close"></i>
-                </li>
-                <li class="completed">
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="checkbox" type="checkbox" checked>
-                      Project review
-                    </label>
-                  </div>
-                  <i class="remove ti-close"></i>
-                </li>
-              </ul>
-            </div>
-            <h4 class="px-3 text-muted mt-5 font-weight-light mb-0">Events</h4>
-            <div class="events pt-4 px-3">
-              <div class="wrapper d-flex mb-2">
-                <i class="ti-control-record text-primary mr-2"></i>
-                <span>Feb 11 2018</span>
-              </div>
-              <p class="mb-0 font-weight-thin text-gray">Creating component page build a js</p>
-              <p class="text-gray mb-0">The total number of sessions</p>
-            </div>
-            <div class="events pt-4 px-3">
-              <div class="wrapper d-flex mb-2">
-                <i class="ti-control-record text-primary mr-2"></i>
-                <span>Feb 7 2018</span>
-              </div>
-              <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
-              <p class="text-gray mb-0 ">Call Sarah Graves</p>
-            </div>
-          </div>
-          <!-- To do section tab ends -->
-          <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
-            <div class="d-flex align-items-center justify-content-between border-bottom">
-              <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
-              <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See All</small>
-            </div>
-            <ul class="chat-list">
-              <li class="list active">
-                <div class="profile"><img src="../../images/faces/face1.jpg" alt="image"><span class="online"></span></div>
-                <div class="info">
-                  <p>Thomas Douglas</p>
-                  <p>Available</p>
-                </div>
-                <small class="text-muted my-auto">19 min</small>
-              </li>
-              <li class="list">
-                <div class="profile"><img src="../../images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
-                <div class="info">
-                  <div class="wrapper d-flex">
-                    <p>Catherine</p>
-                  </div>
-                  <p>Away</p>
-                </div>
-                <div class="badge badge-success badge-pill my-auto mx-2">4</div>
-                <small class="text-muted my-auto">23 min</small>
-              </li>
-              <li class="list">
-                <div class="profile"><img src="../../images/faces/face3.jpg" alt="image"><span class="online"></span></div>
-                <div class="info">
-                  <p>Daniel Russell</p>
-                  <p>Available</p>
-                </div>
-                <small class="text-muted my-auto">14 min</small>
-              </li>
-              <li class="list">
-                <div class="profile"><img src="../../images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
-                <div class="info">
-                  <p>James Richardson</p>
-                  <p>Away</p>
-                </div>
-                <small class="text-muted my-auto">2 min</small>
-              </li>
-              <li class="list">
-                <div class="profile"><img src="../../images/faces/face5.jpg" alt="image"><span class="online"></span></div>
-                <div class="info">
-                  <p>Madeline Kennedy</p>
-                  <p>Available</p>
-                </div>
-                <small class="text-muted my-auto">5 min</small>
-              </li>
-              <li class="list">
-                <div class="profile"><img src="../../images/faces/face6.jpg" alt="image"><span class="online"></span></div>
-                <div class="info">
-                  <p>Sarah Graves</p>
-                  <p>Available</p>
-                </div>
-                <small class="text-muted my-auto">47 min</small>
-              </li>
-            </ul>
-          </div>
-          <!-- chat tab ends -->
-        </div>
-      </div>
       <!-- partial -->
       <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -300,7 +157,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="documentation.html">
+            <a class="nav-link" href="ajukancuti.php">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Ajukan Cuti</span>
             </a>
@@ -313,71 +170,123 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/user/akun.html"> Akun Saya </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/user/riwayat_shift.html"> Riwayat Shift </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/user/riwayat_cuti.html"> Riwayat Cuti </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/user/riwayat_izin.html"> Riwayat Izin </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-              <i class="icon-ban menu-icon"></i>
-              <span class="menu-title">Error pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="error">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="akun.html"> Akun Saya </a></li>
+                <li class="nav-item"> <a class="nav-link" href="riwayat_shift.html"> Riwayat Shift </a></li>
+                <li class="nav-item"> <a class="nav-link" href="riwayat_cuti.php"> Riwayat Cuti </a></li>
+                <li class="nav-item"> <a class="nav-link" href="riwayat_izin.html"> Riwayat Izin </a></li>
               </ul>
             </div>
           </li>
         </ul>
       </nav>
-      <div class="content-wrapper">
-        <div class="row">
-          <div class="col-md-12 grid-margin">
-            <div class="row">
-              <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                <h3 class="font-weight-bold">Riwayat Cuti</h3>
-                <h6 class="font-weight-normal mb-0">Berikut adalah riwayat cuti Anda.</h6>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="row">
+                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                  <h3 class="font-weight-bold">Riwayat Pengajuan Cuti</h3>
+                  <h6 class="font-weight-normal mb-0">Berikut adalah riwayat pengajuan cuti Anda.</h6>
+                </div>
               </div>
-              <!-- Tabel Riwayat Shift -->
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th>Tanggal Mulai</th>
-                            <th>Tanggal AKhir</th>
-                            <th>Alasan</th>
-                            <th>Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>01/01/2023</td>
-                            <td>03/01/2023</td>
-                            <td>Mau Pulang Kampung</td>
-                            <td><span class="badge badge-success">Disetujui</span></td>
-                          </tr>
-                          <!-- Tambahkan data riwayat shift lainnya di sini -->
-                        </tbody>
-                      </table>
-                    </div>
+            </div>
+          </div>
+          
+          <!-- Content -->
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Daftar Pengajuan Cuti</h4>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Tanggal Pengajuan</th>
+                          <th>Periode Cuti</th>
+                          <th>Durasi</th>
+                          <th>Alasan</th>
+                          <th>Status</th>
+                          <th>Keterangan Admin</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                        // Query to get leave history for the employee
+                        $query = "SELECT * FROM cuti_tahunan WHERE id_karyawan = '$id_karyawan' ORDER BY created_at DESC";
+                        $result = mysqli_query($koneksi, $query);
+                        
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                // Format dates
+                                $tanggal_pengajuan = date('d/m/Y', strtotime($row['created_at']));
+                                $periode = date('d/m/Y', strtotime($row['tanggal_mulai'])) . ' - ' . date('d/m/Y', strtotime($row['tanggal_selesai']));
+                                
+                                // Set status class
+                                $status_class = '';
+                                switch ($row['status']) {
+                                    case 'pending':
+                                        $status_class = 'badge-warning';
+                                        break;
+                                    case 'disetujui':
+                                        $status_class = 'badge-success';
+                                        break;
+                                    case 'ditolak':
+                                        $status_class = 'badge-danger';
+                                        break;
+                                }
+                                
+                                echo '<tr>
+                                        <td>' . $row['id'] . '</td>
+                                        <td>' . $tanggal_pengajuan . '</td>
+                                        <td>' . $periode . '</td>
+                                        <td>' . $row['durasi'] . ' hari</td>
+                                        <td>' . $row['alasan'] . '</td>
+                                        <td><span class="badge ' . $status_class . '">' . ucfirst($row['status']) . '</span></td>
+                                        <td>' . ($row['keterangan_admin'] ?: '-') . '</td>
+                                      </tr>';
+                            }
+                        } else {
+                            echo '<tr><td colspan="7" class="text-center">Tidak ada riwayat pengajuan cuti</td></tr>';
+                        }
+                        ?>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          
+          <!-- Info Card -->
+          <div class="row mt-4">
+            <div class="col-md-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Informasi Cuti</h4>
+                  <p>Berikut adalah ketentuan cuti di perusahaan:</p>
+                  <ul>
+                    <li>Setiap karyawan berhak mendapatkan 12 hari cuti tahunan.</li>
+                    <li>Pengajuan cuti harus dilakukan minimal 3 hari sebelum tanggal cuti.</li>
+                    <li>Approval cuti akan diproses dalam waktu 1-2 hari kerja.</li>
+                    <li>Untuk cuti mendadak karena alasan darurat, harap hubungi supervisor atau HRD.</li>
+                  </ul>
+                  <a href="ajukancuti.php" class="btn btn-primary mt-3">Ajukan Cuti Baru</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
         </div>
-      </div>
-              <!-- ... existing code ... -->
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2025. All rights reserved.</span>
+          </div>
+        </footer>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -397,8 +306,6 @@
   <script src="../../js/settings.js"></script>
   <script src="../../js/todolist.js"></script>
   <!-- endinject -->
-  <!-- Custom js for this page-->
-  <!-- End custom js for this page-->
 </body>
 
 </html>

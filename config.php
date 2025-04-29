@@ -1,4 +1,7 @@
 <?php
+// Ensure no output is sent before session_start
+ob_start();
+
 // Mulai session jika belum dimulai
 if (session_status() === PHP_SESSION_NONE) {
     session_start();

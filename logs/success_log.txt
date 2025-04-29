@@ -25,3 +25,11 @@
 2025-04-26 20:45:47 - Berhasil: check_out - Status Lokasi: invalid
 2025-04-26 20:47:07 - Berhasil: check_out - Status Lokasi: invalid
 2025-04-26 21:09:23 - Berhasil: check_out - Status Lokasi: valid
+2025-04-29 21:25:59 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-29 22:17:53 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-29 22:19:41 - Berhasil: check_out - Status Lokasi: invalid
+2025-04-29 22:26:33 - Berhasil: check_in - Status Lokasi: invalid
+2025-04-29 22:30:07 - Berhasil: check_in - Status Lokasi: valid
+2025-04-29 22:30:29 - Berhasil: check_out - Status Lokasi: valid
+2025-04-29 22:30:59 - Berhasil: check_in - Status Lokasi: valid
+2025-04-29 22:34:09 - Berhasil: check_out - Status Lokasi: valid

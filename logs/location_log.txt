@@ -37,3 +37,11 @@
 2025-04-26 20:45:47 - User: 230901 - Status: invalid - Info: Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
 2025-04-26 20:47:07 - User: 090903 - Status: invalid - Info: Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
 2025-04-26 21:09:23 - User: 001 - Status: valid - Info: Wakacao Bintaro
+2025-04-29 21:25:58 - User: 090903 - Status: invalid - Info: Wakacao BSD (6958m dari lokasi, melebihi radius 80m)
+2025-04-29 22:17:53 - User: 1313123123 - Status: invalid - Info: Wakacao Bintaro (13763m dari lokasi, melebihi radius 100m)
+2025-04-29 22:19:41 - User: 1313123123 - Status: invalid - Info: Wakacao Bintaro (13763m dari lokasi, melebihi radius 100m)
+2025-04-29 22:26:33 - User: 1313123123 - Status: invalid - Info: Wakacao Bintaro (13763m dari lokasi, melebihi radius 100m)
+2025-04-29 22:30:07 - User: 1313123123 - Status: valid - Info: unpam
+2025-04-29 22:30:29 - User: 1313123123 - Status: valid - Info: unpam
+2025-04-29 22:30:59 - User: 1313123123 - Status: valid - Info: unpam
+2025-04-29 22:34:09 - User: 090903 - Status: valid - Info: unpam

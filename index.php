@@ -346,7 +346,7 @@ if ($result) {
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/user/documentation.html">
+            <a class="nav-link" href="pages/user/ajukancuti.php">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Ajukan Cuti</span>
             </a>
