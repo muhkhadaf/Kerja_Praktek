@@ -4,7 +4,7 @@ Sistem ini digunakan untuk mengelola absensi karyawan, jadwal shift, dan pengaju
 
 ## Fitur
 
-- Login dan autentikasi user
+- Login dan autentikasi users
 - Dashboard karyawan
 - Absensi check-in dan check-out
 - Pengajuan izin/libur/cuti
