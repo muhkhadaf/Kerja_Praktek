@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     try {
       // Tampilkan loading
-      this.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Menunggu lokasi...';
+      this.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Mengambil data...';
       this.disabled = true;
       
       // Cek ulang status tombol check-in dan check-out
@@ -247,66 +247,59 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Tampilkan informasi lokasi
       statusElement.style.display = 'block';
-      statusElement.innerHTML = `<small>Lokasi: Lat ${locationData.latitude.toFixed(6)}, Long ${locationData.longitude.toFixed(6)}</small>`;
+      statusElement.innerHTML = `<small>Lokasi berhasil diambil</small>`;
       
       // Ambil gambar dari webcam
       const imageData = captureImage(videoElement, canvasElement);
       
-      if (!imageData) {
-        alert('Gagal mengambil gambar dari kamera. Pastikan kamera sudah siap.');
+      if (imageData) {
+        // Simpan gambar ke form
+        document.getElementById('inputFoto').value = imageData;
+        
+        // Tambahkan data lokasi ke form
+        const form = document.getElementById('absenForm');
+        
+        // Tambahkan input lokasi jika belum ada
+        if (!document.getElementById('inputLatitude')) {
+          const latInput = document.createElement('input');
+          latInput.type = 'hidden';
+          latInput.id = 'inputLatitude';
+          latInput.name = 'latitude';
+          latInput.value = locationData.latitude;
+          form.appendChild(latInput);
+        } else {
+          document.getElementById('inputLatitude').value = locationData.latitude;
+        }
+        
+        if (!document.getElementById('inputLongitude')) {
+          const longInput = document.createElement('input');
+          longInput.type = 'hidden';
+          longInput.id = 'inputLongitude';
+          longInput.name = 'longitude';
+          longInput.value = locationData.longitude;
+          form.appendChild(longInput);
+        } else {
+          document.getElementById('inputLongitude').value = locationData.longitude;
+        }
+        
+        // Tambahkan data foto ke form sebagai base64
+        const fotoInput = document.createElement('input');
+        fotoInput.type = 'hidden';
+        fotoInput.name = 'foto_base64';
+        fotoInput.value = imageData;
+        form.appendChild(fotoInput);
+        
+        // Submit form
+        this.innerHTML = 'Menyimpan...';
+        form.submit();
+      } else {
+        alert('Gagal mengambil gambar. Pastikan kamera Anda sudah aktif.');
         this.innerHTML = 'Ambil Foto';
         this.disabled = false;
-        return;
       }
-      
-      // Tampilkan loading
-      this.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Mengirim data...';
-      
-      // Buat FormData untuk mengirim data
-      const formData = new FormData();
-      formData.append('tanggal', document.getElementById('inputTanggal').value);
-      formData.append('id_shift', document.getElementById('inputShift').value);
-      formData.append('jenis_absensi', document.getElementById('jenisAbsensi').value);
-      formData.append('foto_base64', imageData);
-      formData.append('latitude', locationData.latitude);
-      formData.append('longitude', locationData.longitude);
-      
-      console.log('Mengirim data ke server:');
-      console.log('- Tanggal:', document.getElementById('inputTanggal').value);
-      console.log('- ID Shift:', document.getElementById('inputShift').value);
-      console.log('- Jenis Absensi:', document.getElementById('jenisAbsensi').value);
-      console.log('- Latitude:', locationData.latitude);
-      console.log('- Longitude:', locationData.longitude);
-      
-      // Kirim data ke server dengan fetch API
-      const response = await fetch('absen.php', {
-        method: 'POST',
-        body: formData,
-        credentials: 'same-origin'
-      });
-      
-      console.log('Response status:', response.status);
-      
-      // Ambil response text
-      const responseText = await response.text();
-      console.log('Response body:', responseText);
-      
-      if (response.ok) {
-        alert('Absensi berhasil disimpan!');
-        window.location.href = 'index.php?status=success&jenis=' + document.getElementById('jenisAbsensi').value;
-      } else {
-        console.error('Error response:', responseText);
-        alert('Terjadi kesalahan saat menyimpan absensi. Silakan coba lagi atau hubungi admin.');
-      }
-      
-      // Tutup modal
-      $('#absenModal').modal('hide');
-      
     } catch (error) {
+      alert('Terjadi kesalahan: ' + error);
       console.error('Error:', error);
-      alert('Terjadi kesalahan: ' + error.message);
-      
-      // Reset tombol
       this.innerHTML = 'Ambil Foto';
       this.disabled = false;
     }

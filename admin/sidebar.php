@@ -10,39 +10,37 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage_shift.php">
-              <i class="icon-clock menu-icon"></i>
-              <span class="menu-title">Kelola Shift</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="manage_employee.php">
+            <a class="nav-link" data-toggle="collapse" href="#absensi" aria-expanded="false" aria-controls="absensi">
               <i class="icon-head menu-icon"></i>
-              <span class="menu-title">Kelola Karyawan</span>
+              <span class="menu-title">Manajemen Absensi</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="absensi">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="attendance_list.php"> Daftar Absensi</a></li>
+                <li class="nav-item"> <a class="nav-link" href="manage_schedule.php"> Kelola Jadwal </a></li>
+                <li class="nav-item"> <a class="nav-link" href="manage_shift.php"> Kelola Shift </a></li>
+                <li class="nav-item"> <a class="nav-link" href="admin_izin.php"> Kelola Izin </a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="manage_schedule.php">
-              <i class="icon-calendar menu-icon"></i>
-              <span class="menu-title">Kelola Jadwal</span>
+            <a class="nav-link" data-toggle="collapse" href="#karyawan" aria-expanded="false" aria-controls="karyawan">
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">Manajemen SDM</span>
+              <i class="menu-arrow"></i>
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="attendance_list.php">
-              <i class="icon-check menu-icon"></i>
-              <span class="menu-title">Data Absensi</span>
-            </a>
+            <div class="collapse" id="karyawan">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="manage_employee.php"> Kelola Karyawan</a></li>
+                <li class="nav-item"> <a class="nav-link" href="manage_cuti.php"> Kelola Cuti</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="location_settings.php">
               <i class="icon-map menu-icon"></i>
               <span class="menu-title">Lokasi Absensi</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="approval_requests.php">
-              <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Persetujuan Izin</span>
             </a>
           </li>
           <li class="nav-item">

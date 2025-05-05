@@ -76,4 +76,12 @@ function formatTanggal($tanggal) {
 function formatWaktu($waktu) {
     return date('H:i', strtotime($waktu));
 }
+
+// Fungsi untuk memastikan user adalah admin
+function requireAdmin() {
+    if (!isLoggedIn() || getUserRole() !== 'admin') {
+        header("Location: login.php");
+        exit;
+    }
+}
 ?> 

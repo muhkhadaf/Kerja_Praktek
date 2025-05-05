@@ -1,0 +1,4702 @@
+2025-05-02 22:37:47 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-02' ORDER BY u.nama
+2025-05-02 22:37:47 - Jumlah data absensi: 4
+2025-05-02 22:37:47 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-02' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:37:47 - Jumlah data jadwal: 5
+2025-05-02 22:37:47 - Jumlah data gabungan: 5
+2025-05-02 22:37:47 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => 
+    [status_check_out] => 
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+)
+
+2025-05-02 22:38:03 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-02' ORDER BY u.nama
+2025-05-02 22:38:03 - Jumlah data absensi: 4
+2025-05-02 22:38:03 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-02' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:38:03 - Jumlah data jadwal: 5
+2025-05-02 22:38:03 - Jumlah data gabungan: 5
+2025-05-02 22:38:03 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => 
+    [status_check_out] => 
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+)
+
+2025-05-02 22:38:09 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-02 22:38:09 - Jumlah data absensi: 1
+2025-05-02 22:38:09 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:38:09 - Jumlah data jadwal: 5
+2025-05-02 22:38:09 - Jumlah data gabungan: 5
+2025-05-02 22:38:09 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+)
+
+2025-05-02 22:38:46 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-02 22:38:46 - Jumlah data absensi: 2
+2025-05-02 22:38:46 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:38:46 - Jumlah data jadwal: 5
+2025-05-02 22:38:46 - Jumlah data gabungan: 5
+2025-05-02 22:38:46 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+)
+
+2025-05-02 22:40:51 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-02' ORDER BY u.nama
+2025-05-02 22:40:51 - Jumlah data absensi: 5
+2025-05-02 22:40:51 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-02' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:40:51 - Jumlah data jadwal: 6
+2025-05-02 22:40:51 - Jumlah data gabungan: 6
+2025-05-02 22:40:51 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => 
+    [status_check_out] => 
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+)
+
+2025-05-02 22:41:02 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-02 22:41:02 - Jumlah data absensi: 2
+2025-05-02 22:41:02 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:41:02 - Jumlah data jadwal: 6
+2025-05-02 22:41:02 - Jumlah data gabungan: 6
+2025-05-02 22:41:02 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+)
+
+2025-05-02 22:41:05 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-02' ORDER BY u.nama
+2025-05-02 22:41:05 - Jumlah data absensi: 5
+2025-05-02 22:41:05 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-02' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:41:05 - Jumlah data jadwal: 6
+2025-05-02 22:41:05 - Jumlah data gabungan: 6
+2025-05-02 22:41:05 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => 
+    [status_check_out] => 
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+)
+
+2025-05-02 22:41:47 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-02' ORDER BY u.nama
+2025-05-02 22:41:47 - Jumlah data absensi: 5
+2025-05-02 22:41:47 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-02' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:41:47 - Jumlah data jadwal: 6
+2025-05-02 22:41:47 - Jumlah data gabungan: 6
+2025-05-02 22:41:47 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => 
+    [status_check_out] => 
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+)
+
+2025-05-02 22:41:55 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-02' ORDER BY u.nama
+2025-05-02 22:41:55 - Jumlah data absensi: 5
+2025-05-02 22:41:55 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-02' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:41:55 - Jumlah data jadwal: 6
+2025-05-02 22:41:55 - Jumlah data gabungan: 6
+2025-05-02 22:41:55 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => 
+    [status_check_out] => 
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+)
+
+2025-05-02 22:42:09 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-02' ORDER BY u.nama
+2025-05-02 22:42:09 - Jumlah data absensi: 5
+2025-05-02 22:42:09 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-02' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:42:09 - Jumlah data jadwal: 6
+2025-05-02 22:42:09 - Jumlah data gabungan: 6
+2025-05-02 22:42:09 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => 
+    [status_check_out] => 
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+)
+
+2025-05-02 22:42:11 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-02 22:42:11 - Jumlah data absensi: 2
+2025-05-02 22:42:11 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:42:11 - Jumlah data jadwal: 6
+2025-05-02 22:42:11 - Jumlah data gabungan: 6
+2025-05-02 22:42:11 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+)
+
+2025-05-02 22:42:14 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-02' ORDER BY u.nama
+2025-05-02 22:42:14 - Jumlah data absensi: 5
+2025-05-02 22:42:14 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-02' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:42:14 - Jumlah data jadwal: 6
+2025-05-02 22:42:14 - Jumlah data gabungan: 6
+2025-05-02 22:42:14 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => 
+    [status_check_out] => 
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+)
+
+2025-05-02 22:43:09 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-02' ORDER BY u.nama
+2025-05-02 22:43:09 - Jumlah data absensi: 5
+2025-05-02 22:43:09 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-02' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:43:09 - Jumlah data jadwal: 6
+2025-05-02 22:43:09 - Jumlah data gabungan: 6
+2025-05-02 22:43:09 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => 
+    [status_check_out] => 
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+)
+
+2025-05-02 22:43:14 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-02 22:43:14 - Jumlah data absensi: 3
+2025-05-02 22:43:14 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:43:14 - Jumlah data jadwal: 6
+2025-05-02 22:43:14 - Jumlah data gabungan: 6
+2025-05-02 22:43:14 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+)
+
+2025-05-02 22:43:42 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-02' ORDER BY u.nama
+2025-05-02 22:43:42 - Jumlah data absensi: 5
+2025-05-02 22:43:42 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-02' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:43:42 - Jumlah data jadwal: 6
+2025-05-02 22:43:42 - Jumlah data gabungan: 6
+2025-05-02 22:43:42 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => 
+    [status_check_out] => 
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+)
+
+2025-05-02 22:43:45 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-02 22:43:45 - Jumlah data absensi: 3
+2025-05-02 22:43:45 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:43:45 - Jumlah data jadwal: 6
+2025-05-02 22:43:45 - Jumlah data gabungan: 6
+2025-05-02 22:43:45 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+)
+
+2025-05-02 22:43:48 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' ORDER BY u.nama
+2025-05-02 22:43:48 - Jumlah data absensi: 1
+2025-05-02 22:43:48 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:43:48 - Jumlah data jadwal: 6
+2025-05-02 22:43:48 - Jumlah data gabungan: 6
+2025-05-02 22:43:48 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+)
+
+2025-05-02 22:43:50 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-05' ORDER BY u.nama
+2025-05-02 22:43:50 - Jumlah data absensi: 0
+2025-05-02 22:43:50 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-05' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:43:50 - Jumlah data jadwal: 0
+2025-05-02 22:43:50 - Jumlah data gabungan: 0
+2025-05-02 22:43:53 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' ORDER BY u.nama
+2025-05-02 22:43:53 - Jumlah data absensi: 1
+2025-05-02 22:43:53 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:43:53 - Jumlah data jadwal: 6
+2025-05-02 22:43:53 - Jumlah data gabungan: 6
+2025-05-02 22:43:53 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+)
+
+2025-05-02 22:49:14 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' ORDER BY u.nama
+2025-05-02 22:49:14 - Raw data pertama: Array
+(
+    [id] => 22
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-04
+    [id_shift] => 1
+    [check_in] => 2025-04-30 15:22:07
+    [foto_check_in] => uploads/absensi/090903_2025-05-04_check_in_1746001327.jpg
+    [check_out] => 2025-04-30 15:23:06
+    [foto_check_out] => uploads/absensi/090903_2025-05-04_check_out_1746001386.jpg
+    [status_check_in] => terlambat
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_status_in] => valid
+    [location_info_in] => Wakacao Bintaro
+    [location_status_out] => valid
+    [location_info_out] => Wakacao Bintaro
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-02 22:49:14 - Jumlah data absensi (fixed): 1
+2025-05-02 22:49:14 - Contoh data absensi pertama: Array
+(
+    [id] => 22
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-04
+    [id_shift] => 1
+    [check_in] => 2025-04-30 15:22:07
+    [foto_check_in] => uploads/absensi/090903_2025-05-04_check_in_1746001327.jpg
+    [check_out] => 2025-04-30 15:23:06
+    [foto_check_out] => uploads/absensi/090903_2025-05-04_check_out_1746001386.jpg
+    [status_check_in] => terlambat
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_status_in] => valid
+    [location_info_in] => Wakacao Bintaro
+    [location_status_out] => valid
+    [location_info_out] => Wakacao Bintaro
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-02 22:49:14 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:49:14 - Jumlah data jadwal: 6
+2025-05-02 22:49:14 - Jumlah data gabungan: 6
+2025-05-02 22:49:14 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-02 22:49:20 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-02' ORDER BY u.nama
+2025-05-02 22:49:20 - Raw data pertama: Array
+(
+    [id] => 10
+    [id_karyawan] => 002
+    [tanggal] => 2025-05-02
+    [id_shift] => 2
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => 
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [status_check_out] => 
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_status_in] => invalid
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_status_out] => invalid
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+)
+
+2025-05-02 22:49:20 - Jumlah data absensi (fixed): 5
+2025-05-02 22:49:20 - Contoh data absensi pertama: Array
+(
+    [id] => 10
+    [id_karyawan] => 002
+    [tanggal] => 2025-05-02
+    [id_shift] => 2
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_status_in] => invalid
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_status_out] => invalid
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+)
+
+2025-05-02 22:49:20 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-02' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:49:20 - Jumlah data jadwal: 6
+2025-05-02 22:49:20 - Jumlah data gabungan: 6
+2025-05-02 22:49:20 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => tepat waktu
+    [status_check_out] => tepat waktu
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [has_absensi] => 1
+)
+
+2025-05-02 22:49:42 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-02 22:49:42 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-02 22:49:42 - Jumlah data absensi (fixed): 3
+2025-05-02 22:49:42 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-02 22:49:42 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:49:42 - Jumlah data jadwal: 6
+2025-05-02 22:49:42 - Jumlah data gabungan: 6
+2025-05-02 22:49:42 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-02 22:55:07 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-02' ORDER BY u.nama
+2025-05-02 22:55:07 - Raw data pertama: Array
+(
+    [id] => 10
+    [id_karyawan] => 002
+    [tanggal] => 2025-05-02
+    [id_shift] => 2
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => 
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [status_check_out] => 
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_status_in] => invalid
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_status_out] => invalid
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+)
+
+2025-05-02 22:55:07 - Jumlah data absensi (fixed): 5
+2025-05-02 22:55:07 - Contoh data absensi pertama: Array
+(
+    [id] => 10
+    [id_karyawan] => 002
+    [tanggal] => 2025-05-02
+    [id_shift] => 2
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_status_in] => invalid
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_status_out] => invalid
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+)
+
+2025-05-02 22:55:07 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-02' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-02 22:55:07 - Jumlah data jadwal: 6
+2025-05-02 22:55:07 - Jumlah data gabungan: 6
+2025-05-02 22:55:07 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 2025-04-26 17:21:30
+    [foto_check_in] => uploads/absensi/002_2025-05-02_check_in_1745662890.jpg
+    [check_out] => 2025-04-26 17:16:54
+    [foto_check_out] => uploads/absensi/002_2025-05-02_check-in_1745662614.jpg
+    [status_check_in] => tepat waktu
+    [status_check_out] => tepat waktu
+    [latitude_in] => -6.13031480
+    [longitude_in] => 106.90930000
+    [latitude_out] => -6.13031480
+    [longitude_out] => 106.90930000
+    [location_info_in] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [location_info_out] => Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)
+    [has_absensi] => 1
+)
+
+2025-05-03 17:21:12 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 17:21:12 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:21:12 - Jumlah data absensi (fixed): 3
+2025-05-03 17:21:12 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:21:12 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 17:21:12 - Jumlah data jadwal: 6
+2025-05-03 17:21:12 - Jumlah data gabungan: 6
+2025-05-03 17:21:12 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 17:23:55 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 17:23:55 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:23:55 - Jumlah data absensi (fixed): 3
+2025-05-03 17:23:55 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:23:55 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 17:23:55 - Jumlah data jadwal: 6
+2025-05-03 17:23:55 - Jumlah data gabungan: 6
+2025-05-03 17:23:55 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 17:24:03 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 17:24:03 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:24:03 - Jumlah data absensi (fixed): 3
+2025-05-03 17:24:03 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:24:03 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 17:24:03 - Jumlah data jadwal: 6
+2025-05-03 17:24:03 - Jumlah data gabungan: 6
+2025-05-03 17:24:03 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 17:26:04 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 17:26:04 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:26:04 - Jumlah data absensi (fixed): 3
+2025-05-03 17:26:04 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:26:04 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 17:26:04 - Jumlah data jadwal: 6
+2025-05-03 17:26:04 - Jumlah data gabungan: 6
+2025-05-03 17:26:04 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 17:28:23 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 17:28:23 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:28:23 - Jumlah data absensi (fixed): 3
+2025-05-03 17:28:23 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:28:23 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 17:28:23 - Jumlah data jadwal: 6
+2025-05-03 17:28:23 - Jumlah data gabungan: 6
+2025-05-03 17:28:23 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 17:31:04 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 17:31:04 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:31:04 - Jumlah data absensi (fixed): 3
+2025-05-03 17:31:04 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:31:04 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 17:31:04 - Jumlah data jadwal: 6
+2025-05-03 17:31:04 - Jumlah data gabungan: 6
+2025-05-03 17:31:04 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 17:31:11 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 17:31:11 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:31:11 - Jumlah data absensi (fixed): 3
+2025-05-03 17:31:11 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:31:11 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 17:31:11 - Jumlah data jadwal: 6
+2025-05-03 17:31:11 - Jumlah data gabungan: 6
+2025-05-03 17:31:11 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 17:32:20 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 17:32:20 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:32:20 - Jumlah data absensi (fixed): 3
+2025-05-03 17:32:20 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:32:20 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 17:32:20 - Jumlah data jadwal: 6
+2025-05-03 17:32:20 - Jumlah data gabungan: 6
+2025-05-03 17:32:20 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 17:32:24 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 17:32:24 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:32:24 - Jumlah data absensi (fixed): 3
+2025-05-03 17:32:24 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:32:24 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 17:32:24 - Jumlah data jadwal: 6
+2025-05-03 17:32:24 - Jumlah data gabungan: 6
+2025-05-03 17:32:24 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 17:32:27 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 17:32:27 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:32:27 - Jumlah data absensi (fixed): 3
+2025-05-03 17:32:27 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:32:27 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 17:32:27 - Jumlah data jadwal: 6
+2025-05-03 17:32:27 - Jumlah data gabungan: 6
+2025-05-03 17:32:27 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 17:52:58 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 17:52:58 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:52:58 - Jumlah data absensi (fixed): 3
+2025-05-03 17:52:58 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:52:58 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 17:52:58 - Jumlah data jadwal: 6
+2025-05-03 17:52:58 - Jumlah data gabungan: 6
+2025-05-03 17:52:58 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 17:53:45 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 17:53:45 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:53:45 - Jumlah data absensi (fixed): 3
+2025-05-03 17:53:45 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 17:53:45 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 17:53:45 - Jumlah data jadwal: 6
+2025-05-03 17:53:45 - Jumlah data gabungan: 6
+2025-05-03 17:53:45 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 18:50:30 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 18:50:30 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 18:50:30 - Jumlah data absensi (fixed): 3
+2025-05-03 18:50:30 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 18:50:30 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 18:50:30 - Jumlah data jadwal: 6
+2025-05-03 18:50:30 - Jumlah data gabungan: 6
+2025-05-03 18:50:30 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 18:52:42 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 18:52:42 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 18:52:42 - Jumlah data absensi (fixed): 3
+2025-05-03 18:52:42 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 18:52:42 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 18:52:42 - Jumlah data jadwal: 6
+2025-05-03 18:52:42 - Jumlah data gabungan: 6
+2025-05-03 18:52:42 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 18:57:11 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 18:57:11 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 18:57:11 - Jumlah data absensi (fixed): 3
+2025-05-03 18:57:11 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 18:57:11 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 18:57:11 - Jumlah data jadwal: 6
+2025-05-03 18:57:11 - Jumlah data gabungan: 6
+2025-05-03 18:57:11 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 18:57:18 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 18:57:18 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 18:57:18 - Jumlah data absensi (fixed): 3
+2025-05-03 18:57:18 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 18:57:18 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 18:57:18 - Jumlah data jadwal: 6
+2025-05-03 18:57:18 - Jumlah data gabungan: 6
+2025-05-03 18:57:18 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 18:58:25 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 18:58:25 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 18:58:25 - Jumlah data absensi (fixed): 3
+2025-05-03 18:58:25 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 18:58:25 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 18:58:25 - Jumlah data jadwal: 6
+2025-05-03 18:58:25 - Jumlah data gabungan: 6
+2025-05-03 18:58:25 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 18:59:56 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 18:59:56 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 18:59:56 - Jumlah data absensi (fixed): 3
+2025-05-03 18:59:56 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 18:59:56 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 18:59:56 - Jumlah data jadwal: 6
+2025-05-03 18:59:56 - Jumlah data gabungan: 6
+2025-05-03 18:59:56 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:01:17 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 19:01:17 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 19:01:17 - Jumlah data absensi (fixed): 3
+2025-05-03 19:01:17 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 19:01:17 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:01:17 - Jumlah data jadwal: 6
+2025-05-03 19:01:17 - Jumlah data gabungan: 6
+2025-05-03 19:01:17 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:02:36 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 19:02:36 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 19:02:36 - Jumlah data absensi (fixed): 3
+2025-05-03 19:02:36 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 19:02:36 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:02:36 - Jumlah data jadwal: 6
+2025-05-03 19:02:36 - Jumlah data gabungan: 6
+2025-05-03 19:02:36 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:03:03 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' ORDER BY u.nama
+2025-05-03 19:03:03 - Raw data pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:03:03 - Jumlah data absensi (fixed): 2
+2025-05-03 19:03:03 - Contoh data absensi pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:03:03 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:03:03 - Jumlah data jadwal: 6
+2025-05-03 19:03:03 - Jumlah data gabungan: 6
+2025-05-03 19:03:03 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:04:20 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' ORDER BY u.nama
+2025-05-03 19:04:20 - Raw data pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:04:20 - Jumlah data absensi (fixed): 2
+2025-05-03 19:04:20 - Contoh data absensi pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:04:20 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:04:20 - Jumlah data jadwal: 6
+2025-05-03 19:04:20 - Jumlah data gabungan: 6
+2025-05-03 19:04:20 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:06:25 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' ORDER BY u.nama
+2025-05-03 19:06:25 - Raw data pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:06:25 - Jumlah data absensi (fixed): 2
+2025-05-03 19:06:25 - Contoh data absensi pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:06:25 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:06:25 - Jumlah data jadwal: 6
+2025-05-03 19:06:25 - Jumlah data gabungan: 6
+2025-05-03 19:06:25 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:15:51 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' ORDER BY u.nama
+2025-05-03 19:15:51 - Raw data pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:15:51 - Jumlah data absensi (fixed): 2
+2025-05-03 19:15:51 - Contoh data absensi pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:15:51 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:15:51 - Jumlah data jadwal: 6
+2025-05-03 19:15:51 - Jumlah data gabungan: 6
+2025-05-03 19:15:51 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:18:11 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' ORDER BY u.nama
+2025-05-03 19:18:11 - Raw data pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:18:11 - Jumlah data absensi (fixed): 2
+2025-05-03 19:18:11 - Contoh data absensi pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:18:11 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:18:11 - Jumlah data jadwal: 6
+2025-05-03 19:18:11 - Jumlah data gabungan: 6
+2025-05-03 19:18:11 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:18:47 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' ORDER BY u.nama
+2025-05-03 19:18:47 - Raw data pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:18:47 - Jumlah data absensi (fixed): 2
+2025-05-03 19:18:47 - Contoh data absensi pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:18:47 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:18:47 - Jumlah data jadwal: 6
+2025-05-03 19:18:47 - Jumlah data gabungan: 6
+2025-05-03 19:18:47 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:19:08 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' ORDER BY u.nama
+2025-05-03 19:19:08 - Raw data pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:19:08 - Jumlah data absensi (fixed): 2
+2025-05-03 19:19:08 - Contoh data absensi pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:19:08 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:19:08 - Jumlah data jadwal: 6
+2025-05-03 19:19:08 - Jumlah data gabungan: 6
+2025-05-03 19:19:08 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:21:27 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-05' ORDER BY u.nama
+2025-05-03 19:21:27 - Jumlah data absensi (fixed): 0
+2025-05-03 19:21:27 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-05' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:21:27 - Jumlah data jadwal: 6
+2025-05-03 19:21:27 - Jumlah data gabungan: 6
+2025-05-03 19:21:27 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:22:16 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' ORDER BY u.nama
+2025-05-03 19:22:16 - Raw data pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:22:16 - Jumlah data absensi (fixed): 2
+2025-05-03 19:22:16 - Contoh data absensi pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:22:16 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:22:16 - Jumlah data jadwal: 6
+2025-05-03 19:22:16 - Jumlah data gabungan: 6
+2025-05-03 19:22:16 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:22:18 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 19:22:18 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 19:22:18 - Jumlah data absensi (fixed): 3
+2025-05-03 19:22:18 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 19:22:18 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:22:18 - Jumlah data jadwal: 6
+2025-05-03 19:22:18 - Jumlah data gabungan: 6
+2025-05-03 19:22:18 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:23:00 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 19:23:00 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 19:23:00 - Jumlah data absensi (fixed): 3
+2025-05-03 19:23:00 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 19:23:00 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:23:00 - Jumlah data jadwal: 6
+2025-05-03 19:23:00 - Jumlah data gabungan: 6
+2025-05-03 19:23:00 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:24:41 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' ORDER BY u.nama
+2025-05-03 19:24:41 - Raw data pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:24:41 - Jumlah data absensi (fixed): 2
+2025-05-03 19:24:41 - Contoh data absensi pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:24:41 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:24:41 - Jumlah data jadwal: 6
+2025-05-03 19:24:41 - Jumlah data gabungan: 6
+2025-05-03 19:24:41 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:25:15 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' ORDER BY u.nama
+2025-05-03 19:25:15 - Raw data pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:25:15 - Jumlah data absensi (fixed): 2
+2025-05-03 19:25:15 - Contoh data absensi pertama: Array
+(
+    [id] => 27
+    [id_karyawan] => 1211111
+    [tanggal] => 2025-05-04
+    [id_shift] => 3
+    [check_in] => 2025-05-02 22:52:26
+    [foto_check_in] => uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg
+    [check_out] => 2025-05-02 22:53:17
+    [foto_check_out] => uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.36318350
+    [longitude_out] => 106.73361440
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.3631835, Longitude: 106.7336144
+    [nama] => KIM MIN JEONG
+    [outlet] => Wakacao BSD
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+)
+
+2025-05-03 19:25:15 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:25:15 - Jumlah data jadwal: 6
+2025-05-03 19:25:15 - Jumlah data gabungan: 6
+2025-05-03 19:25:15 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-03 19:25:20 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' ORDER BY u.nama
+2025-05-03 19:25:20 - Raw data pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 19:25:20 - Jumlah data absensi (fixed): 3
+2025-05-03 19:25:20 - Contoh data absensi pertama: Array
+(
+    [id] => 24
+    [id_karyawan] => 230901
+    [tanggal] => 2025-05-03
+    [id_shift] => 1
+    [check_in] => 2025-05-02 22:38:38
+    [foto_check_in] => uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => terlambat
+    [latitude_in] => -6.38976000
+    [longitude_in] => 106.78763520
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.38976, Longitude: 106.7876352
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => Khadafi
+    [outlet] => Wakacao Pamulang
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-03 19:25:20 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-03 19:25:20 - Jumlah data jadwal: 6
+2025-05-03 19:25:20 - Jumlah data gabungan: 6
+2025-05-03 19:25:20 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-05 13:10:02 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-05' ORDER BY u.nama
+2025-05-05 13:10:02 - Raw data pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => terlambat
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => lebih awal
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:10:02 - Jumlah data absensi (fixed): 1
+2025-05-05 13:10:02 - Contoh data absensi pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => terlambat
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => lebih awal
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:10:02 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-05' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-05 13:10:02 - Jumlah data jadwal: 6
+2025-05-05 13:10:02 - Jumlah data gabungan: 6
+2025-05-05 13:10:02 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-05 13:16:10 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-05' ORDER BY u.nama
+2025-05-05 13:16:10 - Raw data pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => 
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => 
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:16:10 - Jumlah data absensi (fixed): 1
+2025-05-05 13:16:10 - Contoh data absensi pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:16:10 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-05' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-05 13:16:10 - Jumlah data jadwal: 6
+2025-05-05 13:16:10 - Jumlah data gabungan: 6
+2025-05-05 13:16:10 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-05 13:17:41 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-05' ORDER BY u.nama
+2025-05-05 13:17:41 - Raw data pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => 
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => 
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:17:41 - Jumlah data absensi (fixed): 1
+2025-05-05 13:17:41 - Contoh data absensi pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:17:41 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-05' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-05 13:17:41 - Jumlah data jadwal: 6
+2025-05-05 13:17:41 - Jumlah data gabungan: 6
+2025-05-05 13:17:41 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-05 13:18:08 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-05' ORDER BY u.nama
+2025-05-05 13:18:08 - Raw data pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => 
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => 
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:18:08 - Jumlah data absensi (fixed): 1
+2025-05-05 13:18:08 - Contoh data absensi pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:18:08 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-05' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-05 13:18:08 - Jumlah data jadwal: 6
+2025-05-05 13:18:08 - Jumlah data gabungan: 6
+2025-05-05 13:18:08 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-05 13:18:50 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-05' ORDER BY u.nama
+2025-05-05 13:18:50 - Raw data pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => 
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => 
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:18:50 - Jumlah data absensi (fixed): 1
+2025-05-05 13:18:50 - Contoh data absensi pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:18:50 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-05' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-05 13:18:50 - Jumlah data jadwal: 6
+2025-05-05 13:18:50 - Jumlah data gabungan: 6
+2025-05-05 13:18:50 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-05 13:18:54 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-05' ORDER BY u.nama
+2025-05-05 13:18:54 - Raw data pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => 
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => 
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:18:54 - Jumlah data absensi (fixed): 1
+2025-05-05 13:18:54 - Contoh data absensi pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:18:54 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-05' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-05 13:18:54 - Jumlah data jadwal: 6
+2025-05-05 13:18:54 - Jumlah data gabungan: 6
+2025-05-05 13:18:54 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-05 13:19:40 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-05' ORDER BY u.nama
+2025-05-05 13:19:40 - Raw data pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => 
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => 
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:19:40 - Jumlah data absensi (fixed): 1
+2025-05-05 13:19:40 - Contoh data absensi pertama: Array
+(
+    [id] => 28
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-05
+    [id_shift] => 1
+    [check_in] => 2025-05-05 13:08:16
+    [foto_check_in] => uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg
+    [check_out] => 2025-05-05 13:08:25
+    [foto_check_out] => uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.50054120
+    [longitude_in] => 106.77654430
+    [status_check_out] => tepat waktu
+    [latitude_out] => -6.50054120
+    [longitude_out] => 106.77654430
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.5005412, Longitude: 106.7765443
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.5005412, Longitude: 106.7765443
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-05 13:19:40 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-05' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-05 13:19:40 - Jumlah data jadwal: 6
+2025-05-05 13:19:40 - Jumlah data gabungan: 6
+2025-05-05 13:19:40 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+

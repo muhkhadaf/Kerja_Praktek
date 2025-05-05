@@ -354,28 +354,15 @@ if ($result) {
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="icon-head menu-icon"></i>
-              <span class="menu-title">User Pages</span>
+              <span class="menu-title">Halaman Karyawan</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/user/akun.html"> Akun Saya </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/user/riwayat_shift.html"> Riwayat Shift </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/user/riwayat_cuti.html"> Riwayat Cuti </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/user/akun.php"> Akun Saya </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/user/riwayat_shift.php"> Riwayat Shift </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/user/riwayat_cuti.php"> Riwayat Cuti </a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/user/riwayat_izin.php"> Riwayat Izin </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-              <i class="icon-ban menu-icon"></i>
-              <span class="menu-title">Error pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="error">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
               </ul>
             </div>
           </li>
@@ -383,112 +370,210 @@ if ($result) {
       </nav>
       <!-- partial -->
       <div class="main-panel">
-        <div class="content-wrapper">
+        <div class="content-wrapper" style="background-color: #f5f7fa;">
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                   <h3 class="font-weight-bold">Selamat Datang, <?php echo $nama; ?></h3>
                 </div>
-                <div class="col-12 col-xl-4">
-                 <div class="justify-content-end d-flex">
-                  <div class="dropdown flex-md-grow-1 flex-xl-grow-0">  
-                    <a href="pages/user/riwayat_izin.php" class="btn btn-info">Lihat Riwayat Izin</a>
-                  </div>
-                 </div>
                 </div>
               </div>
             </div>
           </div>
           
           <?php if (isset($_GET['status']) && isset($_GET['jenis'])): ?>
-            <?php if ($_GET['status'] === 'success'): ?>
-              <div class="alert alert-success alert-dismissible fade show" role="alert" id="alertMessage">
-                <?php if ($_GET['jenis'] === 'izin'): ?>
-                  Pengajuan izin berhasil disimpan dan sedang menunggu persetujuan.
-                <?php elseif ($_GET['jenis'] === 'check_in' || $_GET['jenis'] === 'check_out'): ?>
-                  Absensi <?php echo ($_GET['jenis'] === 'check_in') ? 'masuk' : 'pulang'; ?> berhasil disimpan.
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                <?php if ($_GET['status'] === 'success'): ?>
+                  <?php if ($_GET['jenis'] === 'izin'): ?>
+                    Swal.fire({
+                      icon: 'success',
+                      title: 'Berhasil!',
+                      text: 'Pengajuan izin berhasil disimpan dan sedang menunggu persetujuan.',
+                      timer: 3000,
+                      showConfirmButton: false
+                    });
+                  <?php elseif ($_GET['jenis'] === 'check_in' || $_GET['jenis'] === 'check_out'): ?>
+                    Swal.fire({
+                      icon: 'success',
+                      title: 'Berhasil!',
+                      text: 'Absensi <?php echo ($_GET['jenis'] === 'check_in') ? 'masuk' : 'pulang'; ?> berhasil disimpan.',
+                      timer: 3000,
+                      showConfirmButton: false
+                    });
+                  <?php endif; ?>
+                <?php elseif ($_GET['status'] === 'error'): ?>
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Gagal!',
+                    text: 'Terjadi kesalahan. Silakan coba lagi nanti.',
+                    timer: 3000,
+                    showConfirmButton: false
+                  });
                 <?php endif; ?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            <?php elseif ($_GET['status'] === 'error'): ?>
-              <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alertMessage">
-                Terjadi kesalahan. Silakan coba lagi nanti.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            <?php endif; ?>
+
+                // Hapus parameter status & jenis dari URL setelah Swal muncul
+                if (window.history.replaceState) {
+                  const url = new URL(window.location);
+                  url.searchParams.delete('status');
+                  url.searchParams.delete('jenis');
+                  window.history.replaceState({}, document.title, url.pathname + url.search);
+                }
+              });
+            </script>
           <?php endif; ?>
 
-          <script>
-            // Auto hide alert after 3 seconds
-            setTimeout(function() {
-              var alert = document.getElementById('alertMessage');
-              if (alert) {
-                alert.style.display = 'none';
-              }
-            }, 3000);
-          </script>
           <!-- Card Absensi -->
           <div class="col-12">
             <div class="row">
-              <!-- Card untuk setiap jadwal dari database -->
-              <?php if (count($jadwal_array) > 0): ?>
-                <?php foreach ($jadwal_array as $jadwal): ?>
-                  <div class="col-md-4 mb-4">
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title"><?php echo date('l', strtotime($jadwal['tanggal'])) . ', ' . formatTanggal($jadwal['tanggal']); ?></h5>
-                        <p>ID Karyawan: <?php echo $id_karyawan; ?></p>
-                        <p>Nama Karyawan: <?php echo $nama; ?></p>
-                        <p>Outlet: <?php echo $outlet; ?></p>
-                        <p>Shift: <?php echo isset($jadwal['nama_shift']) ? $jadwal['nama_shift'] . ' (' . formatWaktu($jadwal['jam_mulai']) . ' - ' . formatWaktu($jadwal['jam_selesai']) . ')' : 'Belum ditentukan'; ?></p>
-                        
-                        <?php 
-                        // Logika untuk menentukan status absensi
-                        $status_checkin = 'Belum Absen';
-                        $status_checkout = 'Belum Absen';
-                        $badge_checkin = 'badge-danger';
-                        $badge_checkout = 'badge-danger';
-                        
-                        if (isset($jadwal['check_in']) && !empty($jadwal['check_in'])) {
-                            $status_checkin = $jadwal['status_check_in'];
-                            $badge_checkin = ($status_checkin == 'tepat waktu') ? 'badge-success' : 'badge-warning';
+              <div class="col-12 mb-4">
+                <div class="card">
+                  <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Jadwal Hari Ini</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                    <?php 
+                      $today_date = date('Y-m-d');
+                      $today_found = false;
+                      
+                      // Tampilkan jadwal hari ini
+                      foreach ($jadwal_array as $jadwal) {
+                        if ($jadwal['tanggal'] == $today_date) {
+                          $today_found = true;
+                          ?>
+                          <div class="col-md-6 mb-4">
+                            <div class="card border-primary shadow rounded-4" style="border-radius: 20px; min-height: 100%;">
+                              <div class="card-body" style="border-radius: 0 0 20px 20px;">
+                                <h5 class="card-title"><?php echo date('l', strtotime($jadwal['tanggal'])) . ', ' . formatTanggal($jadwal['tanggal']); ?></h5>
+                                <p>ID Karyawan: <?php echo $id_karyawan; ?></p>
+                                <p>Nama Karyawan: <?php echo $nama; ?></p>
+                                <p>Outlet: <?php echo $outlet; ?></p>
+                                <p>Shift: <?php echo isset($jadwal['nama_shift']) ? $jadwal['nama_shift'] . ' (' . formatWaktu($jadwal['jam_mulai']) . ' - ' . formatWaktu($jadwal['jam_selesai']) . ')' : 'Belum ditentukan'; ?></p>
+                                
+                                <?php 
+                                // Logika untuk menentukan status absensi
+                                $status_checkin = 'Belum Absen';
+                                $status_checkout = 'Belum Absen';
+                                $badge_checkin = 'badge-danger';
+                                $badge_checkout = 'badge-danger';
+                                
+                                if (isset($jadwal['check_in']) && !empty($jadwal['check_in'])) {
+                                    $status_checkin = $jadwal['status_check_in'];
+                                    $badge_checkin = ($status_checkin == 'tepat waktu') ? 'badge-success' : (($status_checkin == 'tidak valid') ? 'badge-dark' : 'badge-warning');
+                                }
+                                
+                                if (isset($jadwal['check_out']) && !empty($jadwal['check_out'])) {
+                                    $status_checkout = $jadwal['status_check_out'];
+                                    $badge_checkout = ($status_checkout == 'tepat waktu') ? 'badge-success' : (($status_checkout == 'tidak valid') ? 'badge-dark' : 'badge-warning');
+                                }
+                                ?>
+                                
+                                <p>Status Check in: <span class="badge <?php echo $badge_checkin; ?>"><?php echo ucfirst($status_checkin); ?></span></p>
+                                <p>Status Check Out: <span class="badge <?php echo $badge_checkout; ?>"><?php echo ucfirst($status_checkout); ?></span></p>
+                                
+                                <?php if ($jadwal['status'] == 'masuk'): ?>
+                                  <?php if (isset($jadwal['check_in']) && !empty($jadwal['check_in']) && isset($jadwal['check_out']) && !empty($jadwal['check_out'])): ?>
+                                    <button class="btn btn-secondary" disabled>Sudah Absen</button>
+                                  <?php else: ?>
+                                    <button class="btn btn-primary absen-btn" data-date="<?php echo $jadwal['tanggal']; ?>" data-shift="<?php echo $jadwal['id_shift']; ?>" data-checkin="<?php echo !empty($jadwal['check_in']) ? '1' : '0'; ?>" data-checkout="<?php echo !empty($jadwal['check_out']) ? '1' : '0'; ?>">Absen</button>
+                                  <?php endif; ?>
+                                  <button class="btn btn-primary izin-btn" data-date="<?php echo $jadwal['tanggal']; ?>">Ajukan Libur</button>
+                                <?php else: ?>
+                                  <span class="badge badge-info"><?php echo ucfirst($jadwal['status']); ?></span>
+                                <?php endif; ?>
+                              </div>
+                            </div>
+                          </div>
+                        <?php
                         }
-                        
-                        if (isset($jadwal['check_out']) && !empty($jadwal['check_out'])) {
-                            $status_checkout = $jadwal['status_check_out'];
-                            $badge_checkout = ($status_checkout == 'tepat waktu') ? 'badge-success' : 'badge-warning';
-                        }
-                        ?>
-                        
-                        <p>Status Check in: <span class="badge <?php echo $badge_checkin; ?>"><?php echo ucfirst($status_checkin); ?></span></p>
-                        <p>Status Check Out: <span class="badge <?php echo $badge_checkout; ?>"><?php echo ucfirst($status_checkout); ?></span></p>
-                        
-                        <?php if ($jadwal['status'] == 'masuk'): ?>
-                          <?php if (isset($jadwal['check_in']) && !empty($jadwal['check_in']) && isset($jadwal['check_out']) && !empty($jadwal['check_out'])): ?>
-                            <button class="btn btn-secondary" disabled>Sudah Absen</button>
-                          <?php else: ?>
-                            <button class="btn btn-primary absen-btn" data-date="<?php echo $jadwal['tanggal']; ?>" data-shift="<?php echo $jadwal['id_shift']; ?>" data-checkin="<?php echo !empty($jadwal['check_in']) ? '1' : '0'; ?>" data-checkout="<?php echo !empty($jadwal['check_out']) ? '1' : '0'; ?>">Absen</button>
-                          <?php endif; ?>
-                          <button class="btn btn-primary izin-btn" data-date="<?php echo $jadwal['tanggal']; ?>">Ajukan Libur</button>
-                        <?php else: ?>
-                          <span class="badge badge-info"><?php echo ucfirst($jadwal['status']); ?></span>
-                        <?php endif; ?>
-                      </div>
+                      }
+                      
+                      if (!$today_found) {
+                        echo '<div class="col-12"><div class="alert alert-info rounded-4">Tidak ada jadwal untuk hari ini.</div></div>';
+                      }
+                    ?>
                     </div>
                   </div>
-                <?php endforeach; ?>
-              <?php else: ?>
-                <div class="col-12">
-                  <div class="alert alert-info">
-                    Tidak ada jadwal untuk beberapa hari ke depan. Silakan hubungi supervisor Anda.
+                </div>
+              </div>
+              
+              <!-- Jadwal Mendatang dan Sebelumnya -->
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header bg-secondary text-white rounded-top">
+                    <h4 class="mb-0">Jadwal Mendatang & Sebelumnya</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                    <?php if (count($jadwal_array) > 0): ?>
+                      <?php foreach ($jadwal_array as $jadwal): ?>
+                        <?php if ($jadwal['tanggal'] != $today_date): ?>
+                          <div class="col-md-4 mb-4">
+                            <div class="card shadow rounded-4 <?php echo ($jadwal['tanggal'] < $today_date) ? 'border-secondary' : 'border-info'; ?>" style="border-radius: 20px; min-height: 100%;">
+                              <div class="card-header <?php echo ($jadwal['tanggal'] < $today_date) ? 'bg-secondary' : 'bg-info'; ?> text-white rounded-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                                <h5 class="card-title mb-0">
+                                  <?php 
+                                    if ($jadwal['tanggal'] < $today_date) {
+                                      echo 'Sebelumnya';
+                                    } elseif ($jadwal['tanggal'] > $today_date) {
+                                      echo 'Mendatang';
+                                    }
+                                  ?>
+                                </h5>
+                              </div>
+                              <div class="card-body" style="border-radius: 0 0 20px 20px;">
+                                <h5 class="card-title"><?php echo date('l', strtotime($jadwal['tanggal'])) . ', ' . formatTanggal($jadwal['tanggal']); ?></h5>
+                                <p>ID Karyawan: <?php echo $id_karyawan; ?></p>
+                                <p>Nama Karyawan: <?php echo $nama; ?></p>
+                                <p>Outlet: <?php echo $outlet; ?></p>
+                                <p>Shift: <?php echo isset($jadwal['nama_shift']) ? $jadwal['nama_shift'] . ' (' . formatWaktu($jadwal['jam_mulai']) . ' - ' . formatWaktu($jadwal['jam_selesai']) . ')' : 'Belum ditentukan'; ?></p>
+                                
+                                <?php 
+                                // Logika untuk menentukan status absensi
+                                $status_checkin = 'Belum Absen';
+                                $status_checkout = 'Belum Absen';
+                                $badge_checkin = 'badge-danger';
+                                $badge_checkout = 'badge-danger';
+                                
+                                if (isset($jadwal['check_in']) && !empty($jadwal['check_in'])) {
+                                    $status_checkin = $jadwal['status_check_in'];
+                                    $badge_checkin = ($status_checkin == 'tepat waktu') ? 'badge-success' : (($status_checkin == 'tidak valid') ? 'badge-dark' : 'badge-warning');
+                                }
+                                
+                                if (isset($jadwal['check_out']) && !empty($jadwal['check_out'])) {
+                                    $status_checkout = $jadwal['status_check_out'];
+                                    $badge_checkout = ($status_checkout == 'tepat waktu') ? 'badge-success' : (($status_checkout == 'tidak valid') ? 'badge-dark' : 'badge-warning');
+                                }
+                                ?>
+                                
+                                <p>Status Check in: <span class="badge <?php echo $badge_checkin; ?>"><?php echo ucfirst($status_checkin); ?></span></p>
+                                <p>Status Check Out: <span class="badge <?php echo $badge_checkout; ?>"><?php echo ucfirst($status_checkout); ?></span></p>
+                                
+                                <?php if ($jadwal['status'] == 'masuk'): ?>
+                                  <!-- Tombol Absen dinonaktifkan untuk jadwal yang bukan hari ini -->
+                                  <button class="btn btn-secondary" disabled>Absen</button>
+                                  <button class="btn btn-primary izin-btn" data-date="<?php echo $jadwal['tanggal']; ?>">Ajukan Libur</button>
+                                <?php else: ?>
+                                  <span class="badge badge-info"><?php echo ucfirst($jadwal['status']); ?></span>
+                                <?php endif; ?>
+                              </div>
+                            </div>
+                          </div>
+                        <?php endif; ?>
+                      <?php endforeach; ?>
+                    <?php else: ?>
+                      <div class="col-12">
+                        <div class="alert alert-info rounded-4">
+                          Tidak ada jadwal untuk beberapa hari ke depan. Silakan hubungi supervisor Anda.
+                        </div>
+                      </div>
+                    <?php endif; ?>
+                    </div>
                   </div>
                 </div>
-              <?php endif; ?>
+              </div>
             </div>
           </div>
         </div>
@@ -653,6 +738,8 @@ if ($result) {
       });
     });
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

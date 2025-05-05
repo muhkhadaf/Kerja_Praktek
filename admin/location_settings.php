@@ -178,7 +178,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
                   <h3 class="font-weight-bold">Pengaturan Lokasi Absensi</h3>
-                  <h6 class="font-weight-normal mb-0">Tentukan lokasi dan radius absensi yang diijinkan</h6>
+                  <h6 class="font-weight-normal mb-0">Kelola data lokasi outlet untuk pencatatan informasi absensi</h6>
                 </div>
                 <div class="col-12 col-xl-4">
                   <div class="justify-content-end d-flex">
@@ -204,9 +204,9 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Peta Lokasi Absensi</h4>
+                  <h4 class="card-title">Peta Lokasi Outlet</h4>
                   <p class="card-description">
-                    Menampilkan semua lokasi absensi yang aktif dengan radius yang ditentukan
+                    Menampilkan semua lokasi outlet yang sudah didaftarkan
                   </p>
                   <div id="map"></div>
                 </div>
@@ -218,7 +218,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Daftar Lokasi Absensi</h4>
+                  <h4 class="card-title">Daftar Lokasi Outlet</h4>
                   <div class="table-responsive">
                     <table class="table table-striped table-hover">
                       <thead>
@@ -227,7 +227,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
                           <th>Outlet</th>
                           <th>Latitude</th>
                           <th>Longitude</th>
-                          <th>Radius (m)</th>
                           <th>Status</th>
                           <th>Aksi</th>
                         </tr>
@@ -240,7 +239,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
                             <td><?php echo $location['outlet_name']; ?></td>
                             <td><?php echo $location['latitude']; ?></td>
                             <td><?php echo $location['longitude']; ?></td>
-                            <td><?php echo $location['radius']; ?></td>
                             <td>
                               <span class="badge <?php echo $location['active'] ? 'badge-success' : 'badge-danger'; ?>">
                                 <?php echo $location['active'] ? 'Aktif' : 'Tidak Aktif'; ?>
@@ -258,7 +256,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
                           <?php endforeach; ?>
                         <?php else: ?>
                           <tr>
-                            <td colspan="7" class="text-center">Belum ada data lokasi absensi</td>
+                            <td colspan="7" class="text-center">Belum ada data lokasi outlet</td>
                           </tr>
                         <?php endif; ?>
                       </tbody>
@@ -274,7 +272,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="addLocationModalLabel">Tambah Lokasi Absensi Baru</h5>
+                  <h5 class="modal-title" id="addLocationModalLabel">Tambah Lokasi Outlet Baru</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -299,8 +297,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
                     
                     <div class="form-group">
                       <label for="radius">Radius (meter)</label>
-                      <input type="number" class="form-control" id="radius" name="radius" placeholder="Contoh: 100" min="20" max="1000" value="100" required>
-                      <small class="form-text text-muted">Radius dalam meter, minimal 20 meter dan maksimal 1000 meter.</small>
+                      <input type="hidden" id="radius" name="radius" value="100">
                     </div>
                     
                     <div class="form-group">
@@ -330,7 +327,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="editLocationModalLabel">Edit Lokasi Absensi</h5>
+                  <h5 class="modal-title" id="editLocationModalLabel">Edit Lokasi Outlet</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -357,8 +354,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
                     
                     <div class="form-group">
                       <label for="edit_radius">Radius (meter)</label>
-                      <input type="number" class="form-control" id="edit_radius" name="radius" placeholder="Contoh: 100" min="20" max="1000" value="<?php echo $editData['radius']; ?>" required>
-                      <small class="form-text text-muted">Radius dalam meter, minimal 20 meter dan maksimal 1000 meter.</small>
+                      <input type="hidden" id="edit_radius" name="radius" value="100">
                     </div>
                     
                     <div class="form-group">
@@ -420,7 +416,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
   <script>
     // Data lokasi dari PHP
     const locations = <?php echo json_encode($locations); ?>;
-    let map, formMap, editFormMap, marker, editMarker, circle, editCircle;
+    let map, formMap, editFormMap, marker, editMarker;
     
     // Fungsi inisialisasi peta
     function initMap() {
@@ -430,7 +426,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
         zoom: 11
       });
       
-      // Tambahkan marker dan lingkaran radius untuk setiap lokasi
+      // Tambahkan marker untuk setiap lokasi
       locations.forEach(location => {
         if (location.active === "1") {
           const position = { 
@@ -450,21 +446,8 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
             title: location.outlet_name
           });
           
-          const radius = parseInt(location.radius);
-          const circle = new google.maps.Circle({
-            map: map,
-            radius: radius,
-            fillColor: '#007bff',
-            fillOpacity: 0.1,
-            strokeColor: '#007bff',
-            strokeOpacity: 0.8,
-            strokeWeight: 2
-          });
-          
-          circle.bindTo('center', marker, 'position');
-          
           const infoWindow = new google.maps.InfoWindow({
-            content: `<strong>${location.outlet_name}</strong><br>Radius: ${radius} meter`
+            content: `<strong>${location.outlet_name}</strong>`
           });
           
           marker.addListener('click', () => {
@@ -484,14 +467,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
         // Tambahkan marker ketika user klik pada peta
         formMap.addListener('click', function(event) {
           placeMarker(event.latLng, formMap, 'add');
-        });
-        
-        // Update radius ketika nilai radius berubah
-        document.getElementById('radius').addEventListener('input', function() {
-          if (circle) {
-            const radius = parseInt(this.value) || 100;
-            circle.setRadius(radius);
-          }
         });
       }
       
@@ -522,18 +497,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
           draggable: true
         });
         
-        editCircle = new google.maps.Circle({
-          map: editFormMap,
-          radius: parseInt('<?php echo $editData['radius']; ?>'),
-          fillColor: '#007bff',
-          fillOpacity: 0.1,
-          strokeColor: '#007bff',
-          strokeOpacity: 0.8,
-          strokeWeight: 2
-        });
-        
-        editCircle.bindTo('center', editMarker, 'position');
-        
         // Update koordinat saat marker di-drag
         editMarker.addListener('dragend', function() {
           updateEditCoordinates();
@@ -542,14 +505,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
         // Tambahkan marker ketika user klik pada peta
         editFormMap.addListener('click', function(event) {
           placeMarker(event.latLng, editFormMap, 'edit');
-        });
-        
-        // Update radius ketika nilai radius berubah
-        document.getElementById('edit_radius').addEventListener('input', function() {
-          if (editCircle) {
-            const radius = parseInt(this.value) || 100;
-            editCircle.setRadius(radius);
-          }
         });
         <?php endif; ?>
       }
@@ -567,19 +522,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
             draggable: true
           });
           
-          const radius = parseInt(document.getElementById('radius').value) || 100;
-          circle = new google.maps.Circle({
-            map: targetMap,
-            radius: radius,
-            fillColor: '#007bff',
-            fillOpacity: 0.1,
-            strokeColor: '#007bff',
-            strokeOpacity: 0.8,
-            strokeWeight: 2
-          });
-          
-          circle.bindTo('center', marker, 'position');
-          
           // Update koordinat saat marker di-drag
           marker.addListener('dragend', updateCoordinates);
         }
@@ -594,19 +536,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
             map: targetMap,
             draggable: true
           });
-          
-          const radius = parseInt(document.getElementById('edit_radius').value) || 100;
-          editCircle = new google.maps.Circle({
-            map: targetMap,
-            radius: radius,
-            fillColor: '#007bff',
-            fillOpacity: 0.1,
-            strokeColor: '#007bff',
-            strokeOpacity: 0.8,
-            strokeWeight: 2
-          });
-          
-          editCircle.bindTo('center', editMarker, 'position');
           
           // Update koordinat saat marker di-drag
           editMarker.addListener('dragend', updateEditCoordinates);

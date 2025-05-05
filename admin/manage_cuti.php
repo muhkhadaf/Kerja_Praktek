@@ -140,43 +140,9 @@ if ($outlet_result) {
         </ul>
       </div>
     </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="manage_users.php">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">Manajemen Karyawan</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="manage_jadwal.php">
-              <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Manajemen Jadwal</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="manage_cuti.php">
-              <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Manajemen Cuti</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="manage_izin.php">
-              <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Manajemen Izin</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <?php
+    include 'sidebar.php';
+    ?>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">

@@ -45,3 +45,25 @@
 2025-04-29 22:30:29 - User: 1313123123 - Status: valid - Info: unpam
 2025-04-29 22:30:59 - User: 1313123123 - Status: valid - Info: unpam
 2025-04-29 22:34:09 - User: 090903 - Status: valid - Info: unpam
+2025-04-30 15:13:53 - User: 090903 - Status: valid - Info: Wakacao Bintaro
+2025-04-30 15:14:07 - User: 090903 - Status: valid - Info: Wakacao Bintaro
+2025-04-30 15:14:18 - User: 090903 - Status: valid - Info: Wakacao Bintaro
+2025-04-30 15:15:44 - User: 090903 - Status: valid - Info: Wakacao Bintaro
+2025-04-30 15:16:07 - User: 090903 - Status: valid - Info: Wakacao Bintaro
+2025-04-30 15:17:23 - User: 090903 - Status: valid - Info: Wakacao Bintaro
+2025-04-30 15:20:10 - User: 090903 - Status: valid - Info: Wakacao Bintaro
+2025-04-30 15:21:34 - User: 090903 - Status: valid - Info: Wakacao Bintaro
+2025-04-30 15:22:07 - User: 090903 - Status: valid - Info: Wakacao Bintaro
+2025-04-30 15:23:06 - User: 090903 - Status: valid - Info: Wakacao Bintaro
+2025-05-02 22:27:08 - User: 230901 - Info: Latitude: -6.38976, Longitude: 106.7876352
+2025-05-02 22:27:16 - User: 230901 - Info: Latitude: -6.38976, Longitude: 106.7876352
+2025-05-02 22:30:22 - User: 001 - Info: Latitude: -6.38976, Longitude: 106.7876352
+2025-05-02 22:38:38 - User: 230901 - Info: Latitude: -6.38976, Longitude: 106.7876352
+2025-05-02 22:40:43 - User: 1211111 - Info: Latitude: -6.38976, Longitude: 106.7876352
+2025-05-02 22:41:39 - User: 1211111 - Info: Latitude: -6.38976, Longitude: 106.7876352
+2025-05-02 22:42:59 - User: 1211111 - Info: Latitude: -6.38976, Longitude: 106.7876352
+2025-05-02 22:50:56 - User: 1211111 - Info: Latitude: -6.38976, Longitude: 106.7876352
+2025-05-02 22:52:26 - User: 1211111 - Info: Latitude: -6.38976, Longitude: 106.7876352
+2025-05-02 22:53:17 - User: 1211111 - Info: Latitude: -6.3631835, Longitude: 106.7336144
+2025-05-05 13:08:16 - User: 090903 - Info: Latitude: -6.5005412, Longitude: 106.7765443
+2025-05-05 13:08:25 - User: 090903 - Info: Latitude: -6.5005412, Longitude: 106.7765443

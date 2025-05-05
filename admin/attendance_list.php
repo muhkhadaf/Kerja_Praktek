@@ -67,7 +67,7 @@ if ($result_karyawan) {
 // Query untuk absensi dengan filter
 $query_absensi = "SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
                  FROM absensi a 
-                 JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
                  LEFT JOIN shift s ON a.id_shift = s.id 
                  WHERE a.tanggal = '$filter_tanggal'";
 
@@ -86,22 +86,75 @@ if ($filter_status) {
         $query_absensi .= " AND a.status_check_in = 'terlambat'";
     } else if ($filter_status === 'tidak_absen') {
         $query_absensi .= " AND a.status_check_in = 'tidak absen'";
+    } else if ($filter_status === 'tidak_valid') {
+        $query_absensi .= " AND a.status_check_in = 'tidak valid'";
     }
 }
 
 $query_absensi .= " ORDER BY u.nama";
 $result_absensi = mysqli_query($koneksi, $query_absensi);
+
+// Log untuk debugging
+file_put_contents('../logs/query_debug.txt', date('Y-m-d H:i:s') . " - Query Absensi: " . $query_absensi . "\n", FILE_APPEND);
+if (!$result_absensi) {
+    file_put_contents('../logs/query_debug.txt', date('Y-m-d H:i:s') . " - Error: " . mysqli_error($koneksi) . "\n", FILE_APPEND);
+}
+
 $absensi_list = [];
 if ($result_absensi) {
+    $raw_data = [];
     while ($row = mysqli_fetch_assoc($result_absensi)) {
+        $raw_data[] = $row;
+    }
+    
+    // Log raw data pertama untuk debugging
+    if (count($raw_data) > 0) {
+        file_put_contents('../logs/query_debug.txt', date('Y-m-d H:i:s') . " - Raw data pertama: " . print_r($raw_data[0], true) . "\n", FILE_APPEND);
+    }
+    
+    // Reset result pointer and populate $absensi_list
+    mysqli_data_seek($result_absensi, 0);
+    
+    while ($row = mysqli_fetch_assoc($result_absensi)) {
+        // Pastikan semua field yang diperlukan ada
+        if (empty($row['nama'])) {
+            // Jika nama tidak ada, cari di tabel users
+            $user_query = "SELECT nama, outlet FROM users WHERE id_karyawan = '" . $row['id_karyawan'] . "' LIMIT 1";
+            $user_result = mysqli_query($koneksi, $user_query);
+            if ($user_result && mysqli_num_rows($user_result) > 0) {
+                $user_data = mysqli_fetch_assoc($user_result);
+                $row['nama'] = $user_data['nama'];
+                $row['outlet'] = $user_data['outlet'];
+            } else {
+                $row['nama'] = 'Tidak diketahui';
+                $row['outlet'] = 'Tidak diketahui';
+            }
+        }
+        
+        // Pastikan status absensi selalu ada
+        if (!isset($row['status_check_in']) || $row['status_check_in'] === '') {
+            $row['status_check_in'] = empty($row['check_in']) ? 'tidak absen' : 'tepat waktu';
+        }
+        
+        if (!isset($row['status_check_out']) || $row['status_check_out'] === '') {
+            $row['status_check_out'] = empty($row['check_out']) ? 'tidak absen' : 'tepat waktu';
+        }
+        
+        // Tambahkan ke daftar absensi
         $absensi_list[] = $row;
     }
+}
+
+// Logs jumlah data absensi
+file_put_contents('../logs/query_debug.txt', date('Y-m-d H:i:s') . " - Jumlah data absensi (fixed): " . count($absensi_list) . "\n", FILE_APPEND);
+if (count($absensi_list) > 0) {
+    file_put_contents('../logs/query_debug.txt', date('Y-m-d H:i:s') . " - Contoh data absensi pertama: " . print_r($absensi_list[0], true) . "\n", FILE_APPEND);
 }
 
 // Mendapatkan jadwal untuk tanggal yang dipilih
 $query_jadwal = "SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
                 FROM jadwal j 
-                JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
                 LEFT JOIN shift s ON j.id_shift = s.id 
                 WHERE j.tanggal = '$filter_tanggal' AND j.status = 'masuk'";
 
@@ -115,6 +168,13 @@ if ($filter_karyawan) {
 
 $query_jadwal .= " ORDER BY u.nama";
 $result_jadwal = mysqli_query($koneksi, $query_jadwal);
+
+// Log untuk debugging jadwal
+file_put_contents('../logs/query_debug.txt', date('Y-m-d H:i:s') . " - Query Jadwal: " . $query_jadwal . "\n", FILE_APPEND);
+if (!$result_jadwal) {
+    file_put_contents('../logs/query_debug.txt', date('Y-m-d H:i:s') . " - Error Jadwal: " . mysqli_error($koneksi) . "\n", FILE_APPEND);
+}
+
 $jadwal_list = [];
 if ($result_jadwal) {
     while ($row = mysqli_fetch_assoc($result_jadwal)) {
@@ -122,70 +182,68 @@ if ($result_jadwal) {
     }
 }
 
+// Log jumlah data jadwal
+file_put_contents('../logs/query_debug.txt', date('Y-m-d H:i:s') . " - Jumlah data jadwal: " . count($jadwal_list) . "\n", FILE_APPEND);
+
 // Menggabungkan data absensi dan jadwal
 $merged_data = [];
 
-// 1. Tambahkan data dari jadwal
-foreach ($jadwal_list as $id_karyawan => $jadwal) {
-    $absensi_data = null;
-    foreach ($absensi_list as $absensi) {
-        if ($absensi['id_karyawan'] === $id_karyawan) {
-            $absensi_data = $absensi;
-            break;
-        }
-    }
-    
+// 1. Tambahkan semua data absensi terlebih dahulu
+foreach ($absensi_list as $absensi) {
     $merged_data[] = [
-        'id_karyawan' => $id_karyawan,
-        'nama' => $jadwal['nama'],
-        'outlet' => $jadwal['outlet'],
-        'id_shift' => $jadwal['id_shift'],
-        'nama_shift' => $jadwal['nama_shift'],
-        'jam_mulai' => $jadwal['jam_mulai'],
-        'jam_selesai' => $jadwal['jam_selesai'],
-        'check_in' => isset($absensi_data['check_in']) ? $absensi_data['check_in'] : null,
-        'foto_check_in' => isset($absensi_data['foto_check_in']) ? $absensi_data['foto_check_in'] : null,
-        'check_out' => isset($absensi_data['check_out']) ? $absensi_data['check_out'] : null,
-        'foto_check_out' => isset($absensi_data['foto_check_out']) ? $absensi_data['foto_check_out'] : null,
-        'status_check_in' => isset($absensi_data['status_check_in']) ? $absensi_data['status_check_in'] : 'tidak absen',
-        'status_check_out' => isset($absensi_data['status_check_out']) ? $absensi_data['status_check_out'] : 'tidak absen',
-        'latitude_in' => isset($absensi_data['latitude_in']) ? $absensi_data['latitude_in'] : null,
-        'longitude_in' => isset($absensi_data['longitude_in']) ? $absensi_data['longitude_in'] : null,
-        'latitude_out' => isset($absensi_data['latitude_out']) ? $absensi_data['latitude_out'] : null,
-        'longitude_out' => isset($absensi_data['longitude_out']) ? $absensi_data['longitude_out'] : null,
-        'location_status_in' => isset($absensi_data['location_status_in']) ? $absensi_data['location_status_in'] : null,
-        'location_info_in' => isset($absensi_data['location_info_in']) ? $absensi_data['location_info_in'] : null,
-        'location_status_out' => isset($absensi_data['location_status_out']) ? $absensi_data['location_status_out'] : null,
-        'location_info_out' => isset($absensi_data['location_info_out']) ? $absensi_data['location_info_out'] : null,
+        'id_karyawan' => $absensi['id_karyawan'],
+        'nama' => $absensi['nama'] ?? 'Tidak diketahui',
+        'outlet' => $absensi['outlet'] ?? 'Tidak diketahui',
+        'id_shift' => $absensi['id_shift'] ?? null,
+        'nama_shift' => $absensi['nama_shift'] ?? '-',
+        'jam_mulai' => $absensi['jam_mulai'] ?? null,
+        'jam_selesai' => $absensi['jam_selesai'] ?? null,
+        'check_in' => $absensi['check_in'] ?? null,
+        'foto_check_in' => $absensi['foto_check_in'] ?? null,
+        'check_out' => $absensi['check_out'] ?? null,
+        'foto_check_out' => $absensi['foto_check_out'] ?? null,
+        'status_check_in' => $absensi['status_check_in'] ?? 'tidak absen',
+        'status_check_out' => $absensi['status_check_out'] ?? 'tidak absen',
+        'latitude_in' => $absensi['latitude_in'] ?? null,
+        'longitude_in' => $absensi['longitude_in'] ?? null,
+        'latitude_out' => $absensi['latitude_out'] ?? null,
+        'longitude_out' => $absensi['longitude_out'] ?? null,
+        'location_info_in' => $absensi['location_info_in'] ?? null,
+        'location_info_out' => $absensi['location_info_out'] ?? null,
+        'has_absensi' => true,
     ];
 }
 
-// 2. Tambahkan data absensi yang tidak memiliki jadwal
-$jadwal_karyawan_ids = array_keys($jadwal_list);
-foreach ($absensi_list as $absensi) {
-    if (!in_array($absensi['id_karyawan'], $jadwal_karyawan_ids)) {
+// Kumpulkan id_karyawan yang sudah ada di $merged_data
+$karyawan_dengan_absensi = [];
+foreach ($merged_data as $data) {
+    $karyawan_dengan_absensi[] = $data['id_karyawan'];
+}
+
+// 2. Tambahkan data dari jadwal yang belum memiliki data absensi
+foreach ($jadwal_list as $id_karyawan => $jadwal) {
+    if (!in_array($id_karyawan, $karyawan_dengan_absensi)) {
         $merged_data[] = [
-            'id_karyawan' => $absensi['id_karyawan'],
-            'nama' => $absensi['nama'],
-            'outlet' => $absensi['outlet'],
-            'id_shift' => $absensi['id_shift'],
-            'nama_shift' => $absensi['nama_shift'],
-            'jam_mulai' => $absensi['jam_mulai'],
-            'jam_selesai' => $absensi['jam_selesai'],
-            'check_in' => $absensi['check_in'],
-            'foto_check_in' => $absensi['foto_check_in'],
-            'check_out' => $absensi['check_out'],
-            'foto_check_out' => $absensi['foto_check_out'],
-            'status_check_in' => $absensi['status_check_in'],
-            'status_check_out' => $absensi['status_check_out'],
-            'latitude_in' => $absensi['latitude_in'],
-            'longitude_in' => $absensi['longitude_in'],
-            'latitude_out' => $absensi['latitude_out'],
-            'longitude_out' => $absensi['longitude_out'],
-            'location_status_in' => $absensi['location_status_in'],
-            'location_info_in' => $absensi['location_info_in'],
-            'location_status_out' => $absensi['location_status_out'],
-            'location_info_out' => $absensi['location_info_out'],
+            'id_karyawan' => $id_karyawan,
+            'nama' => $jadwal['nama'] ?? 'Tidak diketahui',
+            'outlet' => $jadwal['outlet'] ?? 'Tidak diketahui',
+            'id_shift' => $jadwal['id_shift'] ?? null,
+            'nama_shift' => $jadwal['nama_shift'] ?? '-',
+            'jam_mulai' => $jadwal['jam_mulai'] ?? null,
+            'jam_selesai' => $jadwal['jam_selesai'] ?? null,
+            'check_in' => null,
+            'foto_check_in' => null,
+            'check_out' => null,
+            'foto_check_out' => null,
+            'status_check_in' => 'tidak absen',
+            'status_check_out' => 'tidak absen',
+            'latitude_in' => null,
+            'longitude_in' => null,
+            'latitude_out' => null,
+            'longitude_out' => null,
+            'location_info_in' => null,
+            'location_info_out' => null,
+            'has_absensi' => false,
         ];
     }
 }
@@ -195,9 +253,22 @@ usort($merged_data, function($a, $b) {
     return strcmp($a['nama'], $b['nama']);
 });
 
+// Setelah menggabungkan data
+// Log jumlah data yang digabungkan
+file_put_contents('../logs/query_debug.txt', date('Y-m-d H:i:s') . " - Jumlah data gabungan: " . count($merged_data) . "\n", FILE_APPEND);
+// Log beberapa data gabungan pertama untuk debugging
+if (count($merged_data) > 0) {
+    file_put_contents('../logs/query_debug.txt', date('Y-m-d H:i:s') . " - Contoh data pertama: " . print_r($merged_data[0], true) . "\n", FILE_APPEND);
+}
+
 // Mendapatkan tanggal kemarin dan besok
 $yesterday = date('Y-m-d', strtotime($filter_tanggal . ' -1 day'));
 $tomorrow = date('Y-m-d', strtotime($filter_tanggal . ' +1 day'));
+
+// Pastikan direktori log ada
+if (!file_exists('../logs')) {
+    mkdir('../logs', 0777, true);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -368,6 +439,7 @@ $tomorrow = date('Y-m-d', strtotime($filter_tanggal . ' +1 day'));
                             <option value="tepat_waktu" <?php echo $filter_status === 'tepat_waktu' ? 'selected' : ''; ?>>Tepat Waktu</option>
                             <option value="terlambat" <?php echo $filter_status === 'terlambat' ? 'selected' : ''; ?>>Terlambat</option>
                             <option value="tidak_absen" <?php echo $filter_status === 'tidak_absen' ? 'selected' : ''; ?>>Tidak Absen</option>
+                            <option value="tidak_valid" <?php echo $filter_status === 'tidak_valid' ? 'selected' : ''; ?>>Tidak Valid</option>
                           </select>
                         </div>
                         
@@ -449,74 +521,87 @@ $tomorrow = date('Y-m-d', strtotime($filter_tanggal . ' +1 day'));
                             <td>
                               <?php
                               // Status Check In
-                              $status_in_class = '';
-                              switch ($data['status_check_in']) {
-                                case 'tepat waktu': $status_in_class = 'badge-success'; break;
-                                case 'terlambat': $status_in_class = 'badge-warning'; break;
-                                case 'tidak absen': $status_in_class = 'badge-danger'; break;
-                              }
+                              $status_in_options = [
+                                'tepat waktu' => 'Tepat Waktu',
+                                'terlambat' => 'Terlambat',
+                                'tidak absen' => 'Tidak Absen',
+                                'tidak valid' => 'Tidak Valid'
+                              ];
+                              $status_in_selected = isset($data['status_check_in']) && !empty($data['status_check_in']) ? $data['status_check_in'] : 'tidak absen';
+                              $status_in_class = [
+                                'tepat waktu' => 'badge-success',
+                                'terlambat' => 'badge-warning',
+                                'tidak absen' => 'badge-danger',
+                                'tidak valid' => 'badge-dark'
+                              ];
                               ?>
-                              <div>
-                                <span class="badge <?php echo $status_in_class; ?> badge-sm">
-                                  Check In: <?php echo ucfirst($data['status_check_in']); ?>
+                              <div class="d-flex align-items-center">
+                                <select class="form-control form-control-sm status-absensi-dropdown mr-2" data-id_karyawan="<?php echo $data['id_karyawan']; ?>" data-tanggal="<?php echo $filter_tanggal; ?>" data-jenis="check_in">
+                                  <?php foreach ($status_in_options as $value => $label): ?>
+                                    <option value="<?php echo $value; ?>" <?php echo $status_in_selected == $value ? 'selected' : ''; ?>><?php echo $label; ?></option>
+                                  <?php endforeach; ?>
+                                </select>
+                                <span class="badge badge-sm status-label-in <?php echo $status_in_class[$status_in_selected]; ?>">
+                                  <?php echo $status_in_options[$status_in_selected]; ?>
                                 </span>
                               </div>
-                              
                               <?php
                               // Status Check Out
-                              $status_out_class = '';
-                              switch ($data['status_check_out']) {
-                                case 'tepat waktu': $status_out_class = 'badge-success'; break;
-                                case 'lebih awal': $status_out_class = 'badge-warning'; break;
-                                case 'tidak absen': $status_out_class = 'badge-danger'; break;
-                              }
+                              $status_out_options = [
+                                'tepat waktu' => 'Tepat Waktu',
+                                'lebih awal' => 'Lebih Awal',
+                                'tidak absen' => 'Tidak Absen',
+                                'tidak valid' => 'Tidak Valid'
+                              ];
+                              $status_out_selected = isset($data['status_check_out']) && !empty($data['status_check_out']) ? $data['status_check_out'] : 'tidak absen';
+                              $status_out_class = [
+                                'tepat waktu' => 'badge-success',
+                                'lebih awal' => 'badge-warning',
+                                'tidak absen' => 'badge-danger',
+                                'tidak valid' => 'badge-dark'
+                              ];
                               ?>
-                              <div class="mt-1">
-                                <span class="badge <?php echo $status_out_class; ?> badge-sm">
-                                  Check Out: <?php echo ucfirst($data['status_check_out']); ?>
+                              <div class="mt-1 d-flex align-items-center">
+                                <select class="form-control form-control-sm status-absensi-dropdown mr-2" data-id_karyawan="<?php echo $data['id_karyawan']; ?>" data-tanggal="<?php echo $filter_tanggal; ?>" data-jenis="check_out">
+                                  <?php foreach ($status_out_options as $value => $label): ?>
+                                    <option value="<?php echo $value; ?>" <?php echo $status_out_selected == $value ? 'selected' : ''; ?>><?php echo $label; ?></option>
+                                  <?php endforeach; ?>
+                                </select>
+                                <span class="badge badge-sm status-label-out <?php echo $status_out_class[$status_out_selected]; ?>">
+                                  <?php echo $status_out_options[$status_out_selected]; ?>
                                 </span>
                               </div>
                             </td>
                             <td>
-                              <?php if ($data['location_status_in']): ?>
+                              <?php if ($data['latitude_in'] && $data['longitude_in']): ?>
                               <div>
                                 <strong>Check In:</strong> 
-                                <span class="badge <?php echo $data['location_status_in'] === 'valid' ? 'badge-success' : 'badge-danger'; ?>">
-                                  <?php echo ucfirst($data['location_status_in']); ?>
-                                </span>
-                                <?php if ($data['location_info_in']): ?>
-                                  <button type="button" class="btn btn-sm btn-info btn-icon ml-1" data-toggle="tooltip" data-placement="top" title="<?php echo $data['location_info_in']; ?>">
-                                    <i class="ti-info-alt"></i>
+                                <a href="https://www.google.com/maps?q=<?php echo $data['latitude_in']; ?>,<?php echo $data['longitude_in']; ?>" target="_blank" class="btn btn-sm btn-primary btn-icon" data-toggle="tooltip" data-placement="top" title="Lihat di Maps">
+                                  <i class="ti-map-alt" style="font-size: 1.5em; margin: auto;"></i> 
+                                </a>
+                                <?php if (!empty($data['location_info_in'])): ?>
+                                  <button type="button" class="btn btn-sm btn-info btn-icon ml-1" data-toggle="tooltip" data-placement="top" title="<?php echo htmlspecialchars($data['location_info_in']); ?>">
+                                    <i class="ti-info-alt" style="font-size: 1.5em;"></i>
                                   </button>
-                                <?php endif; ?>
-                                <?php if ($data['latitude_in'] && $data['longitude_in']): ?>
-                                  <a href="https://www.google.com/maps?q=<?php echo $data['latitude_in']; ?>,<?php echo $data['longitude_in']; ?>" target="_blank" class="btn btn-sm btn-primary btn-icon ml-1" data-toggle="tooltip" data-placement="top" title="Lihat di Maps">
-                                    <i class="ti-map-alt"></i>
-                                  </a>
                                 <?php endif; ?>
                               </div>
                               <?php endif; ?>
                               
-                              <?php if ($data['location_status_out']): ?>
+                              <?php if ($data['latitude_out'] && $data['longitude_out']): ?>
                               <div class="mt-2">
                                 <strong>Check Out:</strong>
-                                <span class="badge <?php echo $data['location_status_out'] === 'valid' ? 'badge-success' : 'badge-danger'; ?>">
-                                  <?php echo ucfirst($data['location_status_out']); ?>
-                                </span>
-                                <?php if ($data['location_info_out']): ?>
-                                  <button type="button" class="btn btn-sm btn-info btn-icon ml-1" data-toggle="tooltip" data-placement="top" title="<?php echo $data['location_info_out']; ?>">
-                                    <i class="ti-info-alt"></i>
+                                <a href="https://www.google.com/maps?q=<?php echo $data['latitude_out']; ?>,<?php echo $data['longitude_out']; ?>" target="_blank" class="btn btn-sm btn-primary btn-icon" data-toggle="tooltip" data-placement="top" title="Lihat di Maps">
+                                  <i class="ti-map-alt" style="font-size: 1.5em; margin: auto;"></i> 
+                                </a>
+                                <?php if (!empty($data['location_info_out'])): ?>
+                                  <button type="button" class="btn btn-sm btn-info btn-icon ml-1" data-toggle="tooltip" data-placement="top" title="<?php echo htmlspecialchars($data['location_info_out']); ?>">
+                                    <i class="ti-info-alt" style="font-size: 1.5em;"></i>
                                   </button>
-                                <?php endif; ?>
-                                <?php if ($data['latitude_out'] && $data['longitude_out']): ?>
-                                  <a href="https://www.google.com/maps?q=<?php echo $data['latitude_out']; ?>,<?php echo $data['longitude_out']; ?>" target="_blank" class="btn btn-sm btn-primary btn-icon ml-1" data-toggle="tooltip" data-placement="top" title="Lihat di Maps">
-                                    <i class="ti-map-alt"></i>
-                                  </a>
                                 <?php endif; ?>
                               </div>
                               <?php endif; ?>
                               
-                              <?php if (!$data['location_status_in'] && !$data['location_status_out']): ?>
+                              <?php if (!$data['latitude_in'] && !$data['longitude_in'] && !$data['latitude_out'] && !$data['longitude_out']): ?>
                               <span class="text-muted">Belum ada data lokasi</span>
                               <?php endif; ?>
                             </td>
@@ -559,6 +644,11 @@ $tomorrow = date('Y-m-d', strtotime($filter_tanggal . ' +1 day'));
                     <div class="col-md-2 col-sm-4 mb-3">
                       <div class="p-2 bg-danger text-white border">
                         <strong>Tidak Absen</strong>: Belum melakukan absensi
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 mb-3">
+                      <div class="p-2 bg-dark text-white border">
+                        <strong>Tidak Valid</strong>: Absensi tidak valid/diragukan
                       </div>
                     </div>
                   </div>
@@ -650,6 +740,75 @@ $tomorrow = date('Y-m-d', strtotime($filter_tanggal . ' +1 day'));
         }
       });
     });
+  </script>
+  <!-- Tambahkan script untuk AJAX update status absensi -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.status-absensi-dropdown').forEach(function(dropdown) {
+      dropdown.addEventListener('change', function() {
+        var id_karyawan = this.getAttribute('data-id_karyawan');
+        var tanggal = this.getAttribute('data-tanggal');
+        var jenis = this.getAttribute('data-jenis');
+        var status = this.value;
+        var selectEl = this;
+        selectEl.disabled = true;
+        fetch('update_status_absensi.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: 'id_karyawan=' + encodeURIComponent(id_karyawan) + '&tanggal=' + encodeURIComponent(tanggal) + '&jenis=' + encodeURIComponent(jenis) + '&status=' + encodeURIComponent(status)
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            selectEl.style.backgroundColor = '#d4edda';
+          } else {
+            alert('Gagal update status: ' + data.message);
+            selectEl.style.backgroundColor = '#f8d7da';
+          }
+          setTimeout(function() { selectEl.style.backgroundColor = ''; selectEl.disabled = false; }, 1000);
+
+          // Update label status secara real-time
+          var label;
+          if (jenis === 'check_in') {
+            label = selectEl.parentElement.querySelector('.status-label-in');
+            if (status === 'tepat waktu') {
+              label.className = 'badge badge-sm status-label-in badge-success';
+              label.textContent = 'Tepat Waktu';
+            } else if (status === 'terlambat') {
+              label.className = 'badge badge-sm status-label-in badge-warning';
+              label.textContent = 'Terlambat';
+            } else if (status === 'tidak absen') {
+              label.className = 'badge badge-sm status-label-in badge-danger';
+              label.textContent = 'Tidak Absen';
+            } else {
+              label.className = 'badge badge-sm status-label-in badge-dark';
+              label.textContent = 'Tidak Valid';
+            }
+          } else if (jenis === 'check_out') {
+            label = selectEl.parentElement.querySelector('.status-label-out');
+            if (status === 'tepat waktu') {
+              label.className = 'badge badge-sm status-label-out badge-success';
+              label.textContent = 'Tepat Waktu';
+            } else if (status === 'lebih awal') {
+              label.className = 'badge badge-sm status-label-out badge-warning';
+              label.textContent = 'Lebih Awal';
+            } else if (status === 'tidak absen') {
+              label.className = 'badge badge-sm status-label-out badge-danger';
+              label.textContent = 'Tidak Absen';
+            } else {
+              label.className = 'badge badge-sm status-label-out badge-dark';
+              label.textContent = 'Tidak Valid';
+            }
+          }
+        })
+        .catch(err => {
+          alert('Terjadi kesalahan koneksi.');
+          selectEl.style.backgroundColor = '#f8d7da';
+          setTimeout(function() { selectEl.style.backgroundColor = ''; selectEl.disabled = false; }, 1000);
+        });
+      });
+    });
+  });
   </script>
 </body>
 

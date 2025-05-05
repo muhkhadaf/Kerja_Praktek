@@ -60,54 +60,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $latitude = isset($_POST['latitude']) ? sanitize($_POST['latitude']) : 0;
     $longitude = isset($_POST['longitude']) ? sanitize($_POST['longitude']) : 0;
     
-    // Validasi lokasi
-    $location_status = 'invalid'; // Default status
-    $location_info = '';
-    $closest_distance = PHP_FLOAT_MAX;
-    $closest_location = null;
+    // Catat informasi lokasi saja tanpa validasi
+    $location_info = "Latitude: $latitude, Longitude: $longitude";
     
-    // Ambil semua lokasi aktif
-    $query_locations = "SELECT * FROM locations WHERE active = 1";
-    $result_locations = mysqli_query($koneksi, $query_locations);
-    
-    if ($result_locations && mysqli_num_rows($result_locations) > 0) {
-        // Cek jarak dari semua lokasi aktif
-        while ($loc = mysqli_fetch_assoc($result_locations)) {
-            $distance = calculateDistance(
-                $latitude, 
-                $longitude, 
-                $loc['latitude'], 
-                $loc['longitude']
-            );
-            
-            // Perbarui lokasi terdekat
-            if ($distance < $closest_distance) {
-                $closest_distance = $distance;
-                $closest_location = $loc;
-            }
-            
-            // Jika dalam radius, lokasi valid
-            if ($distance <= $loc['radius']) {
-                $location_status = 'valid';
-                $location_info = $loc['outlet_name'];
-                break;
-            }
-        }
-        
-        // Jika masih invalid, catat info lokasi terdekat
-        if ($location_status === 'invalid' && $closest_location) {
-            $location_info = $closest_location['outlet_name'] . ' (' . 
-                             round($closest_distance) . 'm dari lokasi, melebihi radius ' . 
-                             $closest_location['radius'] . 'm)';
-        }
-    } else {
-        // Jika tidak ada lokasi aktif, anggap valid
-        $location_status = 'valid';
-        $location_info = 'Tidak ada setting lokasi';
-    }
-    
-    // Log status lokasi
-    file_put_contents('logs/location_log.txt', date('Y-m-d H:i:s') . " - User: $id_karyawan - Status: $location_status - Info: $location_info\n", FILE_APPEND);
+    // Log info lokasi
+    file_put_contents('logs/location_log.txt', date('Y-m-d H:i:s') . " - User: $id_karyawan - Info: $location_info\n", FILE_APPEND);
     
     // Simpan foto dari base64
     $foto = '';
@@ -159,11 +116,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $status_absensi = ($waktu_sekarang_format >= $jam_selesai) ? 'tepat waktu' : 'lebih awal';
     }
     
-    // Tambahkan status lokasi ke status absensi jika invalid
-    if ($location_status === 'invalid') {
-        $status_absensi .= ' (lokasi invalid)';
-    }
-    
     // Cek apakah sudah ada data absensi untuk tanggal ini
     $query_cek = "SELECT * FROM absensi WHERE id_karyawan = '$id_karyawan' AND tanggal = '$tanggal'";
     $result_cek = mysqli_query($koneksi, $query_cek);
@@ -184,7 +136,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 status_check_in = '$status_absensi',
                 latitude_in = '$latitude',
                 longitude_in = '$longitude',
-                location_status_in = '$location_status',
                 location_info_in = '$location_info'
                 WHERE id_karyawan = '$id_karyawan' AND tanggal = '$tanggal'";
         } else {
@@ -194,7 +145,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 status_check_out = '$status_absensi',
                 latitude_out = '$latitude',
                 longitude_out = '$longitude',
-                location_status_out = '$location_status',
                 location_info_out = '$location_info'
                 WHERE id_karyawan = '$id_karyawan' AND tanggal = '$tanggal'";
         }
@@ -203,17 +153,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($jenis_absensi === 'check_in') {
             $query = "INSERT INTO absensi 
                 (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
-                latitude_in, longitude_in, location_status_in, location_info_in)
+                latitude_in, longitude_in, location_info_in)
                 VALUES 
                 ('$id_karyawan', '$tanggal', '$id_shift', '$waktu_sekarang', '$foto', '$status_absensi', 
-                '$latitude', '$longitude', '$location_status', '$location_info')";
+                '$latitude', '$longitude', '$location_info')";
         } else {
             $query = "INSERT INTO absensi 
                 (id_karyawan, tanggal, id_shift, check_out, foto_check_out, status_check_out, 
-                latitude_out, longitude_out, location_status_out, location_info_out)
+                latitude_out, longitude_out, location_info_out)
                 VALUES 
                 ('$id_karyawan', '$tanggal', '$id_shift', '$waktu_sekarang', '$foto', '$status_absensi', 
-                '$latitude', '$longitude', '$location_status', '$location_info')";
+                '$latitude', '$longitude', '$location_info')";
         }
     }
     
@@ -225,7 +175,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Cek hasil query
     if ($result) {
-        file_put_contents('logs/success_log.txt', date('Y-m-d H:i:s') . " - Berhasil: " . $jenis_absensi . " - Status Lokasi: " . $location_status . "\n", FILE_APPEND);
+        file_put_contents('logs/success_log.txt', date('Y-m-d H:i:s') . " - Berhasil: " . $jenis_absensi . "\n", FILE_APPEND);
         header("Location: index.php?status=success&jenis=$jenis_absensi");
         exit();
     } else {

@@ -33,3 +33,25 @@
 2025-04-29 22:30:29 - Berhasil: check_out - Status Lokasi: valid
 2025-04-29 22:30:59 - Berhasil: check_in - Status Lokasi: valid
 2025-04-29 22:34:09 - Berhasil: check_out - Status Lokasi: valid
+2025-04-30 15:13:53 - Berhasil: check_in - Status Lokasi: valid
+2025-04-30 15:14:07 - Berhasil: check_out - Status Lokasi: valid
+2025-04-30 15:14:19 - Berhasil: check_in - Status Lokasi: valid
+2025-04-30 15:15:44 - Berhasil: check_out - Status Lokasi: valid
+2025-04-30 15:16:07 - Berhasil: check_in - Status Lokasi: valid
+2025-04-30 15:17:23 - Berhasil: check_out - Status Lokasi: valid
+2025-04-30 15:20:10 - Berhasil: check_in - Status Lokasi: valid
+2025-04-30 15:21:34 - Berhasil: check_out - Status Lokasi: valid
+2025-04-30 15:22:07 - Berhasil: check_in - Status Lokasi: valid
+2025-04-30 15:23:06 - Berhasil: check_out - Status Lokasi: valid
+2025-05-02 22:27:08 - Berhasil: check_in
+2025-05-02 22:27:16 - Berhasil: check_out
+2025-05-02 22:30:22 - Berhasil: check_out
+2025-05-02 22:38:38 - Berhasil: check_in
+2025-05-02 22:40:43 - Berhasil: check_in
+2025-05-02 22:41:39 - Berhasil: check_out
+2025-05-02 22:42:59 - Berhasil: check_in
+2025-05-02 22:50:56 - Berhasil: check_out
+2025-05-02 22:52:26 - Berhasil: check_in
+2025-05-02 22:53:17 - Berhasil: check_out
+2025-05-05 13:08:16 - Berhasil: check_in
+2025-05-05 13:08:25 - Berhasil: check_out

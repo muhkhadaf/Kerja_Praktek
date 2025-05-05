@@ -1,6 +1,8 @@
 <?php
 // Start output buffering to prevent headers already sent error
 ob_start();
+// Mulai session untuk menyimpan pesan
+if (session_status() === PHP_SESSION_NONE) session_start();
 // Include database configuration
 require_once '../../config.php';
 
@@ -41,27 +43,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             VALUES ('$id_karyawan', '$outlet', '$nama_karyawan', '$tanggal_mulai', '$tanggal_selesai', $durasi, '$alasan', 'pending')";
     
     if (mysqli_query($koneksi, $sql)) {
-        // Success message
-        $success_message = '<div class="alert alert-success mt-3" role="alert">
+        // Simpan pesan sukses ke session dan redirect
+        $_SESSION['success_message'] = '<div class="alert alert-success mt-3" role="alert">
                 Pengajuan cuti berhasil disubmit! Status pengajuan Anda dapat dilihat di halaman Riwayat Cuti.
               </div>';
+        header('Location: ajukancuti.php');
+        exit();
     } else {
-        // Error message
-        $error_message = '<div class="alert alert-danger mt-3" role="alert">
+        // Simpan pesan error ke session dan redirect
+        $_SESSION['error_message'] = '<div class="alert alert-danger mt-3" role="alert">
                 Maaf, terjadi kesalahan: ' . mysqli_error($koneksi) . '
               </div>';
+        header('Location: ajukancuti.php');
+        exit();
     }
 }
 
-// Get outlets for dropdown (if needed)
-$outlets = [];
-$outlet_query = "SELECT DISTINCT outlet FROM karyawan ORDER BY outlet";
-$outlet_result = mysqli_query($koneksi, $outlet_query);
-if ($outlet_result) {
-    while ($row = mysqli_fetch_assoc($outlet_result)) {
-        $outlets[] = $row['outlet'];
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -349,50 +346,7 @@ if ($outlet_result) {
       </div>
       <!-- partial -->
       <!-- partial:../../partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-              <li class="nav-item">
-                <a class="nav-link" href="ajukancuti.php">
-                  <i class="icon-paper menu-icon"></i>
-                  <span class="menu-title">Ajukan Cuti</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                  <i class="icon-head menu-icon"></i>
-                  <span class="menu-title">Status Saya</span>
-                  <i class="menu-arrow"></i>
-                </a>
-                <div class="collapse" id="auth">
-                  <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="akun.html"> Akun Saya </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="riwayat_shift.html"> Riwayat Shift </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="riwayat_cuti.php"> Riwayat Cuti </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="riwayat_izin.html"> Riwayat Izin </a></li>
-                  </ul>
-                </div>
-              </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-              <i class="icon-ban menu-icon"></i>
-              <span class="menu-title">Error pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="error">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </nav>
+      <?php include_once 'sidebar.php'; ?>
       <div class="content-wrapper">
         <div class="row">
           <div class="col-md-12 grid-margin">
@@ -403,9 +357,15 @@ if ($outlet_result) {
               </div>
               
               <?php
-              // Display messages if they exist
-              if (isset($success_message)) echo $success_message;
-              if (isset($error_message)) echo $error_message;
+              // Tampilkan pesan dari session jika ada
+              if (isset($_SESSION['success_message'])) {
+                  echo $_SESSION['success_message'];
+                  unset($_SESSION['success_message']);
+              }
+              if (isset($_SESSION['error_message'])) {
+                  echo $_SESSION['error_message'];
+                  unset($_SESSION['error_message']);
+              }
               ?>
                 
               <!-- Form Pengajuan Cuti -->

@@ -1,3 +1,31 @@
+<?php
+// Start output buffering to prevent headers already sent error
+ob_start();
+// Include database configuration
+require_once '../../config.php';
+
+// Check if user is logged in
+requireLogin();
+
+// Get employee ID from session
+$id_karyawan = getKaryawanId();
+
+// Ambil data karyawan dari database
+$user = null;
+$query = "SELECT * FROM users WHERE id_karyawan = '" . sanitize($id_karyawan) . "' LIMIT 1";
+$result = mysqli_query($koneksi, $query);
+if ($result && mysqli_num_rows($result) > 0) {
+    $user = mysqli_fetch_assoc($result);
+} else {
+    // Jika data tidak ditemukan, isi default kosong
+    $user = [
+        'id_karyawan' => $id_karyawan,
+        'nama' => '-',
+        'outlet' => '-',
+        'created_at' => '-',
+    ];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -291,50 +319,7 @@
       </div>
       <!-- partial -->
       <!-- partial:../../partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="documentation.html">
-              <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Ajukan Cuti</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">Status Saya</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/user/akun.html"> Akun Saya </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/user/riwayat_shift.html"> Riwayat Shift </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/user/riwayat_cuti.html"> Riwayat Cuti </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/user/riwayat_izin.html"> Riwayat Izin </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-              <i class="icon-ban menu-icon"></i>
-              <span class="menu-title">Error pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="error">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </nav>
+      <?php include_once 'sidebar.php'; ?>
       <div class="content-wrapper">
         <div class="row">
           <div class="col-md-12 grid-margin">
@@ -350,21 +335,24 @@
                     <form>
                       <div class="form-group">
                         <label>ID Karyawan</label>
-                        <p class="form-control-static">12345</p>
+                        <p class="form-control-static"><?= htmlspecialchars($user['id_karyawan']) ?></p>
                       </div>
                       <div class="form-group">
                         <label>Nama</label>
-                        <p class="form-control-static">John Doe</p>
+                        <p class="form-control-static"><?= htmlspecialchars($user['nama']) ?></p>
                       </div>
                       <div class="form-group">
                         <label>Outlet</label>
-                        <p class="form-control-static">Bintaro</p>
+                        <p class="form-control-static"><?= htmlspecialchars($user['outlet']) ?></p>
                       </div>
                       <div class="form-group">
                         <label>Tanggal Mulai Kerja</label>
-                        <p class="form-control-static">01-01-2020</p>
+                        <p class="form-control-static"><?= htmlspecialchars($user['created_at']) ?></p>
                       </div>
-                      <!-- Tambahkan data lainnya di sini -->
+                      <!-- Tombol untuk membuka modal ganti password -->
+                      <button type="button" class="btn btn-warning mt-3" data-toggle="modal" data-target="#gantiPasswordModal">
+                        <i class="ti ti-lock"></i> Ganti Password
+                      </button>
                     </form>
                   </div>
                 </div>
@@ -395,6 +383,40 @@
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->
+
+  <!-- Modal Ganti Password -->
+  <div class="modal fade" id="gantiPasswordModal" tabindex="-1" role="dialog" aria-labelledby="gantiPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="gantiPasswordModalLabel">Ganti Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="post" action="">
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Password Lama</label>
+              <input type="password" name="old_password" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Password Baru</label>
+              <input type="password" name="new_password" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label>Konfirmasi Password Baru</label>
+              <input type="password" name="confirm_password" class="form-control" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+            <button type="submit" name="ubah_password" class="btn btn-primary">Ubah Password</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

@@ -36,8 +36,8 @@ $id_karyawan = getKaryawanId();
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="../../index.html"><img src="../../images/logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="../../index.php"><img src="../../images/logo.svg" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="../../index.php"><img src="../../images/logo-mini.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -148,50 +148,9 @@ $id_karyawan = getKaryawanId();
       </div>
       <!-- partial -->
       <!-- partial:../../partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../../index.html">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="ajukancuti.php">
-              <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Ajukan Cuti</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">Status Saya</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="akun.html"> Akun Saya </a></li>
-                <li class="nav-item"> <a class="nav-link" href="riwayat_shift.html"> Riwayat Shift </a></li>
-                <li class="nav-item"> <a class="nav-link" href="riwayat_cuti.php"> Riwayat Cuti </a></li>
-                <li class="nav-item"> <a class="nav-link" href="riwayat_izin.html"> Riwayat Izin </a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </nav>
+      <?php include_once 'sidebar.php'; ?>
       <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-md-12 grid-margin">
-              <div class="row">
-                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Riwayat Pengajuan Cuti</h3>
-                  <h6 class="font-weight-normal mb-0">Berikut adalah riwayat pengajuan cuti Anda.</h6>
-                </div>
-              </div>
-            </div>
-          </div>
+      
           
           <!-- Content -->
           <div class="row">

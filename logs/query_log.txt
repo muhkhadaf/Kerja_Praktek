@@ -368,3 +368,162 @@
                 location_status_out = 'valid',
                 location_info_out = 'unpam'
                 WHERE id_karyawan = '090903' AND tanggal = '2025-04-29'
+2025-04-30 15:13:53 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_status_in, location_info_in)
+                VALUES 
+                ('090903', '2025-04-30', '1', '2025-04-30 15:13:53', 'uploads/absensi/090903_2025-04-30_check_in_1746000833.jpg', 'terlambat', 
+                '-6.1303148', '106.9093', 'valid', 'Wakacao Bintaro')
+2025-04-30 15:14:07 - Query: UPDATE absensi SET 
+                check_out = '2025-04-30 15:14:07',
+                foto_check_out = 'uploads/absensi/090903_2025-04-30_check_out_1746000847.jpg',
+                status_check_out = 'tepat waktu',
+                latitude_out = '-6.1303148',
+                longitude_out = '106.9093',
+                location_status_out = 'valid',
+                location_info_out = 'Wakacao Bintaro'
+                WHERE id_karyawan = '090903' AND tanggal = '2025-04-30'
+2025-04-30 15:14:18 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_status_in, location_info_in)
+                VALUES 
+                ('090903', '2025-05-01', '1', '2025-04-30 15:14:18', 'uploads/absensi/090903_2025-05-01_check_in_1746000858.jpg', 'terlambat', 
+                '-6.1303148', '106.9093', 'valid', 'Wakacao Bintaro')
+2025-04-30 15:15:44 - Query: UPDATE absensi SET 
+                check_out = '2025-04-30 15:15:44',
+                foto_check_out = 'uploads/absensi/090903_2025-05-01_check_out_1746000944.jpg',
+                status_check_out = 'tepat waktu',
+                latitude_out = '-6.1303148',
+                longitude_out = '106.9093',
+                location_status_out = 'valid',
+                location_info_out = 'Wakacao Bintaro'
+                WHERE id_karyawan = '090903' AND tanggal = '2025-05-01'
+2025-04-30 15:16:07 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_status_in, location_info_in)
+                VALUES 
+                ('090903', '2025-05-02', '1', '2025-04-30 15:16:07', 'uploads/absensi/090903_2025-05-02_check_in_1746000967.jpg', 'terlambat', 
+                '-6.1303148', '106.9093', 'valid', 'Wakacao Bintaro')
+2025-04-30 15:17:23 - Query: UPDATE absensi SET 
+                check_out = '2025-04-30 15:17:23',
+                foto_check_out = 'uploads/absensi/090903_2025-05-02_check_out_1746001043.jpg',
+                status_check_out = 'tepat waktu',
+                latitude_out = '-6.1303148',
+                longitude_out = '106.9093',
+                location_status_out = 'valid',
+                location_info_out = 'Wakacao Bintaro'
+                WHERE id_karyawan = '090903' AND tanggal = '2025-05-02'
+2025-04-30 15:20:10 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_status_in, location_info_in)
+                VALUES 
+                ('090903', '2025-05-03', '1', '2025-04-30 15:20:10', 'uploads/absensi/090903_2025-05-03_check_in_1746001210.jpg', 'terlambat', 
+                '-6.1303148', '106.9093', 'valid', 'Wakacao Bintaro')
+2025-04-30 15:21:34 - Query: UPDATE absensi SET 
+                check_out = '2025-04-30 15:21:34',
+                foto_check_out = 'uploads/absensi/090903_2025-05-03_check_out_1746001294.jpg',
+                status_check_out = 'tepat waktu',
+                latitude_out = '-6.1303148',
+                longitude_out = '106.9093',
+                location_status_out = 'valid',
+                location_info_out = 'Wakacao Bintaro'
+                WHERE id_karyawan = '090903' AND tanggal = '2025-05-03'
+2025-04-30 15:22:07 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_status_in, location_info_in)
+                VALUES 
+                ('090903', '2025-05-04', '1', '2025-04-30 15:22:07', 'uploads/absensi/090903_2025-05-04_check_in_1746001327.jpg', 'terlambat', 
+                '-6.1303148', '106.9093', 'valid', 'Wakacao Bintaro')
+2025-04-30 15:23:06 - Query: UPDATE absensi SET 
+                check_out = '2025-04-30 15:23:06',
+                foto_check_out = 'uploads/absensi/090903_2025-05-04_check_out_1746001386.jpg',
+                status_check_out = 'tepat waktu',
+                latitude_out = '-6.1303148',
+                longitude_out = '106.9093',
+                location_status_out = 'valid',
+                location_info_out = 'Wakacao Bintaro'
+                WHERE id_karyawan = '090903' AND tanggal = '2025-05-04'
+2025-05-02 22:27:08 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_info_in)
+                VALUES 
+                ('230901', '2025-05-02', '1', '2025-05-02 22:27:08', 'uploads/absensi/230901_2025-05-02_check_in_1746199628.jpg', 'terlambat', 
+                '-6.38976', '106.7876352', 'Latitude: -6.38976, Longitude: 106.7876352')
+2025-05-02 22:27:16 - Query: UPDATE absensi SET 
+                check_out = '2025-05-02 22:27:16',
+                foto_check_out = 'uploads/absensi/230901_2025-05-02_check_out_1746199636.jpg',
+                status_check_out = 'tepat waktu',
+                latitude_out = '-6.38976',
+                longitude_out = '106.7876352',
+                location_info_out = 'Latitude: -6.38976, Longitude: 106.7876352'
+                WHERE id_karyawan = '230901' AND tanggal = '2025-05-02'
+2025-05-02 22:30:22 - Query: UPDATE absensi SET 
+                check_out = '2025-05-02 22:30:22',
+                foto_check_out = 'uploads/absensi/001_2025-05-02_check_out_1746199822.jpg',
+                status_check_out = 'tepat waktu',
+                latitude_out = '-6.38976',
+                longitude_out = '106.7876352',
+                location_info_out = 'Latitude: -6.38976, Longitude: 106.7876352'
+                WHERE id_karyawan = '001' AND tanggal = '2025-05-02'
+2025-05-02 22:38:38 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_info_in)
+                VALUES 
+                ('230901', '2025-05-03', '1', '2025-05-02 22:38:38', 'uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg', 'terlambat', 
+                '-6.38976', '106.7876352', 'Latitude: -6.38976, Longitude: 106.7876352')
+2025-05-02 22:40:43 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_info_in)
+                VALUES 
+                ('1211111', '2025-05-02', '3', '2025-05-02 22:40:43', 'uploads/absensi/1211111_2025-05-02_check_in_1746200443.jpg', 'tepat waktu', 
+                '-6.38976', '106.7876352', 'Latitude: -6.38976, Longitude: 106.7876352')
+2025-05-02 22:41:39 - Query: UPDATE absensi SET 
+                check_out = '2025-05-02 22:41:39',
+                foto_check_out = 'uploads/absensi/1211111_2025-05-02_check_out_1746200499.jpg',
+                status_check_out = 'tepat waktu',
+                latitude_out = '-6.38976',
+                longitude_out = '106.7876352',
+                location_info_out = 'Latitude: -6.38976, Longitude: 106.7876352'
+                WHERE id_karyawan = '1211111' AND tanggal = '2025-05-02'
+2025-05-02 22:42:59 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_info_in)
+                VALUES 
+                ('1211111', '2025-05-03', '3', '2025-05-02 22:42:59', 'uploads/absensi/1211111_2025-05-03_check_in_1746200579.jpg', 'tepat waktu', 
+                '-6.38976', '106.7876352', 'Latitude: -6.38976, Longitude: 106.7876352')
+2025-05-02 22:50:56 - Query: UPDATE absensi SET 
+                check_out = '2025-05-02 22:50:56',
+                foto_check_out = 'uploads/absensi/1211111_2025-05-03_check_out_1746201056.jpg',
+                status_check_out = 'tepat waktu',
+                latitude_out = '-6.38976',
+                longitude_out = '106.7876352',
+                location_info_out = 'Latitude: -6.38976, Longitude: 106.7876352'
+                WHERE id_karyawan = '1211111' AND tanggal = '2025-05-03'
+2025-05-02 22:52:26 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_info_in)
+                VALUES 
+                ('1211111', '2025-05-04', '3', '2025-05-02 22:52:26', 'uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg', 'tepat waktu', 
+                '-6.38976', '106.7876352', 'Latitude: -6.38976, Longitude: 106.7876352')
+2025-05-02 22:53:17 - Query: UPDATE absensi SET 
+                check_out = '2025-05-02 22:53:17',
+                foto_check_out = 'uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg',
+                status_check_out = 'tepat waktu',
+                latitude_out = '-6.3631835',
+                longitude_out = '106.7336144',
+                location_info_out = 'Latitude: -6.3631835, Longitude: 106.7336144'
+                WHERE id_karyawan = '1211111' AND tanggal = '2025-05-04'
+2025-05-05 13:08:16 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_info_in)
+                VALUES 
+                ('090903', '2025-05-05', '1', '2025-05-05 13:08:16', 'uploads/absensi/090903_2025-05-05_check_in_1746425296.jpg', 'terlambat', 
+                '-6.5005412', '106.7765443', 'Latitude: -6.5005412, Longitude: 106.7765443')
+2025-05-05 13:08:25 - Query: UPDATE absensi SET 
+                check_out = '2025-05-05 13:08:25',
+                foto_check_out = 'uploads/absensi/090903_2025-05-05_check_out_1746425305.jpg',
+                status_check_out = 'lebih awal',
+                latitude_out = '-6.5005412',
+                longitude_out = '106.7765443',
+                location_info_out = 'Latitude: -6.5005412, Longitude: 106.7765443'
+                WHERE id_karyawan = '090903' AND tanggal = '2025-05-05'
