@@ -47,10 +47,10 @@ Database terdiri dari beberapa tabel utama:
 4. `absensi` - Riwayat absensi karyawan
 5. `izin` - Riwayat pengajuan izin/cuti
 
-## Pengembangan Lebih Lanjut
+## Pengembangan Lebih Lanjut yang bisa dikembangkan
 
 Beberapa fitur yang dapat dikembangkan:
 - Notifikasi via email
 - Sistem approval bertingkat
 - Laporan absensi bulanan
-- Integrasi dengan penggajian 
+- Integrasi dengan penggajian
