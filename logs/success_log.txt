@@ -55,3 +55,4 @@
 2025-05-02 22:53:17 - Berhasil: check_out
 2025-05-05 13:08:16 - Berhasil: check_in
 2025-05-05 13:08:25 - Berhasil: check_out
+2025-05-05 21:42:53 - Berhasil: check_in

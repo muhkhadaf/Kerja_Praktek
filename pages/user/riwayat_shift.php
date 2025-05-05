@@ -1,3 +1,41 @@
+<?php
+// Include konfigurasi
+require_once '../../config.php';
+
+// Cek apakah pengguna sudah login
+requireLogin();
+
+// Ambil data karyawan yang login
+$id_karyawan = getKaryawanId();
+
+// Query untuk mengambil riwayat shift dari tabel absensi
+$query = "SELECT a.tanggal, s.nama_shift, u.outlet, 
+          a.check_in, a.check_out,
+          a.status_check_in, a.status_check_out,
+          a.location_status_in, a.location_status_out,
+          a.location_info_in, a.location_info_out,
+          CASE 
+            WHEN a.status_check_in = 'tepat waktu' AND a.status_check_out = 'tepat waktu' THEN 'Hadir'
+            WHEN a.status_check_in = 'terlambat' OR a.status_check_out = 'lebih awal' THEN 'Terlambat/Pulang Awal'
+            WHEN a.status_check_in = 'tidak absen' AND a.status_check_out = 'tidak absen' THEN 'Tidak Hadir'
+            ELSE 'Belum Absen'
+          END as status
+          FROM absensi a
+          LEFT JOIN shift s ON a.id_shift = s.id
+          LEFT JOIN users u ON a.id_karyawan = u.id_karyawan
+          WHERE a.id_karyawan = '$id_karyawan'
+          ORDER BY a.tanggal DESC
+          LIMIT 30"; // Ambil 30 data terakhir
+
+$result = mysqli_query($koneksi, $query);
+$riwayat_shift = [];
+
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $riwayat_shift[] = $row;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -310,23 +348,100 @@
                           <th>Tanggal</th>
                           <th>Shift</th>
                           <th>Outlet</th>
-                          <th>Status</th>
+                          <th>Check In</th>
+                          <th>Status Check In</th>
+                          <th>Check Out</th>
+                          <th>Status Check Out</th>
+                          <th>Lokasi</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>01/01/2023</td>
-                          <td>Pagi</td>
-                          <td>Bintaro</td>
-                          <td>Hadir</td>
-                        </tr>
-                        <tr>
-                          <td>02/01/2023</td>
-                          <td>Siang</td>
-                          <td>Serpong</td>
-                          <td>Hadir</td>
-                        </tr>
-                        <!-- Tambahkan data riwayat shift lainnya di sini -->
+                        <?php if (count($riwayat_shift) > 0): ?>
+                          <?php foreach ($riwayat_shift as $shift): ?>
+                            <tr>
+                              <td><?php echo date('d/m/Y', strtotime($shift['tanggal'])); ?></td>
+                              <td><?php echo $shift['nama_shift']; ?></td>
+                              <td><?php echo $shift['outlet']; ?></td>
+                              <td>
+                                <?php if ($shift['check_in']): ?>
+                                  <?php echo date('H:i', strtotime($shift['check_in'])); ?>
+                                <?php else: ?>
+                                  -
+                                <?php endif; ?>
+                              </td>
+                              <td>
+                                <?php if ($shift['status_check_in']): ?>
+                                  <?php
+                                  $status_in_class = '';
+                                  switch ($shift['status_check_in']) {
+                                      case 'tepat waktu':
+                                          $status_in_class = 'text-success';
+                                          break;
+                                      case 'terlambat':
+                                          $status_in_class = 'text-warning';
+                                          break;
+                                      case 'tidak absen':
+                                          $status_in_class = 'text-danger';
+                                          break;
+                                      default:
+                                          $status_in_class = 'text-muted';
+                                  }
+                                  ?>
+                                  <span class="<?php echo $status_in_class; ?>"><?php echo $shift['status_check_in']; ?></span>
+                                <?php else: ?>
+                                  -
+                                <?php endif; ?>
+                              </td>
+                              <td>
+                                <?php if ($shift['check_out']): ?>
+                                  <?php echo date('H:i', strtotime($shift['check_out'])); ?>
+                                <?php else: ?>
+                                  -
+                                <?php endif; ?>
+                              </td>
+                              <td>
+                                <?php if ($shift['status_check_out']): ?>
+                                  <?php
+                                  $status_out_class = '';
+                                  switch ($shift['status_check_out']) {
+                                      case 'tepat waktu':
+                                          $status_out_class = 'text-success';
+                                          break;
+                                      case 'lebih awal':
+                                          $status_out_class = 'text-warning';
+                                          break;
+                                      case 'tidak absen':
+                                          $status_out_class = 'text-danger';
+                                          break;
+                                      default:
+                                          $status_out_class = 'text-muted';
+                                  }
+                                  ?>
+                                  <span class="<?php echo $status_out_class; ?>"><?php echo $shift['status_check_out']; ?></span>
+                                <?php else: ?>
+                                  -
+                                <?php endif; ?>
+                              </td>
+                              <td>
+                                <?php if ($shift['location_status_in'] == 'valid' && $shift['location_status_out'] == 'valid'): ?>
+                                  <span class="text-success">Valid</span>
+                                <?php elseif ($shift['location_status_in'] == 'invalid' || $shift['location_status_out'] == 'invalid'): ?>
+                                  <span class="text-danger">Invalid</span>
+                                  <br>
+                                  <small class="text-muted">
+                                    <?php echo $shift['location_info_in'] ?: $shift['location_info_out']; ?>
+                                  </small>
+                                <?php else: ?>
+                                  -
+                                <?php endif; ?>
+                              </td>
+                            </tr>
+                          <?php endforeach; ?>
+                        <?php else: ?>
+                          <tr>
+                            <td colspan="8" class="text-center">Tidak ada data riwayat shift</td>
+                          </tr>
+                        <?php endif; ?>
                       </tbody>
                     </table>
                   </div>

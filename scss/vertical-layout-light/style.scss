@@ -5,3 +5,23 @@
 @import "navbar";
 @import "layouts";
 @import "settings-panel"
+
+$theme-colors: (
+  primary:         #FF6B6B,
+  secondary:       #a3a4a5,
+  success:         #57B657,
+  info:            #248AFD,
+  warning:         #FFC100,
+  danger:          #FF4747,
+  light:           #f8f9fa,
+  dark:            #282f3a
+);
+
+$theme-gradient-colors: (
+  primary:         linear-gradient(230deg, #FF6B6B, #FF8E8E),
+  secondary:       linear-gradient(to right, #e7ebf0, #868e96),
+  success:         linear-gradient(45deg, #7bffce, #30c93e),
+  info:            linear-gradient(45deg, #7bffce, #30c93e),
+  warning:         linear-gradient(45deg, #ffd33d, #ffb733),
+  danger:          linear-gradient(45deg, #ff3d71, #ff5753)
+);

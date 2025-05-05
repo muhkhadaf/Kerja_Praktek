@@ -527,3 +527,9 @@
                 longitude_out = '106.7765443',
                 location_info_out = 'Latitude: -6.5005412, Longitude: 106.7765443'
                 WHERE id_karyawan = '090903' AND tanggal = '2025-05-05'
+2025-05-05 21:42:53 - Query: INSERT INTO absensi 
+                (id_karyawan, tanggal, id_shift, check_in, foto_check_in, status_check_in, 
+                latitude_in, longitude_in, location_info_in)
+                VALUES 
+                ('090903', '2025-05-05', '1', '2025-05-05 21:42:53', 'uploads/absensi/090903_2025-05-05_check_in_1746456173.jpg', 'terlambat', 
+                '-6.3539792', '106.707996', 'Latitude: -6.3539792, Longitude: 106.707996')

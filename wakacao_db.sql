@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2025 at 08:43 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: May 05, 2025 at 06:17 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,7 +46,7 @@ CREATE TABLE `absensi` (
   `location_info_in` varchar(255) DEFAULT NULL,
   `location_status_out` varchar(10) DEFAULT NULL,
   `location_info_out` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `absensi`
@@ -54,32 +54,33 @@ CREATE TABLE `absensi` (
 
 INSERT INTO `absensi` (`id`, `id_karyawan`, `tanggal`, `id_shift`, `check_in`, `foto_check_in`, `check_out`, `foto_check_out`, `status_check_in`, `latitude_in`, `longitude_in`, `status_check_out`, `latitude_out`, `longitude_out`, `location_status_in`, `location_info_in`, `location_status_out`, `location_info_out`) VALUES
 (1, '001', '2025-04-26', 1, '2025-04-26 07:15:00', 'uploads/absensi/001_20240601_check_in.jpg', '2025-04-26 15:05:00', 'uploads/absensi/001_20240601_check_out.jpg', 'tepat waktu', NULL, NULL, 'tepat waktu', NULL, NULL, NULL, NULL, NULL, NULL),
-(2, '001', '2025-04-27', 3, '2025-04-26 01:57:17', 'uploads/absensi/001_2025-04-27_check_in_1745607437.jpg', '2025-04-26 21:09:23', 'uploads/absensi/001_2025-04-27_check_out_1745676563.jpg', 'tepat waktu', NULL, NULL, 'tepat waktu', -6.13031480, 106.90930000, NULL, NULL, 'valid', 'Wakacao Bintaro'),
-(3, '001', '2025-04-28', 1, '2025-04-26 02:44:19', 'uploads/absensi/001_2025-04-28_check_in_1745610259.jpg', '2025-04-26 02:43:33', 'uploads/absensi/001_2025-04-28_check_out_1745610213.jpg', '', -6.13031480, 106.90930000, '', -6.13031480, 106.90930000, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
-(4, '002', '2025-04-28', 2, '2025-04-26 16:35:35', 'uploads/absensi/002_2025-04-28_check_in_1745660135.jpg', '2025-04-26 16:36:00', 'uploads/absensi/002_2025-04-28_check_out_1745660160.jpg', '', -6.13031480, 106.90930000, '', -6.13031480, 106.90930000, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
-(5, '002', '2025-04-29', 2, '2025-04-26 16:42:54', 'uploads/absensi/002_2025-04-29_check_in_1745660574.jpg', '2025-04-26 16:43:01', 'uploads/absensi/002_2025-04-29_check_out_1745660581.jpg', '', -6.13031480, 106.90930000, '', -6.13031480, 106.90930000, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
-(6, '002', '2025-04-27', 1, '2025-04-26 16:43:44', 'uploads/absensi/002_2025-04-27_check_in_1745660624.jpg', '2025-04-26 16:55:34', 'uploads/absensi/002_2025-04-27_check_out_1745661334.jpg', '', -6.13031480, 106.90930000, '', -6.13031480, 106.90930000, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
-(7, '002', '2025-04-26', 1, '2025-04-26 16:55:46', 'uploads/absensi/002_2025-04-26_check_in_1745661346.jpg', '2025-04-26 16:58:19', 'uploads/absensi/002_2025-04-26_check_out_1745661499.jpg', '', -6.13031480, 106.90930000, '', -6.13031480, 106.90930000, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
-(8, '002', '2025-04-30', 1, '2025-04-26 17:02:57', 'uploads/absensi/002_2025-04-30_check_in_1745661777.jpg', '2025-04-26 17:16:09', 'uploads/absensi/002_2025-04-30_check-out_1745662569.jpg', '', -6.13031480, 106.90930000, '', -6.13031480, 106.90930000, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
-(9, '002', '2025-05-01', 2, '2025-04-26 17:21:18', 'uploads/absensi/002_2025-05-01_check_in_1745662878.jpg', '2025-04-26 17:18:49', 'uploads/absensi/002_2025-05-01_check-in_1745662729.jpg', '', -6.13031480, 106.90930000, '', -6.36316420, 106.73359160, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (8490m dari lokasi, melebihi radius 100m)'),
-(10, '002', '2025-05-02', 2, '2025-04-26 17:21:30', 'uploads/absensi/002_2025-05-02_check_in_1745662890.jpg', '2025-04-26 17:16:54', 'uploads/absensi/002_2025-05-02_check-in_1745662614.jpg', '', -6.13031480, 106.90930000, '', -6.13031480, 106.90930000, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
-(11, '001', '2025-04-29', 1, '2025-04-26 17:25:33', 'uploads/absensi/001_2025-04-29_check_in_1745663133.jpg', '2025-04-26 17:25:43', 'uploads/absensi/001_2025-04-29_check_out_1745663143.jpg', '', -6.13031480, 106.90930000, '', -6.13031480, 106.90930000, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
-(12, '001', '2025-04-30', 1, '2025-04-26 17:32:54', 'uploads/absensi/001_2025-04-30_check_in_1745663574.jpg', '2025-04-26 20:09:23', 'uploads/absensi/001_2025-04-30_check_out_1745672963.jpg', '', -6.13031480, 106.90930000, '', -6.13031480, 106.90930000, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
-(13, '001', '2025-05-02', 1, '2025-05-02 07:15:00', 'uploads/absensi/001_20240601_check_in.jpg', '2025-05-02 15:05:00', 'uploads/absensi/001_20240601_check_out.jpg', 'tepat waktu', -6.13031480, 106.90930000, 'tepat waktu', -6.38976000, 106.78763520, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', NULL, 'Latitude: -6.38976, Longitude: 106.7876352'),
-(14, '001', '2025-05-01', 1, '2025-04-26 20:09:44', 'uploads/absensi/001_2025-05-01_check_in_1745672984.jpg', NULL, NULL, '', -6.13031480, 106.90930000, 'tidak absen', NULL, NULL, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', NULL, NULL),
-(15, '090903', '2025-04-26', 2, '2025-04-26 20:29:28', 'uploads/absensi/090903_2025-04-26_check_in_1745674168.jpg', '2025-04-26 20:47:07', 'uploads/absensi/090903_2025-04-26_check_out_1745675227.jpg', '', -6.13031480, 106.90930000, '', -6.13031480, 106.90930000, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
-(16, '230901', '2025-04-26', 1, '2025-04-26 20:43:56', 'uploads/absensi/230901_2025-04-26_check_in_1745675036.jpg', '2025-04-26 20:45:47', 'uploads/absensi/230901_2025-04-26_check_out_1745675147.jpg', '', -6.13031480, 106.90930000, '', -6.13031480, 106.90930000, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
-(17, '230901', '2025-04-27', 1, '2025-04-26 20:45:34', 'uploads/absensi/230901_2025-04-27_check_in_1745675134.jpg', NULL, NULL, '', -6.13031480, 106.90930000, 'tidak absen', NULL, NULL, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', NULL, NULL),
-(18, '090903', '2025-04-30', 1, '2025-04-30 15:13:53', 'uploads/absensi/090903_2025-04-30_check_in_1746000833.jpg', '2025-04-30 15:14:07', 'uploads/absensi/090903_2025-04-30_check_out_1746000847.jpg', 'terlambat', -6.13031480, 106.90930000, 'tepat waktu', -6.13031480, 106.90930000, 'valid', 'Wakacao Bintaro', 'valid', 'Wakacao Bintaro'),
-(19, '090903', '2025-05-01', 1, '2025-04-30 15:14:18', 'uploads/absensi/090903_2025-05-01_check_in_1746000858.jpg', '2025-04-30 15:15:44', 'uploads/absensi/090903_2025-05-01_check_out_1746000944.jpg', 'terlambat', -6.13031480, 106.90930000, 'tepat waktu', -6.13031480, 106.90930000, 'valid', 'Wakacao Bintaro', 'valid', 'Wakacao Bintaro'),
-(20, '090903', '2025-05-02', 1, '2025-04-30 15:16:07', 'uploads/absensi/090903_2025-05-02_check_in_1746000967.jpg', '2025-04-30 15:17:23', 'uploads/absensi/090903_2025-05-02_check_out_1746001043.jpg', 'terlambat', -6.13031480, 106.90930000, 'tepat waktu', -6.13031480, 106.90930000, 'valid', 'Wakacao Bintaro', 'valid', 'Wakacao Bintaro'),
-(21, '090903', '2025-05-03', 1, '2025-04-30 15:20:10', 'uploads/absensi/090903_2025-05-03_check_in_1746001210.jpg', '2025-04-30 15:21:34', 'uploads/absensi/090903_2025-05-03_check_out_1746001294.jpg', 'tepat waktu', -6.13031480, 106.90930000, 'tepat waktu', -6.13031480, 106.90930000, 'valid', 'Wakacao Bintaro', 'valid', 'Wakacao Bintaro'),
-(22, '090903', '2025-05-04', 1, '2025-04-30 15:22:07', 'uploads/absensi/090903_2025-05-04_check_in_1746001327.jpg', '2025-04-30 15:23:06', 'uploads/absensi/090903_2025-05-04_check_out_1746001386.jpg', '', -6.13031480, 106.90930000, '', -6.13031480, 106.90930000, 'valid', 'Wakacao Bintaro', 'valid', 'Wakacao Bintaro'),
-(23, '230901', '2025-05-02', 1, '2025-05-02 22:27:08', 'uploads/absensi/230901_2025-05-02_check_in_1746199628.jpg', '2025-05-02 22:27:16', 'uploads/absensi/230901_2025-05-02_check_out_1746199636.jpg', 'terlambat', -6.38976000, 106.78763520, 'tepat waktu', -6.38976000, 106.78763520, NULL, 'Latitude: -6.38976, Longitude: 106.7876352', NULL, 'Latitude: -6.38976, Longitude: 106.7876352'),
-(24, '230901', '2025-05-03', 1, '2025-05-02 22:38:38', 'uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg', NULL, NULL, 'terlambat', -6.38976000, 106.78763520, 'tidak absen', NULL, NULL, NULL, 'Latitude: -6.38976, Longitude: 106.7876352', NULL, NULL),
-(25, '1211111', '2025-05-02', 3, '2025-05-02 22:40:43', 'uploads/absensi/1211111_2025-05-02_check_in_1746200443.jpg', '2025-05-02 22:41:39', 'uploads/absensi/1211111_2025-05-02_check_out_1746200499.jpg', 'tepat waktu', -6.38976000, 106.78763520, 'tepat waktu', -6.38976000, 106.78763520, NULL, 'Latitude: -6.38976, Longitude: 106.7876352', NULL, 'Latitude: -6.38976, Longitude: 106.7876352'),
-(26, '1211111', '2025-05-03', 3, '2025-05-02 22:42:59', 'uploads/absensi/1211111_2025-05-03_check_in_1746200579.jpg', '2025-05-02 22:50:56', 'uploads/absensi/1211111_2025-05-03_check_out_1746201056.jpg', 'tepat waktu', -6.38976000, 106.78763520, 'tepat waktu', -6.38976000, 106.78763520, NULL, 'Latitude: -6.38976, Longitude: 106.7876352', NULL, 'Latitude: -6.38976, Longitude: 106.7876352'),
-(27, '1211111', '2025-05-04', 3, '2025-05-02 22:52:26', 'uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg', '2025-05-02 22:53:17', 'uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg', 'tepat waktu', -6.38976000, 106.78763520, 'tepat waktu', -6.36318350, 106.73361440, NULL, 'Latitude: -6.38976, Longitude: 106.7876352', NULL, 'Latitude: -6.3631835, Longitude: 106.7336144');
+(2, '001', '2025-04-27', 3, '2025-04-26 01:57:17', 'uploads/absensi/001_2025-04-27_check_in_1745607437.jpg', '2025-04-26 21:09:23', 'uploads/absensi/001_2025-04-27_check_out_1745676563.jpg', 'tepat waktu', NULL, NULL, 'tepat waktu', '-6.13031480', '106.90930000', NULL, NULL, 'valid', 'Wakacao Bintaro'),
+(3, '001', '2025-04-28', 1, '2025-04-26 02:44:19', 'uploads/absensi/001_2025-04-28_check_in_1745610259.jpg', '2025-04-26 02:43:33', 'uploads/absensi/001_2025-04-28_check_out_1745610213.jpg', '', '-6.13031480', '106.90930000', '', '-6.13031480', '106.90930000', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
+(4, '002', '2025-04-28', 2, '2025-04-26 16:35:35', 'uploads/absensi/002_2025-04-28_check_in_1745660135.jpg', '2025-04-26 16:36:00', 'uploads/absensi/002_2025-04-28_check_out_1745660160.jpg', '', '-6.13031480', '106.90930000', '', '-6.13031480', '106.90930000', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
+(5, '002', '2025-04-29', 2, '2025-04-26 16:42:54', 'uploads/absensi/002_2025-04-29_check_in_1745660574.jpg', '2025-04-26 16:43:01', 'uploads/absensi/002_2025-04-29_check_out_1745660581.jpg', '', '-6.13031480', '106.90930000', '', '-6.13031480', '106.90930000', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
+(6, '002', '2025-04-27', 1, '2025-04-26 16:43:44', 'uploads/absensi/002_2025-04-27_check_in_1745660624.jpg', '2025-04-26 16:55:34', 'uploads/absensi/002_2025-04-27_check_out_1745661334.jpg', '', '-6.13031480', '106.90930000', '', '-6.13031480', '106.90930000', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
+(7, '002', '2025-04-26', 1, '2025-04-26 16:55:46', 'uploads/absensi/002_2025-04-26_check_in_1745661346.jpg', '2025-04-26 16:58:19', 'uploads/absensi/002_2025-04-26_check_out_1745661499.jpg', '', '-6.13031480', '106.90930000', '', '-6.13031480', '106.90930000', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
+(8, '002', '2025-04-30', 1, '2025-04-26 17:02:57', 'uploads/absensi/002_2025-04-30_check_in_1745661777.jpg', '2025-04-26 17:16:09', 'uploads/absensi/002_2025-04-30_check-out_1745662569.jpg', '', '-6.13031480', '106.90930000', '', '-6.13031480', '106.90930000', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
+(9, '002', '2025-05-01', 2, '2025-04-26 17:21:18', 'uploads/absensi/002_2025-05-01_check_in_1745662878.jpg', '2025-04-26 17:18:49', 'uploads/absensi/002_2025-05-01_check-in_1745662729.jpg', '', '-6.13031480', '106.90930000', '', '-6.36316420', '106.73359160', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (8490m dari lokasi, melebihi radius 100m)'),
+(10, '002', '2025-05-02', 2, '2025-04-26 17:21:30', 'uploads/absensi/002_2025-05-02_check_in_1745662890.jpg', '2025-04-26 17:16:54', 'uploads/absensi/002_2025-05-02_check-in_1745662614.jpg', '', '-6.13031480', '106.90930000', '', '-6.13031480', '106.90930000', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
+(11, '001', '2025-04-29', 1, '2025-04-26 17:25:33', 'uploads/absensi/001_2025-04-29_check_in_1745663133.jpg', '2025-04-26 17:25:43', 'uploads/absensi/001_2025-04-29_check_out_1745663143.jpg', '', '-6.13031480', '106.90930000', '', '-6.13031480', '106.90930000', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
+(12, '001', '2025-04-30', 1, '2025-04-26 17:32:54', 'uploads/absensi/001_2025-04-30_check_in_1745663574.jpg', '2025-04-26 20:09:23', 'uploads/absensi/001_2025-04-30_check_out_1745672963.jpg', '', '-6.13031480', '106.90930000', '', '-6.13031480', '106.90930000', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
+(13, '001', '2025-05-02', 1, '2025-05-02 07:15:00', 'uploads/absensi/001_20240601_check_in.jpg', '2025-05-02 15:05:00', 'uploads/absensi/001_20240601_check_out.jpg', 'tepat waktu', '-6.13031480', '106.90930000', 'tepat waktu', '-6.38976000', '106.78763520', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', NULL, 'Latitude: -6.38976, Longitude: 106.7876352'),
+(14, '001', '2025-05-01', 1, '2025-04-26 20:09:44', 'uploads/absensi/001_2025-05-01_check_in_1745672984.jpg', NULL, NULL, '', '-6.13031480', '106.90930000', 'tidak absen', NULL, NULL, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', NULL, NULL),
+(15, '090903', '2025-04-26', 2, '2025-04-26 20:29:28', 'uploads/absensi/090903_2025-04-26_check_in_1745674168.jpg', '2025-04-26 20:47:07', 'uploads/absensi/090903_2025-04-26_check_out_1745675227.jpg', '', '-6.13031480', '106.90930000', '', '-6.13031480', '106.90930000', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
+(16, '230901', '2025-04-26', 1, '2025-04-26 20:43:56', 'uploads/absensi/230901_2025-04-26_check_in_1745675036.jpg', '2025-04-26 20:45:47', 'uploads/absensi/230901_2025-04-26_check_out_1745675147.jpg', '', '-6.13031480', '106.90930000', '', '-6.13031480', '106.90930000', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)'),
+(17, '230901', '2025-04-27', 1, '2025-04-26 20:45:34', 'uploads/absensi/230901_2025-04-27_check_in_1745675134.jpg', NULL, NULL, '', '-6.13031480', '106.90930000', 'tidak absen', NULL, NULL, 'invalid', 'Wakacao Bintaro (27805m dari lokasi, melebihi radius 100m)', NULL, NULL),
+(18, '090903', '2025-04-30', 1, '2025-04-30 15:13:53', 'uploads/absensi/090903_2025-04-30_check_in_1746000833.jpg', '2025-04-30 15:14:07', 'uploads/absensi/090903_2025-04-30_check_out_1746000847.jpg', 'terlambat', '-6.13031480', '106.90930000', 'tepat waktu', '-6.13031480', '106.90930000', 'valid', 'Wakacao Bintaro', 'valid', 'Wakacao Bintaro'),
+(19, '090903', '2025-05-01', 1, '2025-04-30 15:14:18', 'uploads/absensi/090903_2025-05-01_check_in_1746000858.jpg', '2025-04-30 15:15:44', 'uploads/absensi/090903_2025-05-01_check_out_1746000944.jpg', 'terlambat', '-6.13031480', '106.90930000', 'tepat waktu', '-6.13031480', '106.90930000', 'valid', 'Wakacao Bintaro', 'valid', 'Wakacao Bintaro'),
+(20, '090903', '2025-05-02', 1, '2025-04-30 15:16:07', 'uploads/absensi/090903_2025-05-02_check_in_1746000967.jpg', '2025-04-30 15:17:23', 'uploads/absensi/090903_2025-05-02_check_out_1746001043.jpg', 'terlambat', '-6.13031480', '106.90930000', 'tepat waktu', '-6.13031480', '106.90930000', 'valid', 'Wakacao Bintaro', 'valid', 'Wakacao Bintaro'),
+(21, '090903', '2025-05-03', 1, '2025-04-30 15:20:10', 'uploads/absensi/090903_2025-05-03_check_in_1746001210.jpg', '2025-04-30 15:21:34', 'uploads/absensi/090903_2025-05-03_check_out_1746001294.jpg', 'tepat waktu', '-6.13031480', '106.90930000', 'tepat waktu', '-6.13031480', '106.90930000', 'valid', 'Wakacao Bintaro', 'valid', 'Wakacao Bintaro'),
+(22, '090903', '2025-05-04', 1, '2025-04-30 15:22:07', 'uploads/absensi/090903_2025-05-04_check_in_1746001327.jpg', '2025-04-30 15:23:06', 'uploads/absensi/090903_2025-05-04_check_out_1746001386.jpg', '', '-6.13031480', '106.90930000', '', '-6.13031480', '106.90930000', 'valid', 'Wakacao Bintaro', 'valid', 'Wakacao Bintaro'),
+(23, '230901', '2025-05-02', 1, '2025-05-02 22:27:08', 'uploads/absensi/230901_2025-05-02_check_in_1746199628.jpg', '2025-05-02 22:27:16', 'uploads/absensi/230901_2025-05-02_check_out_1746199636.jpg', 'terlambat', '-6.38976000', '106.78763520', 'tepat waktu', '-6.38976000', '106.78763520', NULL, 'Latitude: -6.38976, Longitude: 106.7876352', NULL, 'Latitude: -6.38976, Longitude: 106.7876352'),
+(24, '230901', '2025-05-03', 1, '2025-05-02 22:38:38', 'uploads/absensi/230901_2025-05-03_check_in_1746200318.jpg', NULL, NULL, 'terlambat', '-6.38976000', '106.78763520', 'tidak absen', NULL, NULL, NULL, 'Latitude: -6.38976, Longitude: 106.7876352', NULL, NULL),
+(25, '1211111', '2025-05-02', 3, '2025-05-02 22:40:43', 'uploads/absensi/1211111_2025-05-02_check_in_1746200443.jpg', '2025-05-02 22:41:39', 'uploads/absensi/1211111_2025-05-02_check_out_1746200499.jpg', 'tepat waktu', '-6.38976000', '106.78763520', 'tepat waktu', '-6.38976000', '106.78763520', NULL, 'Latitude: -6.38976, Longitude: 106.7876352', NULL, 'Latitude: -6.38976, Longitude: 106.7876352'),
+(26, '1211111', '2025-05-03', 3, '2025-05-02 22:42:59', 'uploads/absensi/1211111_2025-05-03_check_in_1746200579.jpg', '2025-05-02 22:50:56', 'uploads/absensi/1211111_2025-05-03_check_out_1746201056.jpg', 'tepat waktu', '-6.38976000', '106.78763520', 'tepat waktu', '-6.38976000', '106.78763520', NULL, 'Latitude: -6.38976, Longitude: 106.7876352', NULL, 'Latitude: -6.38976, Longitude: 106.7876352'),
+(27, '1211111', '2025-05-04', 3, '2025-05-02 22:52:26', 'uploads/absensi/1211111_2025-05-04_check_in_1746201146.jpg', '2025-05-02 22:53:17', 'uploads/absensi/1211111_2025-05-04_check_out_1746201197.jpg', 'tepat waktu', '-6.38976000', '106.78763520', 'tepat waktu', '-6.36318350', '106.73361440', NULL, 'Latitude: -6.38976, Longitude: 106.7876352', NULL, 'Latitude: -6.3631835, Longitude: 106.7336144'),
+(28, '090903', '2025-05-05', 1, '2025-05-05 21:42:53', 'uploads/absensi/090903_2025-05-05_check_in_1746456173.jpg', NULL, NULL, 'terlambat', '-6.35397920', '106.70799600', 'tidak absen', NULL, NULL, NULL, 'Latitude: -6.3539792, Longitude: 106.707996', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -102,7 +103,7 @@ CREATE TABLE `cuti_tahunan` (
   `approved_at` datetime DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cuti_tahunan`
@@ -133,14 +134,15 @@ CREATE TABLE `izin` (
   `solusi_pengganti` enum('shift','libur','cuti','gaji') NOT NULL,
   `status` enum('pending','disetujui','ditolak') DEFAULT 'pending',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `izin`
 --
 
 INSERT INTO `izin` (`id`, `id_karyawan`, `tanggal_mulai`, `tanggal_selesai`, `jenis_izin`, `keterangan`, `bukti_file`, `solusi_pengganti`, `status`, `created_at`) VALUES
-(1, '001', '2025-04-26', '0000-00-00', 'sakit', 'sss', '', 'shift', 'disetujui', '2025-04-25 18:46:24');
+(1, '001', '2025-04-26', '0000-00-00', 'sakit', 'sss', '', 'shift', 'disetujui', '2025-04-25 18:46:24'),
+(2, '090903', '2025-05-05', '2025-05-05', 'sakit', 'Batuk', 'uploads/izin/090903_2025-05-05_1746456448.jpeg', 'libur', 'pending', '2025-05-05 14:47:28');
 
 -- --------------------------------------------------------
 
@@ -154,7 +156,7 @@ CREATE TABLE `jadwal` (
   `tanggal` date NOT NULL,
   `id_shift` int(11) DEFAULT NULL,
   `status` enum('masuk','libur','izin','sakit','cuti') DEFAULT 'masuk'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `jadwal`
@@ -189,13 +191,6 @@ INSERT INTO `jadwal` (`id`, `id_karyawan`, `tanggal`, `id_shift`, `status`) VALU
 (399, '003', '2025-04-25', 2, 'masuk'),
 (400, '003', '2025-04-26', 2, 'masuk'),
 (401, '003', '2025-04-27', 2, 'masuk'),
-(402, '090903', '2025-04-21', 2, 'masuk'),
-(403, '090903', '2025-04-22', 2, 'masuk'),
-(404, '090903', '2025-04-23', 1, 'masuk'),
-(405, '090903', '2025-04-24', 2, 'masuk'),
-(406, '090903', '2025-04-25', 2, 'masuk'),
-(407, '090903', '2025-04-26', 2, 'masuk'),
-(408, '090903', '2025-04-27', 2, 'masuk'),
 (444, '090903', '2025-09-23', NULL, 'cuti'),
 (445, '090903', '2025-09-24', NULL, 'cuti'),
 (446, '090903', '2025-09-25', NULL, 'cuti'),
@@ -304,7 +299,7 @@ INSERT INTO `jadwal` (`id`, `id_karyawan`, `tanggal`, `id_shift`, `status`) VALU
 (591, '003', '2025-05-09', 2, 'masuk'),
 (592, '003', '2025-05-10', 2, 'masuk'),
 (593, '003', '2025-05-11', 2, 'masuk'),
-(594, '090903', '2025-05-05', 1, 'masuk'),
+(594, '090903', '2025-05-05', 1, 'sakit'),
 (595, '090903', '2025-05-06', 1, 'masuk'),
 (596, '090903', '2025-05-07', 1, 'masuk'),
 (597, '090903', '2025-05-08', 1, 'masuk'),
@@ -315,28 +310,70 @@ INSERT INTO `jadwal` (`id`, `id_karyawan`, `tanggal`, `id_shift`, `status`) VALU
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `laporan`
+--
+
+CREATE TABLE `laporan` (
+  `id_laporan` int(11) NOT NULL,
+  `id_user` int(11) DEFAULT NULL,
+  `tanggal` datetime DEFAULT current_timestamp(),
+  `jenis_laporan` varchar(50) NOT NULL,
+  `deskripsi` text DEFAULT NULL,
+  `status` enum('Menunggu','Proses','Selesai') DEFAULT 'Menunggu',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `laporan`
+--
+
+INSERT INTO `laporan` (`id_laporan`, `id_user`, `tanggal`, `jenis_laporan`, `deskripsi`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, '2025-05-05 22:49:05', 'Keluhan', 'Contoh keluhan pelanggan', 'Selesai', '2025-05-05 15:49:05', '2025-05-05 15:49:05'),
+(2, 1, '2025-05-05 22:49:05', 'Saran', 'Contoh saran pengembangan', 'Proses', '2025-05-05 15:49:05', '2025-05-05 15:49:05'),
+(3, 1, '2025-05-05 22:49:05', 'Bug', 'Contoh laporan bug sistem', 'Menunggu', '2025-05-05 15:49:05', '2025-05-05 15:49:05');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `locations`
 --
 
 CREATE TABLE `locations` (
   `id` int(11) NOT NULL,
   `outlet_name` varchar(100) NOT NULL,
+  `address` text DEFAULT NULL,
   `latitude` decimal(10,8) NOT NULL,
   `longitude` decimal(11,8) NOT NULL,
   `radius` int(11) NOT NULL DEFAULT 100,
   `active` tinyint(1) NOT NULL DEFAULT 1,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `locations`
 --
 
-INSERT INTO `locations` (`id`, `outlet_name`, `latitude`, `longitude`, `radius`, `active`, `created_at`, `updated_at`) VALUES
-(1, 'Wakacao Bintaro', -6.13031590, 106.90930000, 100, 1, '2025-04-25 19:26:34', '2025-04-26 14:06:16'),
-(2, 'Wakacao BSD', -6.28998500, 106.66478000, 80, 1, '2025-04-25 19:26:34', '2025-04-25 19:26:34'),
-(3, 'Wakacao Pamulang', -6.36313480, 106.33645200, 100, 1, '2025-04-26 13:41:36', '2025-04-26 13:41:36');
+INSERT INTO `locations` (`id`, `outlet_name`, `address`, `latitude`, `longitude`, `radius`, `active`, `created_at`, `updated_at`) VALUES
+(1, 'Wakacao Bintaro', 'gatau', '-6.13031590', '106.90930000', 100, 1, '2025-04-25 19:26:34', '2025-05-05 15:40:40'),
+(2, 'Wakacao BSD', NULL, '-6.28998500', '106.66478000', 80, 1, '2025-04-25 19:26:34', '2025-04-25 19:26:34'),
+(3, 'Wakacao Pamulang', NULL, '-6.36313480', '106.33645200', 100, 1, '2025-04-26 13:41:36', '2025-04-26 13:41:36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `outlets`
+--
+
+CREATE TABLE `outlets` (
+  `id` int(11) NOT NULL,
+  `outlet_name` varchar(255) NOT NULL,
+  `address` text NOT NULL,
+  `active` tinyint(1) DEFAULT 1,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -349,7 +386,7 @@ CREATE TABLE `shift` (
   `nama_shift` varchar(20) NOT NULL,
   `jam_mulai` time NOT NULL,
   `jam_selesai` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `shift`
@@ -376,7 +413,7 @@ CREATE TABLE `users` (
   `role` enum('admin','karyawan','supervisor') NOT NULL DEFAULT 'karyawan',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -427,9 +464,22 @@ ALTER TABLE `jadwal`
   ADD KEY `id_shift` (`id_shift`);
 
 --
+-- Indexes for table `laporan`
+--
+ALTER TABLE `laporan`
+  ADD PRIMARY KEY (`id_laporan`),
+  ADD KEY `id_user` (`id_user`);
+
+--
 -- Indexes for table `locations`
 --
 ALTER TABLE `locations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `outlets`
+--
+ALTER TABLE `outlets`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -454,7 +504,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `absensi`
 --
 ALTER TABLE `absensi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `cuti_tahunan`
@@ -466,7 +516,7 @@ ALTER TABLE `cuti_tahunan`
 -- AUTO_INCREMENT for table `izin`
 --
 ALTER TABLE `izin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `jadwal`
@@ -475,10 +525,22 @@ ALTER TABLE `jadwal`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=601;
 
 --
+-- AUTO_INCREMENT for table `laporan`
+--
+ALTER TABLE `laporan`
+  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `outlets`
+--
+ALTER TABLE `outlets`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `shift`
@@ -515,6 +577,12 @@ ALTER TABLE `izin`
 ALTER TABLE `jadwal`
   ADD CONSTRAINT `jadwal_ibfk_1` FOREIGN KEY (`id_karyawan`) REFERENCES `users` (`id_karyawan`),
   ADD CONSTRAINT `jadwal_ibfk_2` FOREIGN KEY (`id_shift`) REFERENCES `shift` (`id`);
+
+--
+-- Constraints for table `laporan`
+--
+ALTER TABLE `laporan`
+  ADD CONSTRAINT `laporan_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

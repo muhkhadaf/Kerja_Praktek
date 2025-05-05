@@ -70,8 +70,8 @@ if ($result) {
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.php"><img src="images/logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.php"><img src="images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="index.php"><img src="images/logowakacao.png" class="mr-2" alt="logo" style="height: 60px; width: auto;"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.php"><img src="images/logowakacao.png" alt="logo" style="height: 45px; width: auto;"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -475,7 +475,7 @@ if ($result) {
                                 
                                 <?php if ($jadwal['status'] == 'masuk'): ?>
                                   <?php if (isset($jadwal['check_in']) && !empty($jadwal['check_in']) && isset($jadwal['check_out']) && !empty($jadwal['check_out'])): ?>
-                                    <button class="btn btn-secondary" disabled>Sudah Absen</button>
+                                    <button class="btn btn-primary" disabled>Sudah Absen</button>
                                   <?php else: ?>
                                     <button class="btn btn-primary absen-btn" data-date="<?php echo $jadwal['tanggal']; ?>" data-shift="<?php echo $jadwal['id_shift']; ?>" data-checkin="<?php echo !empty($jadwal['check_in']) ? '1' : '0'; ?>" data-checkout="<?php echo !empty($jadwal['check_out']) ? '1' : '0'; ?>">Absen</button>
                                   <?php endif; ?>
@@ -502,7 +502,7 @@ if ($result) {
               <!-- Jadwal Mendatang dan Sebelumnya -->
               <div class="col-12">
                 <div class="card">
-                  <div class="card-header bg-secondary text-white rounded-top">
+                  <div class="card-header bg-primary text-white rounded-top">
                     <h4 class="mb-0">Jadwal Mendatang & Sebelumnya</h4>
                   </div>
                   <div class="card-body">
@@ -511,8 +511,8 @@ if ($result) {
                       <?php foreach ($jadwal_array as $jadwal): ?>
                         <?php if ($jadwal['tanggal'] != $today_date): ?>
                           <div class="col-md-4 mb-4">
-                            <div class="card shadow rounded-4 <?php echo ($jadwal['tanggal'] < $today_date) ? 'border-secondary' : 'border-info'; ?>" style="border-radius: 20px; min-height: 100%;">
-                              <div class="card-header <?php echo ($jadwal['tanggal'] < $today_date) ? 'bg-secondary' : 'bg-info'; ?> text-white rounded-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                            <div class="card shadow rounded-4 <?php echo ($jadwal['tanggal'] < $today_date) ? 'border-primary' : 'border-info'; ?>" style="border-radius: 20px; min-height: 100%;">
+                              <div class="card-header <?php echo ($jadwal['tanggal'] < $today_date) ? 'bg-primary' : 'bg-info'; ?> text-white rounded-top" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
                                 <h5 class="card-title mb-0">
                                   <?php 
                                     if ($jadwal['tanggal'] < $today_date) {
@@ -553,7 +553,7 @@ if ($result) {
                                 
                                 <?php if ($jadwal['status'] == 'masuk'): ?>
                                   <!-- Tombol Absen dinonaktifkan untuk jadwal yang bukan hari ini -->
-                                  <button class="btn btn-secondary" disabled>Absen</button>
+                                  <button class="btn btn-primary" disabled>Absen</button>
                                   <button class="btn btn-primary izin-btn" data-date="<?php echo $jadwal['tanggal']; ?>">Ajukan Libur</button>
                                 <?php else: ?>
                                   <span class="badge badge-info"><?php echo ucfirst($jadwal['status']); ?></span>
