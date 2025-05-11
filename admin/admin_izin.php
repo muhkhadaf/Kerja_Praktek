@@ -10,8 +10,43 @@ if (isset($_POST['action']) && isset($_POST['izin_id'])) {
     $aksi = $_POST['action'] === 'approve' ? 'disetujui' : 'ditolak';
     $keterangan = isset($_POST['keterangan']) ? mysqli_real_escape_string($koneksi, $_POST['keterangan']) : '';
     $admin_name = getUserName();
-    $query = "UPDATE izin SET status = '$aksi', keterangan_admin = '$keterangan', approved_by = '$admin_name', approved_at = NOW() WHERE id = $id_izin";
-    mysqli_query($koneksi, $query);
+    
+    // Cek apakah kolom yang diperlukan sudah ada
+    $check_columns = mysqli_query($koneksi, "SHOW COLUMNS FROM izin LIKE 'keterangan_admin'");
+    $column_exists = mysqli_num_rows($check_columns) > 0;
+    
+    if ($column_exists) {
+        $query = "UPDATE izin SET status = '$aksi', keterangan_admin = '$keterangan', approved_by = '$admin_name', approved_at = NOW() WHERE id = $id_izin";
+    } else {
+        // Jika kolom belum ada, gunakan query yang hanya mengupdate status
+        $query = "UPDATE izin SET status = '$aksi' WHERE id = $id_izin";
+    }
+    
+    $result = mysqli_query($koneksi, $query);
+    
+    if (!$result) {
+        // Tampilkan pesan error yang lebih informatif
+        echo "<div style='background-color: #f8d7da; color: #721c24; padding: 10px; margin: 10px;'>";
+        echo "<h3>Error Database</h3>";
+        echo "<p>Terjadi kesalahan saat menjalankan query:</p>";
+        echo "<p><code>" . htmlspecialchars($query) . "</code></p>";
+        echo "<p>Error: " . mysqli_error($koneksi) . "</p>";
+        echo "<p>Silakan jalankan file SQL berikut di phpMyAdmin untuk menambahkan kolom yang diperlukan:</p>";
+        echo "<pre>
+-- Menambahkan kolom keterangan_admin
+ALTER TABLE izin ADD COLUMN keterangan_admin TEXT NULL AFTER status;
+
+-- Menambahkan kolom approved_by
+ALTER TABLE izin ADD COLUMN approved_by VARCHAR(100) NULL;
+
+-- Menambahkan kolom approved_at
+ALTER TABLE izin ADD COLUMN approved_at DATETIME NULL;
+        </pre>";
+        echo "<p><a href='admin_izin.php' class='btn btn-primary'>Kembali</a></p>";
+        echo "</div>";
+        exit();
+    }
+    
     header('Location: admin_izin.php');
     exit();
 }
@@ -39,31 +74,8 @@ $result = mysqli_query($koneksi, $query);
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="../images/logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../images/logo-mini.svg" alt="logo"/></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="icon-menu"></span>
-        </button>
-        <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../images/faces/face28.jpg" alt="profile"/>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" href="../logout.php">
-                <i class="ti-power-off text-primary"></i>
-                Logout
-              </a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <?php include 'sidebar.php'; ?>
+    <?php include_once 'navbar.php'; ?>
+    <?php include_once 'sidebar.php'; ?>
     <!-- partial -->
     <div class="main-panel">
       <div class="content-wrapper">

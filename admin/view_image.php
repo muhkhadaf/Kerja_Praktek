@@ -28,8 +28,82 @@ if (!file_exists($fullPath)) {
 
 // Cek ukuran file
 $fileSize = filesize($fullPath);
-echo "File ditemukan! Ukuran: " . $fileSize . " bytes<br>";
 
-// Tampilkan gambar
-echo "<img src='../{$imagePath}' alt='Foto Absensi' style='max-width: 100%;'>";
+// Output HTML dengan CSS
+echo '<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lihat Gambar</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 24px;
+        }
+        .info {
+            background-color: #e1f5fe;
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            text-align: center;
+            padding: 10px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            border: 1px solid #eaeaea;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Viewer Gambar</h1>
+        </div>
+        <div class="info">
+            File ditemukan! Ukuran: ' . $fileSize . ' bytes
+        </div>
+        <div class="image-container">
+            <img src="../' . $imagePath . '" alt="Foto Absensi">
+        </div>
+        <div class="footer">
+            <p>Klik kanan pada gambar untuk menyimpan</p>
+        </div>
+    </div>
+</body>
+</html>';
 ?> 

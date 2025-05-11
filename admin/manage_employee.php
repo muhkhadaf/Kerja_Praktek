@@ -178,11 +178,25 @@ if (isset($_GET['action']) && $_GET['action'] === 'edit' && isset($_GET['id'])) 
 $query_karyawan = "SELECT * FROM users ORDER BY id_karyawan";
 $result_karyawan = mysqli_query($koneksi, $query_karyawan);
 $karyawan_list = [];
+$admin_list = [];
+$karyawan_by_outlet = [];
+
 if ($result_karyawan) {
     while ($row = mysqli_fetch_assoc($result_karyawan)) {
+        if ($row['role'] === 'admin') {
+            $admin_list[] = $row;
+        } else {
+            if (!isset($karyawan_by_outlet[$row['outlet']])) {
+                $karyawan_by_outlet[$row['outlet']] = [];
+            }
+            $karyawan_by_outlet[$row['outlet']][] = $row;
+        }
         $karyawan_list[] = $row;
     }
 }
+
+// Urutkan outlet berdasarkan nama
+ksort($karyawan_by_outlet);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -208,41 +222,8 @@ if ($result_karyawan) {
 
 <body>
   <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.php"><img src="../images/logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.php"><img src="../images/logo-mini.svg" alt="logo"/></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="icon-menu"></span>
-        </button>
-        <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../images/faces/face28.jpg" alt="profile"/>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Pengaturan
-              </a>
-              <a class="dropdown-item" href="../logout.php">
-                <i class="ti-power-off text-primary"></i>
-                Logout
-              </a>
-            </div>
-          </li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="icon-menu"></span>
-        </button>
-      </div>
-    </nav>
-    </div>
-      <!-- partial:partials/_sidebar.html -->
-      <?php include 'sidebar.php'; ?>
+      <?php include_once 'navbar.php'; ?>
+      <?php include_once 'sidebar.php'; ?>
     
       
       <!-- partial -->
@@ -276,13 +257,14 @@ if ($result_karyawan) {
           </div>
           <?php endif; ?>
           
+          <!-- Tabel Admin -->
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Daftar Karyawan</h4>
+                  <h4 class="card-title">Daftar Admin</h4>
                   <div class="table-responsive">
-                    <table class="table table-striped datatable">
+                    <table class="table table-striped datatable-admin">
                       <thead>
                         <tr>
                           <th>ID Karyawan</th>
@@ -294,27 +276,19 @@ if ($result_karyawan) {
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach ($karyawan_list as $karyawan): ?>
+                        <?php foreach ($admin_list as $admin): ?>
                         <tr>
-                          <td><?php echo $karyawan['id_karyawan']; ?></td>
-                          <td><?php echo $karyawan['nama']; ?></td>
-                          <td><?php echo $karyawan['email']; ?></td>
-                          <td><?php echo $karyawan['outlet']; ?></td>
+                          <td><?php echo $admin['id_karyawan']; ?></td>
+                          <td><?php echo $admin['nama']; ?></td>
+                          <td><?php echo $admin['email']; ?></td>
+                          <td><?php echo $admin['outlet']; ?></td>
                           <td>
-                            <span class="badge badge-<?php 
-                              echo $karyawan['role'] === 'admin' ? 'danger' : 
-                                   ($karyawan['role'] === 'supervisor' ? 'warning' : 'success'); 
-                            ?>"><?php echo ucfirst($karyawan['role']); ?></span>
+                            <span class="badge badge-danger"><?php echo ucfirst($admin['role']); ?></span>
                           </td>
                           <td>
-                            <a href="?action=edit&id=<?php echo $karyawan['id']; ?>" class="btn btn-sm btn-info">
+                            <a href="?action=edit&id=<?php echo $admin['id']; ?>" class="btn btn-sm btn-info">
                               <i class="ti-pencil"></i> Edit
                             </a>
-                            <?php if ($karyawan['role'] !== 'admin'): ?>
-                            <a href="?action=delete&id=<?php echo $karyawan['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus karyawan ini? Semua data terkait (jadwal, absensi, izin) juga akan dihapus!')">
-                              <i class="ti-trash"></i> Hapus
-                            </a>
-                            <?php endif; ?>
                           </td>
                         </tr>
                         <?php endforeach; ?>
@@ -325,6 +299,54 @@ if ($result_karyawan) {
               </div>
             </div>
           </div>
+          
+          <!-- Tabel Karyawan per Outlet -->
+          <?php foreach ($karyawan_by_outlet as $outlet_name => $outlet_karyawan): ?>
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Karyawan Outlet: <?php echo $outlet_name; ?></h4>
+                  <div class="table-responsive">
+                    <table class="table table-striped datatable-outlet">
+                      <thead>
+                        <tr>
+                          <th>ID Karyawan</th>
+                          <th>Nama</th>
+                          <th>Email</th>
+                          <th>Role</th>
+                          <th>Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php foreach ($outlet_karyawan as $karyawan): ?>
+                        <tr>
+                          <td><?php echo $karyawan['id_karyawan']; ?></td>
+                          <td><?php echo $karyawan['nama']; ?></td>
+                          <td><?php echo $karyawan['email']; ?></td>
+                          <td>
+                            <span class="badge badge-<?php 
+                              echo $karyawan['role'] === 'supervisor' ? 'warning' : 'success'; 
+                            ?>"><?php echo ucfirst($karyawan['role']); ?></span>
+                          </td>
+                          <td>
+                            <a href="?action=edit&id=<?php echo $karyawan['id']; ?>" class="btn btn-sm btn-info">
+                              <i class="ti-pencil"></i> Edit
+                            </a>
+                            <a href="?action=delete&id=<?php echo $karyawan['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus karyawan ini? Semua data terkait (jadwal, absensi, izin) juga akan dihapus!')">
+                              <i class="ti-trash"></i> Hapus
+                            </a>
+                          </td>
+                        </tr>
+                        <?php endforeach; ?>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php endforeach; ?>
         </div>
         <!-- content-wrapper ends -->
         
@@ -497,7 +519,25 @@ if ($result_karyawan) {
   <!-- Custom js for this page-->
   <script>
     $(document).ready(function() {
-      $('.datatable').DataTable({
+      $('.datatable-admin').DataTable({
+        "order": [[0, "asc"]],
+        "language": {
+          "lengthMenu": "Tampilkan _MENU_ data per halaman",
+          "zeroRecords": "Tidak ada data yang ditemukan",
+          "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
+          "infoEmpty": "Tidak ada data yang tersedia",
+          "infoFiltered": "(difilter dari _MAX_ total data)",
+          "search": "Cari:",
+          "paginate": {
+            "first": "Pertama",
+            "last": "Terakhir",
+            "next": "Selanjutnya",
+            "previous": "Sebelumnya"
+          }
+        }
+      });
+      
+      $('.datatable-outlet').DataTable({
         "order": [[0, "asc"]],
         "language": {
           "lengthMenu": "Tampilkan _MENU_ data per halaman",

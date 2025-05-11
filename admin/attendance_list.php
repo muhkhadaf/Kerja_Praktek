@@ -322,39 +322,8 @@ if (!file_exists('../logs')) {
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.php"><img src="../images/logowakacao.png" class="mr-2" alt="logo" style="height: 60px; width: auto;"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.php"><img src="../images/logowakacao.png" alt="logo" style="height: 45px; width: auto;"/></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="icon-menu"></span>
-        </button>
-        <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="../images/faces/face28.jpg" alt="profile"/>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Pengaturan
-              </a>
-              <a class="dropdown-item" href="../logout.php">
-                <i class="ti-power-off text-primary"></i>
-                Logout
-              </a>
-            </div>
-          </li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="icon-menu"></span>
-        </button>
-      </div>
-    </nav>
-  
-      <?php include 'sidebar.php'; ?>
+      <?php include_once 'navbar.php'; ?>
+      <?php include_once 'sidebar.php'; ?>
       
       <!-- partial -->
       <div class="main-panel">
@@ -450,171 +419,357 @@ if (!file_exists('../logs')) {
                     </div>
                   </div>
                   
-                  <div class="table-responsive">
-                    <table class="table table-striped table-hover attendance-table">
-                      <thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Karyawan</th>
-                          <th>Outlet</th>
-                          <th>Shift</th>
-                          <th>Jam Kerja</th>
-                          <th>Check In</th>
-                          <th>Foto In</th>
-                          <th>Check Out</th>
-                          <th>Foto Out</th>
-                          <th>Status</th>
-                          <th>Lokasi</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php if (count($merged_data) > 0): ?>
-                          <?php $no = 1; foreach ($merged_data as $data): ?>
+                  <?php
+                  // Kelompokkan data berdasarkan outlet
+                  $data_by_outlet = [];
+                  foreach ($merged_data as $data) {
+                    $outlet = $data['outlet'];
+                    if (!isset($data_by_outlet[$outlet])) {
+                      $data_by_outlet[$outlet] = [];
+                    }
+                    $data_by_outlet[$outlet][] = $data;
+                  }
+                  
+                  // Urutkan outlet berdasarkan nama
+                  ksort($data_by_outlet);
+                  ?>
+                  
+                  <?php if (empty($filter_outlet)): ?>
+                    <!-- Tampilkan tabel per outlet -->
+                    <?php foreach ($data_by_outlet as $outlet => $outlet_data): ?>
+                    <div class="mb-5">
+                      <h5 class="font-weight-bold mb-3">Outlet: <?php echo $outlet; ?></h5>
+                      <div class="table-responsive">
+                        <table class="table table-striped table-hover attendance-table">
+                          <thead>
+                            <tr>
+                              <th>No</th>
+                              <th>Karyawan</th>
+                              <th>Shift</th>
+                              <th>Jam Kerja</th>
+                              <th>Check In</th>
+                              <th>Foto In</th>
+                              <th>Check Out</th>
+                              <th>Foto Out</th>
+                              <th>Status</th>
+                              <th>Lokasi</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <?php if (count($outlet_data) > 0): ?>
+                              <?php $no = 1; foreach ($outlet_data as $data): ?>
+                              <tr>
+                                <td><?php echo $no++; ?></td>
+                                <td>
+                                  <strong><?php echo $data['nama']; ?></strong>
+                                  <br>
+                                  <small class="text-muted"><?php echo $data['id_karyawan']; ?></small>
+                                </td>
+                                <td><?php echo $data['nama_shift'] ?: '-'; ?></td>
+                                <td>
+                                  <?php if ($data['jam_mulai'] && $data['jam_selesai']): ?>
+                                  <?php echo substr($data['jam_mulai'], 0, 5); ?> - <?php echo substr($data['jam_selesai'], 0, 5); ?>
+                                  <?php else: ?>
+                                  -
+                                  <?php endif; ?>
+                                </td>
+                                <td>
+                                  <?php if ($data['check_in']): ?>
+                                  <?php echo date('H:i', strtotime($data['check_in'])); ?>
+                                  <?php else: ?>
+                                  -
+                                  <?php endif; ?>
+                                </td>
+                                <td>
+                                  <?php if ($data['foto_check_in']): ?>
+                                  <img src="../<?php echo $data['foto_check_in']; ?>" class="attendance-img" data-toggle="modal" data-target="#imageModal" data-img="../<?php echo $data['foto_check_in']; ?>" alt="Check In">
+                                  <br>
+                                  <a href="view_image.php?path=<?php echo $data['foto_check_in']; ?>" target="_blank" class="badge badge-primary mt-1">Lihat langsung</a>
+                                  <?php else: ?>
+                                  <span class="badge badge-light">Tidak ada foto</span>
+                                  <?php endif; ?>
+                                </td>
+                                <td>
+                                  <?php if ($data['check_out']): ?>
+                                  <?php echo date('H:i', strtotime($data['check_out'])); ?>
+                                  <?php else: ?>
+                                  -
+                                  <?php endif; ?>
+                                </td>
+                                <td>
+                                  <?php if ($data['foto_check_out']): ?>
+                                  <img src="../<?php echo $data['foto_check_out']; ?>" class="attendance-img" data-toggle="modal" data-target="#imageModal" data-img="../<?php echo $data['foto_check_out']; ?>" alt="Check Out">
+                                  <br>
+                                  <a href="view_image.php?path=<?php echo $data['foto_check_out']; ?>" target="_blank" class="badge badge-primary mt-1">Lihat langsung</a>
+                                  <?php else: ?>
+                                  <span class="badge badge-light">Tidak ada foto</span>
+                                  <?php endif; ?>
+                                </td>
+                                <td>
+                                  <?php
+                                  // Status Check In
+                                  $status_in_options = [
+                                    'tepat waktu' => 'Tepat Waktu',
+                                    'terlambat' => 'Terlambat',
+                                    'tidak absen' => 'Tidak Absen',
+                                    'tidak valid' => 'Tidak Valid'
+                                  ];
+                                  $status_in_selected = isset($data['status_check_in']) && !empty($data['status_check_in']) ? $data['status_check_in'] : 'tidak absen';
+                                  $status_in_class = [
+                                    'tepat waktu' => 'badge-success',
+                                    'terlambat' => 'badge-warning',
+                                    'tidak absen' => 'badge-danger',
+                                    'tidak valid' => 'badge-dark'
+                                  ];
+                                  ?>
+                                  <div class="d-flex align-items-center">
+                                    <select class="form-control form-control-sm status-absensi-dropdown mr-2" data-id_karyawan="<?php echo $data['id_karyawan']; ?>" data-tanggal="<?php echo $filter_tanggal; ?>" data-jenis="check_in">
+                                      <?php foreach ($status_in_options as $value => $label): ?>
+                                        <option value="<?php echo $value; ?>" <?php echo $status_in_selected == $value ? 'selected' : ''; ?>><?php echo $label; ?></option>
+                                      <?php endforeach; ?>
+                                    </select>
+                                    <span class="badge badge-sm status-label-in <?php echo $status_in_class[$status_in_selected]; ?>">
+                                      <?php echo $status_in_options[$status_in_selected]; ?>
+                                    </span>
+                                  </div>
+                                  <?php
+                                  // Status Check Out
+                                  $status_out_options = [
+                                    'tepat waktu' => 'Tepat Waktu',
+                                    'lebih awal' => 'Lebih Awal',
+                                    'tidak absen' => 'Tidak Absen',
+                                    'tidak valid' => 'Tidak Valid'
+                                  ];
+                                  $status_out_selected = isset($data['status_check_out']) && !empty($data['status_check_out']) ? $data['status_check_out'] : 'tidak absen';
+                                  $status_out_class = [
+                                    'tepat waktu' => 'badge-success',
+                                    'lebih awal' => 'badge-warning',
+                                    'tidak absen' => 'badge-danger',
+                                    'tidak valid' => 'badge-dark'
+                                  ];
+                                  ?>
+                                  <div class="mt-1 d-flex align-items-center">
+                                    <select class="form-control form-control-sm status-absensi-dropdown mr-2" data-id_karyawan="<?php echo $data['id_karyawan']; ?>" data-tanggal="<?php echo $filter_tanggal; ?>" data-jenis="check_out">
+                                      <?php foreach ($status_out_options as $value => $label): ?>
+                                        <option value="<?php echo $value; ?>" <?php echo $status_out_selected == $value ? 'selected' : ''; ?>><?php echo $label; ?></option>
+                                      <?php endforeach; ?>
+                                    </select>
+                                    <span class="badge badge-sm status-label-out <?php echo $status_out_class[$status_out_selected]; ?>">
+                                      <?php echo $status_out_options[$status_out_selected]; ?>
+                                    </span>
+                                  </div>
+                                </td>
+                                <td>
+                                  <?php if ($data['latitude_in'] && $data['longitude_in']): ?>
+                                  <div>
+                                    <strong>Check In:</strong> 
+                                    <a href="https://www.google.com/maps?q=<?php echo $data['latitude_in']; ?>,<?php echo $data['longitude_in']; ?>" target="_blank" class="btn btn-sm btn-primary btn-icon" data-toggle="tooltip" data-placement="top" title="Lihat di Maps">
+                                      <i class="ti-map-alt" style="font-size: 1.5em; margin: auto;"></i> 
+                                    </a>
+                                    <?php if (!empty($data['location_info_in'])): ?>
+                                      <button type="button" class="btn btn-sm btn-info btn-icon ml-1" data-toggle="tooltip" data-placement="top" title="<?php echo htmlspecialchars($data['location_info_in']); ?>">
+                                        <i class="ti-info-alt" style="font-size: 1.5em;"></i>
+                                      </button>
+                                    <?php endif; ?>
+                                  </div>
+                                  <?php endif; ?>
+                                  
+                                  <?php if ($data['latitude_out'] && $data['longitude_out']): ?>
+                                  <div class="mt-2">
+                                    <strong>Check Out:</strong>
+                                    <a href="https://www.google.com/maps?q=<?php echo $data['latitude_out']; ?>,<?php echo $data['longitude_out']; ?>" target="_blank" class="btn btn-sm btn-primary btn-icon" data-toggle="tooltip" data-placement="top" title="Lihat di Maps">
+                                      <i class="ti-map-alt" style="font-size: 1.5em; margin: auto;"></i> 
+                                    </a>
+                                    <?php if (!empty($data['location_info_out'])): ?>
+                                      <button type="button" class="btn btn-sm btn-info btn-icon ml-1" data-toggle="tooltip" data-placement="top" title="<?php echo htmlspecialchars($data['location_info_out']); ?>">
+                                        <i class="ti-info-alt" style="font-size: 1.5em;"></i>
+                                      </button>
+                                    <?php endif; ?>
+                                  </div>
+                                  <?php endif; ?>
+                                  
+                                  <?php if (!$data['latitude_in'] && !$data['longitude_in'] && !$data['latitude_out'] && !$data['longitude_out']): ?>
+                                  <span class="text-muted">Belum ada data lokasi</span>
+                                  <?php endif; ?>
+                                </td>
+                              </tr>
+                              <?php endforeach; ?>
+                            <?php else: ?>
+                            <tr>
+                              <td colspan="10" class="text-center">Tidak ada data absensi untuk outlet ini</td>
+                            </tr>
+                            <?php endif; ?>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <?php endforeach; ?>
+                  <?php else: ?>
+                    <!-- Jika filter outlet dipilih, tampilkan hanya tabel untuk outlet tersebut -->
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover attendance-table">
+                        <thead>
                           <tr>
-                            <td><?php echo $no++; ?></td>
-                            <td>
-                              <strong><?php echo $data['nama']; ?></strong>
-                              <br>
-                              <small class="text-muted"><?php echo $data['id_karyawan']; ?></small>
-                            </td>
-                            <td><?php echo $data['outlet']; ?></td>
-                            <td><?php echo $data['nama_shift'] ?: '-'; ?></td>
-                            <td>
-                              <?php if ($data['jam_mulai'] && $data['jam_selesai']): ?>
-                              <?php echo substr($data['jam_mulai'], 0, 5); ?> - <?php echo substr($data['jam_selesai'], 0, 5); ?>
-                              <?php else: ?>
-                              -
-                              <?php endif; ?>
-                            </td>
-                            <td>
-                              <?php if ($data['check_in']): ?>
-                              <?php echo date('H:i', strtotime($data['check_in'])); ?>
-                              <?php else: ?>
-                              -
-                              <?php endif; ?>
-                            </td>
-                            <td>
-                              <?php if ($data['foto_check_in']): ?>
-                              <img src="../<?php echo $data['foto_check_in']; ?>" class="attendance-img" data-toggle="modal" data-target="#imageModal" data-img="../<?php echo $data['foto_check_in']; ?>" alt="Check In">
-                              <br>
-                              <a href="view_image.php?path=<?php echo $data['foto_check_in']; ?>" target="_blank" class="badge badge-primary mt-1">Lihat langsung</a>
-                              <?php else: ?>
-                              <span class="badge badge-light">Tidak ada foto</span>
-                              <?php endif; ?>
-                            </td>
-                            <td>
-                              <?php if ($data['check_out']): ?>
-                              <?php echo date('H:i', strtotime($data['check_out'])); ?>
-                              <?php else: ?>
-                              -
-                              <?php endif; ?>
-                            </td>
-                            <td>
-                              <?php if ($data['foto_check_out']): ?>
-                              <img src="../<?php echo $data['foto_check_out']; ?>" class="attendance-img" data-toggle="modal" data-target="#imageModal" data-img="../<?php echo $data['foto_check_out']; ?>" alt="Check Out">
-                              <br>
-                              <a href="view_image.php?path=<?php echo $data['foto_check_out']; ?>" target="_blank" class="badge badge-primary mt-1">Lihat langsung</a>
-                              <?php else: ?>
-                              <span class="badge badge-light">Tidak ada foto</span>
-                              <?php endif; ?>
-                            </td>
-                            <td>
-                              <?php
-                              // Status Check In
-                              $status_in_options = [
-                                'tepat waktu' => 'Tepat Waktu',
-                                'terlambat' => 'Terlambat',
-                                'tidak absen' => 'Tidak Absen',
-                                'tidak valid' => 'Tidak Valid'
-                              ];
-                              $status_in_selected = isset($data['status_check_in']) && !empty($data['status_check_in']) ? $data['status_check_in'] : 'tidak absen';
-                              $status_in_class = [
-                                'tepat waktu' => 'badge-success',
-                                'terlambat' => 'badge-warning',
-                                'tidak absen' => 'badge-danger',
-                                'tidak valid' => 'badge-dark'
-                              ];
-                              ?>
-                              <div class="d-flex align-items-center">
-                                <select class="form-control form-control-sm status-absensi-dropdown mr-2" data-id_karyawan="<?php echo $data['id_karyawan']; ?>" data-tanggal="<?php echo $filter_tanggal; ?>" data-jenis="check_in">
-                                  <?php foreach ($status_in_options as $value => $label): ?>
-                                    <option value="<?php echo $value; ?>" <?php echo $status_in_selected == $value ? 'selected' : ''; ?>><?php echo $label; ?></option>
-                                  <?php endforeach; ?>
-                                </select>
-                                <span class="badge badge-sm status-label-in <?php echo $status_in_class[$status_in_selected]; ?>">
-                                  <?php echo $status_in_options[$status_in_selected]; ?>
-                                </span>
-                              </div>
-                              <?php
-                              // Status Check Out
-                              $status_out_options = [
-                                'tepat waktu' => 'Tepat Waktu',
-                                'lebih awal' => 'Lebih Awal',
-                                'tidak absen' => 'Tidak Absen',
-                                'tidak valid' => 'Tidak Valid'
-                              ];
-                              $status_out_selected = isset($data['status_check_out']) && !empty($data['status_check_out']) ? $data['status_check_out'] : 'tidak absen';
-                              $status_out_class = [
-                                'tepat waktu' => 'badge-success',
-                                'lebih awal' => 'badge-warning',
-                                'tidak absen' => 'badge-danger',
-                                'tidak valid' => 'badge-dark'
-                              ];
-                              ?>
-                              <div class="mt-1 d-flex align-items-center">
-                                <select class="form-control form-control-sm status-absensi-dropdown mr-2" data-id_karyawan="<?php echo $data['id_karyawan']; ?>" data-tanggal="<?php echo $filter_tanggal; ?>" data-jenis="check_out">
-                                  <?php foreach ($status_out_options as $value => $label): ?>
-                                    <option value="<?php echo $value; ?>" <?php echo $status_out_selected == $value ? 'selected' : ''; ?>><?php echo $label; ?></option>
-                                  <?php endforeach; ?>
-                                </select>
-                                <span class="badge badge-sm status-label-out <?php echo $status_out_class[$status_out_selected]; ?>">
-                                  <?php echo $status_out_options[$status_out_selected]; ?>
-                                </span>
-                              </div>
-                            </td>
-                            <td>
-                              <?php if ($data['latitude_in'] && $data['longitude_in']): ?>
-                              <div>
-                                <strong>Check In:</strong> 
-                                <a href="https://www.google.com/maps?q=<?php echo $data['latitude_in']; ?>,<?php echo $data['longitude_in']; ?>" target="_blank" class="btn btn-sm btn-primary btn-icon" data-toggle="tooltip" data-placement="top" title="Lihat di Maps">
-                                  <i class="ti-map-alt" style="font-size: 1.5em; margin: auto;"></i> 
-                                </a>
-                                <?php if (!empty($data['location_info_in'])): ?>
-                                  <button type="button" class="btn btn-sm btn-info btn-icon ml-1" data-toggle="tooltip" data-placement="top" title="<?php echo htmlspecialchars($data['location_info_in']); ?>">
-                                    <i class="ti-info-alt" style="font-size: 1.5em;"></i>
-                                  </button>
-                                <?php endif; ?>
-                              </div>
-                              <?php endif; ?>
-                              
-                              <?php if ($data['latitude_out'] && $data['longitude_out']): ?>
-                              <div class="mt-2">
-                                <strong>Check Out:</strong>
-                                <a href="https://www.google.com/maps?q=<?php echo $data['latitude_out']; ?>,<?php echo $data['longitude_out']; ?>" target="_blank" class="btn btn-sm btn-primary btn-icon" data-toggle="tooltip" data-placement="top" title="Lihat di Maps">
-                                  <i class="ti-map-alt" style="font-size: 1.5em; margin: auto;"></i> 
-                                </a>
-                                <?php if (!empty($data['location_info_out'])): ?>
-                                  <button type="button" class="btn btn-sm btn-info btn-icon ml-1" data-toggle="tooltip" data-placement="top" title="<?php echo htmlspecialchars($data['location_info_out']); ?>">
-                                    <i class="ti-info-alt" style="font-size: 1.5em;"></i>
-                                  </button>
-                                <?php endif; ?>
-                              </div>
-                              <?php endif; ?>
-                              
-                              <?php if (!$data['latitude_in'] && !$data['longitude_in'] && !$data['latitude_out'] && !$data['longitude_out']): ?>
-                              <span class="text-muted">Belum ada data lokasi</span>
-                              <?php endif; ?>
-                            </td>
+                            <th>No</th>
+                            <th>Karyawan</th>
+                            <th>Shift</th>
+                            <th>Jam Kerja</th>
+                            <th>Check In</th>
+                            <th>Foto In</th>
+                            <th>Check Out</th>
+                            <th>Foto Out</th>
+                            <th>Status</th>
+                            <th>Lokasi</th>
                           </tr>
-                          <?php endforeach; ?>
-                        <?php else: ?>
-                        <tr>
-                          <td colspan="10" class="text-center">Tidak ada data absensi untuk tanggal ini</td>
-                        </tr>
-                        <?php endif; ?>
-                      </tbody>
-                    </table>
-                  </div>
+                        </thead>
+                        <tbody>
+                          <?php if (count($merged_data) > 0): ?>
+                            <?php $no = 1; foreach ($merged_data as $data): ?>
+                            <tr>
+                              <td><?php echo $no++; ?></td>
+                              <td>
+                                <strong><?php echo $data['nama']; ?></strong>
+                                <br>
+                                <small class="text-muted"><?php echo $data['id_karyawan']; ?></small>
+                              </td>
+                              <td><?php echo $data['nama_shift'] ?: '-'; ?></td>
+                              <td>
+                                <?php if ($data['jam_mulai'] && $data['jam_selesai']): ?>
+                                <?php echo substr($data['jam_mulai'], 0, 5); ?> - <?php echo substr($data['jam_selesai'], 0, 5); ?>
+                                <?php else: ?>
+                                -
+                                <?php endif; ?>
+                              </td>
+                              <td>
+                                <?php if ($data['check_in']): ?>
+                                <?php echo date('H:i', strtotime($data['check_in'])); ?>
+                                <?php else: ?>
+                                -
+                                <?php endif; ?>
+                              </td>
+                              <td>
+                                <?php if ($data['foto_check_in']): ?>
+                                <img src="../<?php echo $data['foto_check_in']; ?>" class="attendance-img" data-toggle="modal" data-target="#imageModal" data-img="../<?php echo $data['foto_check_in']; ?>" alt="Check In">
+                                <br>
+                                <a href="view_image.php?path=<?php echo $data['foto_check_in']; ?>" target="_blank" class="badge badge-primary mt-1">Lihat langsung</a>
+                                <?php else: ?>
+                                <span class="badge badge-light">Tidak ada foto</span>
+                                <?php endif; ?>
+                              </td>
+                              <td>
+                                <?php if ($data['check_out']): ?>
+                                <?php echo date('H:i', strtotime($data['check_out'])); ?>
+                                <?php else: ?>
+                                -
+                                <?php endif; ?>
+                              </td>
+                              <td>
+                                <?php if ($data['foto_check_out']): ?>
+                                <img src="../<?php echo $data['foto_check_out']; ?>" class="attendance-img" data-toggle="modal" data-target="#imageModal" data-img="../<?php echo $data['foto_check_out']; ?>" alt="Check Out">
+                                <br>
+                                <a href="view_image.php?path=<?php echo $data['foto_check_out']; ?>" target="_blank" class="badge badge-primary mt-1">Lihat langsung</a>
+                                <?php else: ?>
+                                <span class="badge badge-light">Tidak ada foto</span>
+                                <?php endif; ?>
+                              </td>
+                              <td>
+                                <?php
+                                // Status Check In
+                                $status_in_options = [
+                                  'tepat waktu' => 'Tepat Waktu',
+                                  'terlambat' => 'Terlambat',
+                                  'tidak absen' => 'Tidak Absen',
+                                  'tidak valid' => 'Tidak Valid'
+                                ];
+                                $status_in_selected = isset($data['status_check_in']) && !empty($data['status_check_in']) ? $data['status_check_in'] : 'tidak absen';
+                                $status_in_class = [
+                                  'tepat waktu' => 'badge-success',
+                                  'terlambat' => 'badge-warning',
+                                  'tidak absen' => 'badge-danger',
+                                  'tidak valid' => 'badge-dark'
+                                ];
+                                ?>
+                                <div class="d-flex align-items-center">
+                                  <select class="form-control form-control-sm status-absensi-dropdown mr-2" data-id_karyawan="<?php echo $data['id_karyawan']; ?>" data-tanggal="<?php echo $filter_tanggal; ?>" data-jenis="check_in">
+                                    <?php foreach ($status_in_options as $value => $label): ?>
+                                      <option value="<?php echo $value; ?>" <?php echo $status_in_selected == $value ? 'selected' : ''; ?>><?php echo $label; ?></option>
+                                    <?php endforeach; ?>
+                                  </select>
+                                  <span class="badge badge-sm status-label-in <?php echo $status_in_class[$status_in_selected]; ?>">
+                                    <?php echo $status_in_options[$status_in_selected]; ?>
+                                  </span>
+                                </div>
+                                <?php
+                                // Status Check Out
+                                $status_out_options = [
+                                  'tepat waktu' => 'Tepat Waktu',
+                                  'lebih awal' => 'Lebih Awal',
+                                  'tidak absen' => 'Tidak Absen',
+                                  'tidak valid' => 'Tidak Valid'
+                                ];
+                                $status_out_selected = isset($data['status_check_out']) && !empty($data['status_check_out']) ? $data['status_check_out'] : 'tidak absen';
+                                $status_out_class = [
+                                  'tepat waktu' => 'badge-success',
+                                  'lebih awal' => 'badge-warning',
+                                  'tidak absen' => 'badge-danger',
+                                  'tidak valid' => 'badge-dark'
+                                ];
+                                ?>
+                                <div class="mt-1 d-flex align-items-center">
+                                  <select class="form-control form-control-sm status-absensi-dropdown mr-2" data-id_karyawan="<?php echo $data['id_karyawan']; ?>" data-tanggal="<?php echo $filter_tanggal; ?>" data-jenis="check_out">
+                                    <?php foreach ($status_out_options as $value => $label): ?>
+                                      <option value="<?php echo $value; ?>" <?php echo $status_out_selected == $value ? 'selected' : ''; ?>><?php echo $label; ?></option>
+                                    <?php endforeach; ?>
+                                  </select>
+                                  <span class="badge badge-sm status-label-out <?php echo $status_out_class[$status_out_selected]; ?>">
+                                    <?php echo $status_out_options[$status_out_selected]; ?>
+                                  </span>
+                                </div>
+                              </td>
+                              <td>
+                                <?php if ($data['latitude_in'] && $data['longitude_in']): ?>
+                                <div>
+                                  <strong>Check In:</strong> 
+                                  <a href="https://www.google.com/maps?q=<?php echo $data['latitude_in']; ?>,<?php echo $data['longitude_in']; ?>" target="_blank" class="btn btn-sm btn-primary btn-icon" data-toggle="tooltip" data-placement="top" title="Lihat di Maps">
+                                    <i class="ti-map-alt" style="font-size: 1.5em; margin: auto;"></i> 
+                                  </a>
+                                  <?php if (!empty($data['location_info_in'])): ?>
+                                    <button type="button" class="btn btn-sm btn-info btn-icon ml-1" data-toggle="tooltip" data-placement="top" title="<?php echo htmlspecialchars($data['location_info_in']); ?>">
+                                      <i class="ti-info-alt" style="font-size: 1.5em;"></i>
+                                    </button>
+                                  <?php endif; ?>
+                                </div>
+                                <?php endif; ?>
+                                
+                                <?php if ($data['latitude_out'] && $data['longitude_out']): ?>
+                                <div class="mt-2">
+                                  <strong>Check Out:</strong>
+                                  <a href="https://www.google.com/maps?q=<?php echo $data['latitude_out']; ?>,<?php echo $data['longitude_out']; ?>" target="_blank" class="btn btn-sm btn-primary btn-icon" data-toggle="tooltip" data-placement="top" title="Lihat di Maps">
+                                    <i class="ti-map-alt" style="font-size: 1.5em; margin: auto;"></i> 
+                                  </a>
+                                  <?php if (!empty($data['location_info_out'])): ?>
+                                    <button type="button" class="btn btn-sm btn-info btn-icon ml-1" data-toggle="tooltip" data-placement="top" title="<?php echo htmlspecialchars($data['location_info_out']); ?>">
+                                      <i class="ti-info-alt" style="font-size: 1.5em;"></i>
+                                    </button>
+                                  <?php endif; ?>
+                                </div>
+                                <?php endif; ?>
+                                
+                                <?php if (!$data['latitude_in'] && !$data['longitude_in'] && !$data['latitude_out'] && !$data['longitude_out']): ?>
+                                <span class="text-muted">Belum ada data lokasi</span>
+                                <?php endif; ?>
+                              </td>
+                            </tr>
+                            <?php endforeach; ?>
+                          <?php else: ?>
+                          <tr>
+                            <td colspan="10" class="text-center">Tidak ada data absensi untuk tanggal ini</td>
+                          </tr>
+                          <?php endif; ?>
+                        </tbody>
+                      </table>
+                    </div>
+                  <?php endif; ?>
                 </div>
               </div>
             </div>

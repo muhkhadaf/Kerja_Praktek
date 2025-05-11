@@ -4882,3 +4882,1748 @@
     [has_absensi] => 
 )
 
+2025-05-11 13:59:20 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-11' ORDER BY u.nama
+2025-05-11 13:59:20 - Jumlah data absensi (fixed): 0
+2025-05-11 13:59:20 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-11' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-11 13:59:20 - Jumlah data jadwal: 6
+2025-05-11 13:59:20 - Jumlah data gabungan: 6
+2025-05-11 13:59:20 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-11 14:49:24 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-11' ORDER BY u.nama
+2025-05-11 14:49:24 - Raw data pertama: Array
+(
+    [id] => 29
+    [id_karyawan] => 33333
+    [tanggal] => 2025-05-11
+    [id_shift] => 2
+    [check_in] => 2025-05-11 14:02:42
+    [foto_check_in] => uploads/absensi/33333_2025-05-11_check_in_1746946962.jpg
+    [check_out] => 2025-05-11 14:06:05
+    [foto_check_out] => uploads/absensi/33333_2025-05-11_check_out_1746947165.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.34659200
+    [longitude_in] => 106.69173600
+    [status_check_out] => lebih awal
+    [latitude_out] => -6.20090000
+    [longitude_out] => 106.83390000
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.346592, Longitude: 106.691736
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.2009, Longitude: 106.8339
+    [nama] => test
+    [outlet] => Wakacao BSD
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+)
+
+2025-05-11 14:49:24 - Jumlah data absensi (fixed): 1
+2025-05-11 14:49:24 - Contoh data absensi pertama: Array
+(
+    [id] => 29
+    [id_karyawan] => 33333
+    [tanggal] => 2025-05-11
+    [id_shift] => 2
+    [check_in] => 2025-05-11 14:02:42
+    [foto_check_in] => uploads/absensi/33333_2025-05-11_check_in_1746946962.jpg
+    [check_out] => 2025-05-11 14:06:05
+    [foto_check_out] => uploads/absensi/33333_2025-05-11_check_out_1746947165.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.34659200
+    [longitude_in] => 106.69173600
+    [status_check_out] => lebih awal
+    [latitude_out] => -6.20090000
+    [longitude_out] => 106.83390000
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.346592, Longitude: 106.691736
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.2009, Longitude: 106.8339
+    [nama] => test
+    [outlet] => Wakacao BSD
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+)
+
+2025-05-11 14:49:24 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-11' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-11 14:49:24 - Jumlah data jadwal: 7
+2025-05-11 14:49:24 - Jumlah data gabungan: 7
+2025-05-11 14:49:24 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-11 14:49:40 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-11' ORDER BY u.nama
+2025-05-11 14:49:40 - Raw data pertama: Array
+(
+    [id] => 29
+    [id_karyawan] => 33333
+    [tanggal] => 2025-05-11
+    [id_shift] => 2
+    [check_in] => 2025-05-11 14:02:42
+    [foto_check_in] => uploads/absensi/33333_2025-05-11_check_in_1746946962.jpg
+    [check_out] => 2025-05-11 14:06:05
+    [foto_check_out] => uploads/absensi/33333_2025-05-11_check_out_1746947165.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.34659200
+    [longitude_in] => 106.69173600
+    [status_check_out] => lebih awal
+    [latitude_out] => -6.20090000
+    [longitude_out] => 106.83390000
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.346592, Longitude: 106.691736
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.2009, Longitude: 106.8339
+    [nama] => test
+    [outlet] => Wakacao BSD
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+)
+
+2025-05-11 14:49:40 - Jumlah data absensi (fixed): 1
+2025-05-11 14:49:40 - Contoh data absensi pertama: Array
+(
+    [id] => 29
+    [id_karyawan] => 33333
+    [tanggal] => 2025-05-11
+    [id_shift] => 2
+    [check_in] => 2025-05-11 14:02:42
+    [foto_check_in] => uploads/absensi/33333_2025-05-11_check_in_1746946962.jpg
+    [check_out] => 2025-05-11 14:06:05
+    [foto_check_out] => uploads/absensi/33333_2025-05-11_check_out_1746947165.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.34659200
+    [longitude_in] => 106.69173600
+    [status_check_out] => lebih awal
+    [latitude_out] => -6.20090000
+    [longitude_out] => 106.83390000
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.346592, Longitude: 106.691736
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.2009, Longitude: 106.8339
+    [nama] => test
+    [outlet] => Wakacao BSD
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+)
+
+2025-05-11 14:49:40 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-11' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-11 14:49:40 - Jumlah data jadwal: 7
+2025-05-11 14:49:40 - Jumlah data gabungan: 7
+2025-05-11 14:49:40 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:11:59 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:11:59 - Jumlah data absensi (fixed): 0
+2025-05-12 00:11:59 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:11:59 - Jumlah data jadwal: 0
+2025-05-12 00:11:59 - Jumlah data gabungan: 0
+2025-05-12 00:14:17 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:14:17 - Jumlah data absensi (fixed): 0
+2025-05-12 00:14:17 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:14:17 - Jumlah data jadwal: 0
+2025-05-12 00:14:17 - Jumlah data gabungan: 0
+2025-05-12 00:19:31 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:19:31 - Jumlah data absensi (fixed): 0
+2025-05-12 00:19:31 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:19:31 - Jumlah data jadwal: 0
+2025-05-12 00:19:31 - Jumlah data gabungan: 0
+2025-05-12 00:38:48 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:38:48 - Jumlah data absensi (fixed): 0
+2025-05-12 00:38:48 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:38:48 - Jumlah data jadwal: 0
+2025-05-12 00:38:48 - Jumlah data gabungan: 0
+2025-05-12 00:39:58 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:39:58 - Jumlah data absensi (fixed): 0
+2025-05-12 00:39:58 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:39:58 - Jumlah data jadwal: 3
+2025-05-12 00:39:58 - Jumlah data gabungan: 3
+2025-05-12 00:39:58 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:41:20 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:41:20 - Jumlah data absensi (fixed): 0
+2025-05-12 00:41:20 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:41:20 - Jumlah data jadwal: 3
+2025-05-12 00:41:20 - Jumlah data gabungan: 3
+2025-05-12 00:41:20 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:41:27 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:41:27 - Jumlah data absensi (fixed): 0
+2025-05-12 00:41:27 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:41:27 - Jumlah data jadwal: 3
+2025-05-12 00:41:27 - Jumlah data gabungan: 3
+2025-05-12 00:41:27 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:43:47 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:43:47 - Jumlah data absensi (fixed): 0
+2025-05-12 00:43:47 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:43:47 - Jumlah data jadwal: 3
+2025-05-12 00:43:47 - Jumlah data gabungan: 3
+2025-05-12 00:43:47 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:51:36 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:51:36 - Jumlah data absensi (fixed): 0
+2025-05-12 00:51:36 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:51:36 - Jumlah data jadwal: 3
+2025-05-12 00:51:36 - Jumlah data gabungan: 3
+2025-05-12 00:51:36 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:51:50 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:51:50 - Jumlah data absensi (fixed): 0
+2025-05-12 00:51:50 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:51:50 - Jumlah data jadwal: 3
+2025-05-12 00:51:50 - Jumlah data gabungan: 3
+2025-05-12 00:51:50 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:51:52 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:51:52 - Jumlah data absensi (fixed): 0
+2025-05-12 00:51:52 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:51:52 - Jumlah data jadwal: 3
+2025-05-12 00:51:52 - Jumlah data gabungan: 3
+2025-05-12 00:51:52 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:51:55 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:51:55 - Jumlah data absensi (fixed): 0
+2025-05-12 00:51:55 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:51:55 - Jumlah data jadwal: 3
+2025-05-12 00:51:55 - Jumlah data gabungan: 3
+2025-05-12 00:51:55 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:55:48 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:55:48 - Jumlah data absensi (fixed): 0
+2025-05-12 00:55:48 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:55:48 - Jumlah data jadwal: 3
+2025-05-12 00:55:48 - Jumlah data gabungan: 3
+2025-05-12 00:55:48 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:55:51 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:55:51 - Jumlah data absensi (fixed): 0
+2025-05-12 00:55:51 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:55:51 - Jumlah data jadwal: 3
+2025-05-12 00:55:51 - Jumlah data gabungan: 3
+2025-05-12 00:55:51 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:56:06 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:56:06 - Jumlah data absensi (fixed): 0
+2025-05-12 00:56:06 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:56:06 - Jumlah data jadwal: 3
+2025-05-12 00:56:06 - Jumlah data gabungan: 3
+2025-05-12 00:56:06 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:56:09 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-13' ORDER BY u.nama
+2025-05-12 00:56:09 - Jumlah data absensi (fixed): 0
+2025-05-12 00:56:09 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-13' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:56:09 - Jumlah data jadwal: 3
+2025-05-12 00:56:09 - Jumlah data gabungan: 3
+2025-05-12 00:56:09 - Contoh data pertama: Array
+(
+    [id_karyawan] => 001
+    [nama] => John Doe
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:56:12 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-14' ORDER BY u.nama
+2025-05-12 00:56:12 - Jumlah data absensi (fixed): 0
+2025-05-12 00:56:12 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-14' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:56:12 - Jumlah data jadwal: 4
+2025-05-12 00:56:12 - Jumlah data gabungan: 4
+2025-05-12 00:56:12 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:56:14 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-13' ORDER BY u.nama
+2025-05-12 00:56:14 - Jumlah data absensi (fixed): 0
+2025-05-12 00:56:14 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-13' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:56:14 - Jumlah data jadwal: 3
+2025-05-12 00:56:14 - Jumlah data gabungan: 3
+2025-05-12 00:56:14 - Contoh data pertama: Array
+(
+    [id_karyawan] => 001
+    [nama] => John Doe
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:56:15 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:56:15 - Jumlah data absensi (fixed): 0
+2025-05-12 00:56:15 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:56:15 - Jumlah data jadwal: 3
+2025-05-12 00:56:15 - Jumlah data gabungan: 3
+2025-05-12 00:56:15 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:56:16 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-13' ORDER BY u.nama
+2025-05-12 00:56:16 - Jumlah data absensi (fixed): 0
+2025-05-12 00:56:16 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-13' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:56:16 - Jumlah data jadwal: 3
+2025-05-12 00:56:16 - Jumlah data gabungan: 3
+2025-05-12 00:56:16 - Contoh data pertama: Array
+(
+    [id_karyawan] => 001
+    [nama] => John Doe
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:56:17 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-14' ORDER BY u.nama
+2025-05-12 00:56:17 - Jumlah data absensi (fixed): 0
+2025-05-12 00:56:17 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-14' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:56:17 - Jumlah data jadwal: 4
+2025-05-12 00:56:17 - Jumlah data gabungan: 4
+2025-05-12 00:56:17 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:56:18 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-15' ORDER BY u.nama
+2025-05-12 00:56:18 - Jumlah data absensi (fixed): 0
+2025-05-12 00:56:18 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-15' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:56:18 - Jumlah data jadwal: 3
+2025-05-12 00:56:18 - Jumlah data gabungan: 3
+2025-05-12 00:56:18 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 3
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:56:19 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-16' ORDER BY u.nama
+2025-05-12 00:56:19 - Jumlah data absensi (fixed): 0
+2025-05-12 00:56:19 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-16' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:56:19 - Jumlah data jadwal: 4
+2025-05-12 00:56:19 - Jumlah data gabungan: 4
+2025-05-12 00:56:19 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 3
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:56:21 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-15' ORDER BY u.nama
+2025-05-12 00:56:21 - Jumlah data absensi (fixed): 0
+2025-05-12 00:56:21 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-15' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:56:21 - Jumlah data jadwal: 3
+2025-05-12 00:56:21 - Jumlah data gabungan: 3
+2025-05-12 00:56:21 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 3
+    [nama_shift] => Malam
+    [jam_mulai] => 23:00:00
+    [jam_selesai] => 07:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:56:21 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-14' ORDER BY u.nama
+2025-05-12 00:56:21 - Jumlah data absensi (fixed): 0
+2025-05-12 00:56:21 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-14' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:56:21 - Jumlah data jadwal: 4
+2025-05-12 00:56:21 - Jumlah data gabungan: 4
+2025-05-12 00:56:21 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:56:21 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-13' ORDER BY u.nama
+2025-05-12 00:56:21 - Jumlah data absensi (fixed): 0
+2025-05-12 00:56:21 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-13' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:56:21 - Jumlah data jadwal: 3
+2025-05-12 00:56:21 - Jumlah data gabungan: 3
+2025-05-12 00:56:21 - Contoh data pertama: Array
+(
+    [id_karyawan] => 001
+    [nama] => John Doe
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:56:28 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:56:28 - Jumlah data absensi (fixed): 0
+2025-05-12 00:56:28 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:56:28 - Jumlah data jadwal: 3
+2025-05-12 00:56:28 - Jumlah data gabungan: 3
+2025-05-12 00:56:28 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:59:07 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:59:07 - Jumlah data absensi (fixed): 0
+2025-05-12 00:59:07 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:59:07 - Jumlah data jadwal: 3
+2025-05-12 00:59:07 - Jumlah data gabungan: 3
+2025-05-12 00:59:07 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:59:10 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-11' ORDER BY u.nama
+2025-05-12 00:59:10 - Raw data pertama: Array
+(
+    [id] => 29
+    [id_karyawan] => 33333
+    [tanggal] => 2025-05-11
+    [id_shift] => 2
+    [check_in] => 2025-05-11 14:02:42
+    [foto_check_in] => uploads/absensi/33333_2025-05-11_check_in_1746946962.jpg
+    [check_out] => 2025-05-11 14:06:05
+    [foto_check_out] => uploads/absensi/33333_2025-05-11_check_out_1746947165.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.34659200
+    [longitude_in] => 106.69173600
+    [status_check_out] => lebih awal
+    [latitude_out] => -6.20090000
+    [longitude_out] => 106.83390000
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.346592, Longitude: 106.691736
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.2009, Longitude: 106.8339
+    [nama] => test
+    [outlet] => Wakacao BSD
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+)
+
+2025-05-12 00:59:10 - Jumlah data absensi (fixed): 1
+2025-05-12 00:59:10 - Contoh data absensi pertama: Array
+(
+    [id] => 29
+    [id_karyawan] => 33333
+    [tanggal] => 2025-05-11
+    [id_shift] => 2
+    [check_in] => 2025-05-11 14:02:42
+    [foto_check_in] => uploads/absensi/33333_2025-05-11_check_in_1746946962.jpg
+    [check_out] => 2025-05-11 14:06:05
+    [foto_check_out] => uploads/absensi/33333_2025-05-11_check_out_1746947165.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.34659200
+    [longitude_in] => 106.69173600
+    [status_check_out] => lebih awal
+    [latitude_out] => -6.20090000
+    [longitude_out] => 106.83390000
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.346592, Longitude: 106.691736
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.2009, Longitude: 106.8339
+    [nama] => test
+    [outlet] => Wakacao BSD
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+)
+
+2025-05-12 00:59:10 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-11' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:59:10 - Jumlah data jadwal: 7
+2025-05-12 00:59:10 - Jumlah data gabungan: 7
+2025-05-12 00:59:10 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:59:11 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-10' ORDER BY u.nama
+2025-05-12 00:59:11 - Jumlah data absensi (fixed): 0
+2025-05-12 00:59:11 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-10' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:59:11 - Jumlah data jadwal: 6
+2025-05-12 00:59:11 - Jumlah data gabungan: 6
+2025-05-12 00:59:11 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:59:12 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-11' ORDER BY u.nama
+2025-05-12 00:59:12 - Raw data pertama: Array
+(
+    [id] => 29
+    [id_karyawan] => 33333
+    [tanggal] => 2025-05-11
+    [id_shift] => 2
+    [check_in] => 2025-05-11 14:02:42
+    [foto_check_in] => uploads/absensi/33333_2025-05-11_check_in_1746946962.jpg
+    [check_out] => 2025-05-11 14:06:05
+    [foto_check_out] => uploads/absensi/33333_2025-05-11_check_out_1746947165.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.34659200
+    [longitude_in] => 106.69173600
+    [status_check_out] => lebih awal
+    [latitude_out] => -6.20090000
+    [longitude_out] => 106.83390000
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.346592, Longitude: 106.691736
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.2009, Longitude: 106.8339
+    [nama] => test
+    [outlet] => Wakacao BSD
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+)
+
+2025-05-12 00:59:12 - Jumlah data absensi (fixed): 1
+2025-05-12 00:59:12 - Contoh data absensi pertama: Array
+(
+    [id] => 29
+    [id_karyawan] => 33333
+    [tanggal] => 2025-05-11
+    [id_shift] => 2
+    [check_in] => 2025-05-11 14:02:42
+    [foto_check_in] => uploads/absensi/33333_2025-05-11_check_in_1746946962.jpg
+    [check_out] => 2025-05-11 14:06:05
+    [foto_check_out] => uploads/absensi/33333_2025-05-11_check_out_1746947165.jpg
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.34659200
+    [longitude_in] => 106.69173600
+    [status_check_out] => lebih awal
+    [latitude_out] => -6.20090000
+    [longitude_out] => 106.83390000
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.346592, Longitude: 106.691736
+    [location_status_out] => 
+    [location_info_out] => Latitude: -6.2009, Longitude: 106.8339
+    [nama] => test
+    [outlet] => Wakacao BSD
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+)
+
+2025-05-12 00:59:12 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-11' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:59:12 - Jumlah data jadwal: 7
+2025-05-12 00:59:12 - Jumlah data gabungan: 7
+2025-05-12 00:59:12 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 2
+    [nama_shift] => Siang
+    [jam_mulai] => 15:00:00
+    [jam_selesai] => 23:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 00:59:34 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 00:59:34 - Jumlah data absensi (fixed): 0
+2025-05-12 00:59:34 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 00:59:34 - Jumlah data jadwal: 3
+2025-05-12 00:59:34 - Jumlah data gabungan: 3
+2025-05-12 00:59:34 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 01:10:44 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 01:10:44 - Jumlah data absensi (fixed): 0
+2025-05-12 01:10:44 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 01:10:44 - Jumlah data jadwal: 3
+2025-05-12 01:10:44 - Jumlah data gabungan: 3
+2025-05-12 01:10:44 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 01:14:17 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 01:14:17 - Jumlah data absensi (fixed): 0
+2025-05-12 01:14:17 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 01:14:17 - Jumlah data jadwal: 3
+2025-05-12 01:14:17 - Jumlah data gabungan: 3
+2025-05-12 01:14:17 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 01:43:43 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 01:43:43 - Jumlah data absensi (fixed): 0
+2025-05-12 01:43:43 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 01:43:43 - Jumlah data jadwal: 6
+2025-05-12 01:43:43 - Jumlah data gabungan: 6
+2025-05-12 01:43:43 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 01:48:49 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 01:48:49 - Jumlah data absensi (fixed): 0
+2025-05-12 01:48:49 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 01:48:49 - Jumlah data jadwal: 6
+2025-05-12 01:48:49 - Jumlah data gabungan: 6
+2025-05-12 01:48:49 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 02:11:13 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 02:11:13 - Raw data pertama: Array
+(
+    [id] => 30
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-12
+    [id_shift] => 1
+    [check_in] => 2025-05-12 02:10:48
+    [foto_check_in] => uploads/absensi/090903_2025-05-12_check_in_1746990648.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.36309138
+    [longitude_in] => 106.73335613
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.363091380621554, Longitude: 106.73335613298983
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-12 02:11:13 - Jumlah data absensi (fixed): 1
+2025-05-12 02:11:13 - Contoh data absensi pertama: Array
+(
+    [id] => 30
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-12
+    [id_shift] => 1
+    [check_in] => 2025-05-12 02:10:48
+    [foto_check_in] => uploads/absensi/090903_2025-05-12_check_in_1746990648.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.36309138
+    [longitude_in] => 106.73335613
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.363091380621554, Longitude: 106.73335613298983
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-12 02:11:13 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 02:11:13 - Jumlah data jadwal: 6
+2025-05-12 02:11:13 - Jumlah data gabungan: 6
+2025-05-12 02:11:13 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+
+2025-05-12 02:17:06 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-12 02:17:06 - Raw data pertama: Array
+(
+    [id] => 30
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-12
+    [id_shift] => 1
+    [check_in] => 2025-05-12 02:10:48
+    [foto_check_in] => uploads/absensi/090903_2025-05-12_check_in_1746990648.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.36309138
+    [longitude_in] => 106.73335613
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.363091380621554, Longitude: 106.73335613298983
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-12 02:17:06 - Jumlah data absensi (fixed): 1
+2025-05-12 02:17:06 - Contoh data absensi pertama: Array
+(
+    [id] => 30
+    [id_karyawan] => 090903
+    [tanggal] => 2025-05-12
+    [id_shift] => 1
+    [check_in] => 2025-05-12 02:10:48
+    [foto_check_in] => uploads/absensi/090903_2025-05-12_check_in_1746990648.jpg
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tepat waktu
+    [latitude_in] => -6.36309138
+    [longitude_in] => 106.73335613
+    [status_check_out] => tidak absen
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_status_in] => 
+    [location_info_in] => Latitude: -6.363091380621554, Longitude: 106.73335613298983
+    [location_status_out] => 
+    [location_info_out] => 
+    [nama] => MUJI NUR FADILAH
+    [outlet] => Wakacao BSD
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+)
+
+2025-05-12 02:17:06 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-12 02:17:06 - Jumlah data jadwal: 6
+2025-05-12 02:17:06 - Jumlah data gabungan: 6
+2025-05-12 02:17:06 - Contoh data pertama: Array
+(
+    [id_karyawan] => 002
+    [nama] => Jane Smith
+    [outlet] => Bintaro
+    [id_shift] => 1
+    [nama_shift] => Pagi
+    [jam_mulai] => 07:00:00
+    [jam_selesai] => 15:00:00
+    [check_in] => 
+    [foto_check_in] => 
+    [check_out] => 
+    [foto_check_out] => 
+    [status_check_in] => tidak absen
+    [status_check_out] => tidak absen
+    [latitude_in] => 
+    [longitude_in] => 
+    [latitude_out] => 
+    [longitude_out] => 
+    [location_info_in] => 
+    [location_info_out] => 
+    [has_absensi] => 
+)
+

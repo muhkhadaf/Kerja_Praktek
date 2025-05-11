@@ -68,3 +68,6 @@
 2025-05-05 13:08:16 - User: 090903 - Info: Latitude: -6.5005412, Longitude: 106.7765443
 2025-05-05 13:08:25 - User: 090903 - Info: Latitude: -6.5005412, Longitude: 106.7765443
 2025-05-05 21:42:53 - User: 090903 - Info: Latitude: -6.3539792, Longitude: 106.707996
+2025-05-11 14:02:42 - User: 33333 - Info: Latitude: -6.346592, Longitude: 106.691736
+2025-05-11 14:06:04 - User: 33333 - Info: Latitude: -6.2009, Longitude: 106.8339
+2025-05-12 02:10:48 - User: 090903 - Info: Latitude: -6.363091380621554, Longitude: 106.73335613298983
