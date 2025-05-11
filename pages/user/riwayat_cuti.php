@@ -34,6 +34,7 @@ $id_karyawan = getKaryawanId();
 <body>
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
+<<<<<<< HEAD
     <?php include_once 'navbar.php'; ?>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
@@ -58,10 +59,11 @@ $id_karyawan = getKaryawanId();
       </div>
       <!-- partial -->
       <!-- partial:../../partials/_sidebar.html -->
+=======
+      <?php include_once 'navbar.php'; ?>
+>>>>>>> a6dfb2b27c368d07d46ae4928abd46a5faa196fc
       <?php include_once 'sidebar.php'; ?>
       <!-- partial -->
-      
-          
           <!-- Content -->
           <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">

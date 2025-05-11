@@ -94,6 +94,12 @@ Beberapa fitur yang dapat dikembangkan:
 - 💰 Integrasi dengan sistem penggajian
 - 🗓️ Penjadwalan otomatis berdasarkan kebutuhan outlet
 
+## 📞 Kontak
+
+Untuk informasi lebih lanjut, silakan hubungi:
+- Email: admin@wakacao.com
+- Website: www.wakacao.com
+
 ## 📝 Lisensi
 
 © 2025 Wakacao. All rights reserved.

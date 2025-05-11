@@ -60,6 +60,7 @@ if ($result) {
 <body>
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
+<<<<<<< HEAD
     <?php include_once 'navbar.php'; ?>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
@@ -234,6 +235,9 @@ if ($result) {
       </div>
       <!-- partial -->
       <!-- partial:../../partials/_sidebar.html -->
+=======
+      <?php include_once 'navbar.php'; ?>
+>>>>>>> a6dfb2b27c368d07d46ae4928abd46a5faa196fc
       <?php include_once 'sidebar.php'; ?>
       <div class="content-wrapper">
         <div class="row">

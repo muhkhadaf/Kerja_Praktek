@@ -38,9 +38,9 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="location_settings.php">
+            <a class="nav-link active" href="outlet_setting.php">
               <i class="icon-map menu-icon"></i>
-              <span class="menu-title">Lokasi Absensi</span>
+              <span class="menu-title">Kelola Outlet</span>
             </a>
           </li>
           <li class="nav-item">

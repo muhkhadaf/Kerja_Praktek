@@ -17,7 +17,7 @@
                 <i class="ti-settings text-primary"></i>
                 Pengaturan
               </a>
-              <a class="dropdown-item" href="logout.php">
+              <a class="dropdown-item" href="../logout.php">
                 <i class="ti-power-off text-primary"></i>
                 Logout
               </a>

@@ -56,6 +56,15 @@
 2025-05-05 13:08:16 - Berhasil: check_in
 2025-05-05 13:08:25 - Berhasil: check_out
 2025-05-05 21:42:53 - Berhasil: check_in
+<<<<<<< HEAD
 2025-05-11 14:02:42 - Berhasil: check_in
 2025-05-11 14:06:05 - Berhasil: check_out
 2025-05-12 02:10:48 - Berhasil: check_in
+=======
+2025-05-06 00:35:17 - Berhasil: check_in
+2025-05-06 00:35:35 - Berhasil: check_out
+2025-05-06 01:22:57 - Berhasil: check_in
+2025-05-06 01:28:11 - Berhasil: check_out
+2025-05-06 01:29:16 - Berhasil: check_out
+2025-05-06 01:35:14 - Berhasil: check_in
+>>>>>>> a6dfb2b27c368d07d46ae4928abd46a5faa196fc
