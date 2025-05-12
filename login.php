@@ -55,10 +55,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Wakacao - Login</title>
+  
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#6c7ae0">
+  <meta name="description" content="Aplikasi Wakacao untuk manajemen karyawan">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Wakacao">
+  
+  <!-- PWA Icons -->
+  <link rel="apple-touch-icon" href="images/pwa/icon-192x192.png">
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Regular CSS -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="css/pwa.css">
   <link rel="shortcut icon" href="images/favicon.png" />
 </head>
 
@@ -101,6 +115,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                   <a href="#" class="auth-link text-black">Lupa password?</a>
                 </div>
               </form>
+              
+              <!-- Tombol Unduh PWA -->
+              <button id="pwa-install-button" class="btn btn-block btn-info mt-3 pwa-install-button" onclick="installPWA()">
+                <i class="ti-download mr-2"></i> Pasang Aplikasi di Perangkat
+              </button>
             </div>
           </div>
         </div>
@@ -108,12 +127,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
   </div>
 
+  <!-- Scripts -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
   <script src="js/off-canvas.js"></script>
   <script src="js/hoverable-collapse.js"></script>
   <script src="js/template.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/todolist.js"></script>
+  
+  <!-- PWA Scripts -->
+  <script src="js/pwa.js"></script>
+  <script src="js/splash.js"></script>
 </body>
 
 </html> 

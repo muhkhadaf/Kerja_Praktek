@@ -82,7 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
-<<<<<<< HEAD
     <?php include_once 'navbar.php'; ?>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
@@ -255,9 +254,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <!-- chat tab ends -->
         </div>
       </div>
-=======
-    
->>>>>>> a6dfb2b27c368d07d46ae4928abd46a5faa196fc
       <!-- partial -->
       <!-- partial:../../partials/_sidebar.html -->
       <?php include_once 'navbar.php'; ?>

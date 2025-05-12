@@ -50,6 +50,18 @@ if ($result) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Wakacao</title>
+  
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#6c7ae0">
+  <meta name="description" content="Aplikasi Wakacao untuk manajemen karyawan">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Wakacao">
+  
+  <!-- PWA Icons -->
+  <link rel="apple-touch-icon" href="images/pwa/icon-192x192.png">
+  <link rel="manifest" href="manifest.json">
+  
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -61,6 +73,7 @@ if ($result) {
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="css/pwa.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
 </head>
@@ -383,8 +396,11 @@ if ($result) {
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
-  <script src="js/absensi.js"></script>
   
+  <!-- PWA Scripts -->
+  <script src="js/pwa.js"></script>
+  <script src="js/splash.js"></script>
+
   <!-- Modal HTML untuk Absensi -->
   <div class="modal fade" id="absenModal" tabindex="-1" role="dialog" aria-labelledby="absenModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
