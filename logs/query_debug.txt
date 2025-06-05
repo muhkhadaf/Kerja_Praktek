@@ -8544,3 +8544,1459 @@
 )
 
 >>>>>>> a6dfb2b27c368d07d46ae4928abd46a5faa196fc
+2025-05-22 16:31:35 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' ORDER BY u.nama
+2025-05-22 16:31:35 - Jumlah data absensi (fixed): 0
+2025-05-22 16:31:35 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:31:35 - Jumlah data jadwal: 0
+2025-05-22 16:31:35 - Jumlah data gabungan: 0
+2025-05-22 16:43:22 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' ORDER BY u.nama
+2025-05-22 16:43:22 - Jumlah data absensi (fixed): 0
+2025-05-22 16:43:22 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:43:22 - Jumlah data jadwal: 0
+2025-05-22 16:43:22 - Jumlah data gabungan: 0
+2025-05-22 16:53:28 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' ORDER BY u.nama
+2025-05-22 16:53:28 - Jumlah data absensi (fixed): 0
+2025-05-22 16:53:28 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:53:28 - Jumlah data jadwal: 0
+2025-05-22 16:53:28 - Jumlah data gabungan: 0
+2025-05-22 16:54:03 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:03 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:03 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:03 - Jumlah data jadwal: 0
+2025-05-22 16:54:03 - Jumlah data gabungan: 0
+2025-05-22 16:54:13 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:13 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:13 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:13 - Jumlah data jadwal: 0
+2025-05-22 16:54:13 - Jumlah data gabungan: 0
+2025-05-22 16:54:15 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:15 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:15 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:15 - Jumlah data jadwal: 0
+2025-05-22 16:54:15 - Jumlah data gabungan: 0
+2025-05-22 16:54:20 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-21' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:20 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:20 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-21' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:20 - Jumlah data jadwal: 0
+2025-05-22 16:54:20 - Jumlah data gabungan: 0
+2025-05-22 16:54:26 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-20' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:26 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:26 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-20' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:26 - Jumlah data jadwal: 0
+2025-05-22 16:54:26 - Jumlah data gabungan: 0
+2025-05-22 16:54:26 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-19' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:26 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:26 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-19' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:26 - Jumlah data jadwal: 0
+2025-05-22 16:54:26 - Jumlah data gabungan: 0
+2025-05-22 16:54:26 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-18' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:26 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:26 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-18' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:26 - Jumlah data jadwal: 0
+2025-05-22 16:54:26 - Jumlah data gabungan: 0
+2025-05-22 16:54:28 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-18' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:28 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:28 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-18' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:28 - Jumlah data jadwal: 0
+2025-05-22 16:54:28 - Jumlah data gabungan: 0
+2025-05-22 16:54:32 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-18' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:32 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:32 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-18' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:32 - Jumlah data jadwal: 0
+2025-05-22 16:54:32 - Jumlah data gabungan: 0
+2025-05-22 16:54:33 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-19' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:33 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:33 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-19' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:33 - Jumlah data jadwal: 0
+2025-05-22 16:54:33 - Jumlah data gabungan: 0
+2025-05-22 16:54:34 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-20' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:34 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:34 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-20' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:34 - Jumlah data jadwal: 0
+2025-05-22 16:54:34 - Jumlah data gabungan: 0
+2025-05-22 16:54:34 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-21' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:34 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:34 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-21' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:34 - Jumlah data jadwal: 0
+2025-05-22 16:54:34 - Jumlah data gabungan: 0
+2025-05-22 16:54:35 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:35 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:35 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-22 16:54:35 - Jumlah data jadwal: 0
+2025-05-22 16:54:35 - Jumlah data gabungan: 0
+2025-05-22 16:54:35 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' ORDER BY u.nama
+2025-05-22 16:54:35 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:35 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:54:35 - Jumlah data jadwal: 0
+2025-05-22 16:54:35 - Jumlah data gabungan: 0
+2025-05-22 16:54:35 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' ORDER BY u.nama
+2025-05-22 16:54:35 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:35 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:54:35 - Jumlah data jadwal: 0
+2025-05-22 16:54:35 - Jumlah data gabungan: 0
+2025-05-22 16:54:54 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' AND u.outlet = 'Wakacao BSD' ORDER BY u.nama
+2025-05-22 16:54:54 - Jumlah data absensi (fixed): 0
+2025-05-22 16:54:54 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' AND u.outlet = 'Wakacao BSD' ORDER BY u.nama
+2025-05-22 16:54:54 - Jumlah data jadwal: 0
+2025-05-22 16:54:54 - Jumlah data gabungan: 0
+2025-05-22 16:55:03 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' ORDER BY u.nama
+2025-05-22 16:55:03 - Jumlah data absensi (fixed): 0
+2025-05-22 16:55:03 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:55:03 - Jumlah data jadwal: 0
+2025-05-22 16:55:03 - Jumlah data gabungan: 0
+2025-05-22 16:55:07 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-21' ORDER BY u.nama
+2025-05-22 16:55:07 - Jumlah data absensi (fixed): 0
+2025-05-22 16:55:07 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-21' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:55:07 - Jumlah data jadwal: 0
+2025-05-22 16:55:07 - Jumlah data gabungan: 0
+2025-05-22 16:55:07 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-20' ORDER BY u.nama
+2025-05-22 16:55:07 - Jumlah data absensi (fixed): 0
+2025-05-22 16:55:07 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-20' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:55:07 - Jumlah data jadwal: 0
+2025-05-22 16:55:07 - Jumlah data gabungan: 0
+2025-05-22 16:55:08 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-19' ORDER BY u.nama
+2025-05-22 16:55:08 - Jumlah data absensi (fixed): 0
+2025-05-22 16:55:08 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-19' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:55:08 - Jumlah data jadwal: 0
+2025-05-22 16:55:08 - Jumlah data gabungan: 0
+2025-05-22 16:55:08 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-18' ORDER BY u.nama
+2025-05-22 16:55:08 - Jumlah data absensi (fixed): 0
+2025-05-22 16:55:08 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-18' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:55:08 - Jumlah data jadwal: 0
+2025-05-22 16:55:08 - Jumlah data gabungan: 0
+2025-05-22 16:55:09 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-17' ORDER BY u.nama
+2025-05-22 16:55:09 - Jumlah data absensi (fixed): 0
+2025-05-22 16:55:09 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-17' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:55:09 - Jumlah data jadwal: 0
+2025-05-22 16:55:09 - Jumlah data gabungan: 0
+2025-05-22 16:55:09 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-16' ORDER BY u.nama
+2025-05-22 16:55:09 - Jumlah data absensi (fixed): 0
+2025-05-22 16:55:09 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-16' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:55:09 - Jumlah data jadwal: 0
+2025-05-22 16:55:09 - Jumlah data gabungan: 0
+2025-05-22 16:55:10 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-15' ORDER BY u.nama
+2025-05-22 16:55:10 - Jumlah data absensi (fixed): 0
+2025-05-22 16:55:10 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-15' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:55:10 - Jumlah data jadwal: 0
+2025-05-22 16:55:10 - Jumlah data gabungan: 0
+2025-05-22 16:55:10 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-14' ORDER BY u.nama
+2025-05-22 16:55:10 - Jumlah data absensi (fixed): 0
+2025-05-22 16:55:10 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-14' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:55:10 - Jumlah data jadwal: 0
+2025-05-22 16:55:10 - Jumlah data gabungan: 0
+2025-05-22 16:55:10 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-13' ORDER BY u.nama
+2025-05-22 16:55:10 - Jumlah data absensi (fixed): 0
+2025-05-22 16:55:10 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-13' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:55:10 - Jumlah data jadwal: 0
+2025-05-22 16:55:10 - Jumlah data gabungan: 0
+2025-05-22 16:55:11 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' ORDER BY u.nama
+2025-05-22 16:55:11 - Jumlah data absensi (fixed): 0
+2025-05-22 16:55:11 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 16:55:11 - Jumlah data jadwal: 0
+2025-05-22 16:55:11 - Jumlah data gabungan: 0
+2025-05-22 16:55:21 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' AND u.outlet = 'Wakacao BSD' ORDER BY u.nama
+2025-05-22 16:55:21 - Jumlah data absensi (fixed): 0
+2025-05-22 16:55:21 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' AND u.outlet = 'Wakacao BSD' ORDER BY u.nama
+2025-05-22 16:55:21 - Jumlah data jadwal: 0
+2025-05-22 16:55:21 - Jumlah data gabungan: 0
+2025-05-22 17:06:38 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' ORDER BY u.nama
+2025-05-22 17:06:38 - Jumlah data absensi (fixed): 0
+2025-05-22 17:06:38 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 17:06:38 - Jumlah data jadwal: 0
+2025-05-22 17:06:38 - Jumlah data gabungan: 0
+2025-05-22 17:26:32 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' ORDER BY u.nama
+2025-05-22 17:26:32 - Jumlah data absensi (fixed): 0
+2025-05-22 17:26:32 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-22 17:26:32 - Jumlah data jadwal: 0
+2025-05-22 17:26:32 - Jumlah data gabungan: 0
+2025-05-26 19:39:14 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-26' ORDER BY u.nama
+2025-05-26 19:39:14 - Jumlah data absensi (fixed): 0
+2025-05-26 19:39:14 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-26' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-26 19:39:14 - Jumlah data jadwal: 0
+2025-05-26 19:39:14 - Jumlah data gabungan: 0
+2025-05-26 19:44:16 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-26' ORDER BY u.nama
+2025-05-26 19:44:16 - Jumlah data absensi (fixed): 0
+2025-05-26 19:44:16 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-26' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-26 19:44:16 - Jumlah data jadwal: 0
+2025-05-26 19:44:16 - Jumlah data gabungan: 0
+2025-05-26 19:46:18 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-26' ORDER BY u.nama
+2025-05-26 19:46:18 - Jumlah data absensi (fixed): 0
+2025-05-26 19:46:18 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-26' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-26 19:46:18 - Jumlah data jadwal: 0
+2025-05-26 19:46:18 - Jumlah data gabungan: 0
+2025-05-26 19:49:32 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-26' ORDER BY u.nama
+2025-05-26 19:49:32 - Jumlah data absensi (fixed): 0
+2025-05-26 19:49:32 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-26' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-26 19:49:32 - Jumlah data jadwal: 0
+2025-05-26 19:49:32 - Jumlah data gabungan: 0
+2025-05-26 19:49:42 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-26' ORDER BY u.nama
+2025-05-26 19:49:42 - Jumlah data absensi (fixed): 0
+2025-05-26 19:49:42 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-26' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-26 19:49:42 - Jumlah data jadwal: 0
+2025-05-26 19:49:42 - Jumlah data gabungan: 0
+2025-05-26 19:52:58 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-26' ORDER BY u.nama
+2025-05-26 19:52:58 - Jumlah data absensi (fixed): 0
+2025-05-26 19:52:58 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-26' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-26 19:52:58 - Jumlah data jadwal: 0
+2025-05-26 19:52:58 - Jumlah data gabungan: 0
+2025-05-26 19:53:12 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-26' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:12 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:12 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-26' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:12 - Jumlah data jadwal: 0
+2025-05-26 19:53:12 - Jumlah data gabungan: 0
+2025-05-26 19:53:26 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-25' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:26 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:26 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-25' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:26 - Jumlah data jadwal: 0
+2025-05-26 19:53:26 - Jumlah data gabungan: 0
+2025-05-26 19:53:27 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-24' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:27 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:27 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-24' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:27 - Jumlah data jadwal: 0
+2025-05-26 19:53:27 - Jumlah data gabungan: 0
+2025-05-26 19:53:27 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-23' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:27 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:27 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-23' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:27 - Jumlah data jadwal: 0
+2025-05-26 19:53:27 - Jumlah data gabungan: 0
+2025-05-26 19:53:28 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:28 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:28 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:28 - Jumlah data jadwal: 0
+2025-05-26 19:53:28 - Jumlah data gabungan: 0
+2025-05-26 19:53:28 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-21' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:28 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:28 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-21' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:28 - Jumlah data jadwal: 0
+2025-05-26 19:53:28 - Jumlah data gabungan: 0
+2025-05-26 19:53:28 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-20' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:28 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:28 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-20' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:28 - Jumlah data jadwal: 0
+2025-05-26 19:53:28 - Jumlah data gabungan: 0
+2025-05-26 19:53:29 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-19' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:29 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:29 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-19' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:29 - Jumlah data jadwal: 0
+2025-05-26 19:53:29 - Jumlah data gabungan: 0
+2025-05-26 19:53:29 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-18' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:29 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:29 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-18' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:29 - Jumlah data jadwal: 0
+2025-05-26 19:53:29 - Jumlah data gabungan: 0
+2025-05-26 19:53:30 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-17' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:30 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:30 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-17' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:30 - Jumlah data jadwal: 0
+2025-05-26 19:53:30 - Jumlah data gabungan: 0
+2025-05-26 19:53:30 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-16' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:30 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:30 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-16' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:30 - Jumlah data jadwal: 0
+2025-05-26 19:53:30 - Jumlah data gabungan: 0
+2025-05-26 19:53:31 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-15' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:31 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:31 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-15' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:31 - Jumlah data jadwal: 0
+2025-05-26 19:53:31 - Jumlah data gabungan: 0
+2025-05-26 19:53:31 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-14' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:31 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:31 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-14' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:31 - Jumlah data jadwal: 0
+2025-05-26 19:53:31 - Jumlah data gabungan: 0
+2025-05-26 19:53:32 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-13' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:32 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:32 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-13' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:32 - Jumlah data jadwal: 0
+2025-05-26 19:53:32 - Jumlah data gabungan: 0
+2025-05-26 19:53:32 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:32 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:32 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:32 - Jumlah data jadwal: 0
+2025-05-26 19:53:32 - Jumlah data gabungan: 0
+2025-05-26 19:53:33 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-11' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:33 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:33 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-11' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:33 - Jumlah data jadwal: 0
+2025-05-26 19:53:33 - Jumlah data gabungan: 0
+2025-05-26 19:53:33 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-10' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:33 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:33 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-10' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:33 - Jumlah data jadwal: 0
+2025-05-26 19:53:33 - Jumlah data gabungan: 0
+2025-05-26 19:53:34 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-09' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:34 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:34 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-09' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:34 - Jumlah data jadwal: 0
+2025-05-26 19:53:34 - Jumlah data gabungan: 0
+2025-05-26 19:53:34 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-08' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:34 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:34 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-08' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:34 - Jumlah data jadwal: 0
+2025-05-26 19:53:34 - Jumlah data gabungan: 0
+2025-05-26 19:53:35 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-07' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:35 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:35 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-07' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:35 - Jumlah data jadwal: 0
+2025-05-26 19:53:35 - Jumlah data gabungan: 0
+2025-05-26 19:53:36 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-06' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:36 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:36 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-06' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:36 - Jumlah data jadwal: 0
+2025-05-26 19:53:36 - Jumlah data gabungan: 0
+2025-05-26 19:53:36 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-05' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:36 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:36 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-05' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:36 - Jumlah data jadwal: 0
+2025-05-26 19:53:36 - Jumlah data gabungan: 0
+2025-05-26 19:53:37 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:37 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:37 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:37 - Jumlah data jadwal: 0
+2025-05-26 19:53:37 - Jumlah data gabungan: 0
+2025-05-26 19:53:37 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:37 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:37 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:37 - Jumlah data jadwal: 0
+2025-05-26 19:53:37 - Jumlah data gabungan: 0
+2025-05-26 19:53:38 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-02' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:38 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:38 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-02' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:38 - Jumlah data jadwal: 0
+2025-05-26 19:53:38 - Jumlah data gabungan: 0
+2025-05-26 19:53:38 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-01' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:38 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:38 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-01' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:38 - Jumlah data jadwal: 0
+2025-05-26 19:53:38 - Jumlah data gabungan: 0
+2025-05-26 19:53:39 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-30' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:39 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:39 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-30' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:39 - Jumlah data jadwal: 0
+2025-05-26 19:53:39 - Jumlah data gabungan: 0
+2025-05-26 19:53:42 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-29' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:42 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:42 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-29' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:42 - Jumlah data jadwal: 0
+2025-05-26 19:53:42 - Jumlah data gabungan: 0
+2025-05-26 19:53:43 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-28' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:43 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:43 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-28' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:43 - Jumlah data jadwal: 0
+2025-05-26 19:53:43 - Jumlah data gabungan: 0
+2025-05-26 19:53:44 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-27' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:44 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:44 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-27' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:44 - Jumlah data jadwal: 0
+2025-05-26 19:53:44 - Jumlah data gabungan: 0
+2025-05-26 19:53:45 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-26' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:45 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:45 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-26' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:45 - Jumlah data jadwal: 0
+2025-05-26 19:53:45 - Jumlah data gabungan: 0
+2025-05-26 19:53:45 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-25' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:45 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:45 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-25' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:45 - Jumlah data jadwal: 0
+2025-05-26 19:53:45 - Jumlah data gabungan: 0
+2025-05-26 19:53:46 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-24' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:46 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:46 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-24' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:46 - Jumlah data jadwal: 0
+2025-05-26 19:53:46 - Jumlah data gabungan: 0
+2025-05-26 19:53:46 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-23' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:46 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:46 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-23' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:46 - Jumlah data jadwal: 0
+2025-05-26 19:53:46 - Jumlah data gabungan: 0
+2025-05-26 19:53:47 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-22' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:47 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:47 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-22' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:47 - Jumlah data jadwal: 0
+2025-05-26 19:53:47 - Jumlah data gabungan: 0
+2025-05-26 19:53:50 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-23' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:50 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:50 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-23' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:50 - Jumlah data jadwal: 0
+2025-05-26 19:53:50 - Jumlah data gabungan: 0
+2025-05-26 19:53:50 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-24' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:50 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:50 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-24' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:50 - Jumlah data jadwal: 0
+2025-05-26 19:53:50 - Jumlah data gabungan: 0
+2025-05-26 19:53:51 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-25' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:51 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:51 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-25' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:51 - Jumlah data jadwal: 0
+2025-05-26 19:53:51 - Jumlah data gabungan: 0
+2025-05-26 19:53:51 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-26' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:51 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:51 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-26' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:51 - Jumlah data jadwal: 0
+2025-05-26 19:53:51 - Jumlah data gabungan: 0
+2025-05-26 19:53:54 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-27' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:54 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:54 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-27' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:54 - Jumlah data jadwal: 0
+2025-05-26 19:53:54 - Jumlah data gabungan: 0
+2025-05-26 19:53:54 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-28' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:54 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:54 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-28' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:54 - Jumlah data jadwal: 0
+2025-05-26 19:53:54 - Jumlah data gabungan: 0
+2025-05-26 19:53:59 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-22' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:59 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:59 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-22' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:59 - Jumlah data jadwal: 0
+2025-05-26 19:53:59 - Jumlah data gabungan: 0
+2025-05-26 19:53:59 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-23' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:59 - Jumlah data absensi (fixed): 0
+2025-05-26 19:53:59 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-23' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:53:59 - Jumlah data jadwal: 0
+2025-05-26 19:53:59 - Jumlah data gabungan: 0
+2025-05-26 19:54:00 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-24' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:00 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:00 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-24' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:00 - Jumlah data jadwal: 0
+2025-05-26 19:54:00 - Jumlah data gabungan: 0
+2025-05-26 19:54:00 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-25' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:00 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:00 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-25' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:00 - Jumlah data jadwal: 0
+2025-05-26 19:54:00 - Jumlah data gabungan: 0
+2025-05-26 19:54:00 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-26' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:00 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:00 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-26' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:00 - Jumlah data jadwal: 0
+2025-05-26 19:54:00 - Jumlah data gabungan: 0
+2025-05-26 19:54:00 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-27' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:00 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:00 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-27' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:00 - Jumlah data jadwal: 0
+2025-05-26 19:54:00 - Jumlah data gabungan: 0
+2025-05-26 19:54:01 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-28' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:01 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:01 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-28' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:01 - Jumlah data jadwal: 0
+2025-05-26 19:54:01 - Jumlah data gabungan: 0
+2025-05-26 19:54:01 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-29' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:01 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:01 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-29' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:01 - Jumlah data jadwal: 0
+2025-05-26 19:54:01 - Jumlah data gabungan: 0
+2025-05-26 19:54:01 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-04-30' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:01 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:01 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-04-30' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:01 - Jumlah data jadwal: 0
+2025-05-26 19:54:01 - Jumlah data gabungan: 0
+2025-05-26 19:54:01 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-01' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:01 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:01 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-01' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:01 - Jumlah data jadwal: 0
+2025-05-26 19:54:01 - Jumlah data gabungan: 0
+2025-05-26 19:54:02 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-03' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:02 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:02 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-03' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:02 - Jumlah data jadwal: 0
+2025-05-26 19:54:02 - Jumlah data gabungan: 0
+2025-05-26 19:54:02 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-04' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:02 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:02 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-04' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:02 - Jumlah data jadwal: 0
+2025-05-26 19:54:02 - Jumlah data gabungan: 0
+2025-05-26 19:54:02 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-05' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:02 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:02 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-05' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:02 - Jumlah data jadwal: 0
+2025-05-26 19:54:02 - Jumlah data gabungan: 0
+2025-05-26 19:54:02 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-06' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:02 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:02 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-06' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:02 - Jumlah data jadwal: 0
+2025-05-26 19:54:02 - Jumlah data gabungan: 0
+2025-05-26 19:54:02 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-07' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:02 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:02 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-07' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:02 - Jumlah data jadwal: 0
+2025-05-26 19:54:02 - Jumlah data gabungan: 0
+2025-05-26 19:54:03 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-09' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:03 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:03 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-09' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:03 - Jumlah data jadwal: 0
+2025-05-26 19:54:03 - Jumlah data gabungan: 0
+2025-05-26 19:54:03 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-11' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:03 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:03 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-11' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:03 - Jumlah data jadwal: 0
+2025-05-26 19:54:03 - Jumlah data gabungan: 0
+2025-05-26 19:54:04 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-12' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:04 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:04 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-12' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:04 - Jumlah data jadwal: 0
+2025-05-26 19:54:04 - Jumlah data gabungan: 0
+2025-05-26 19:54:04 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-13' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:04 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:04 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-13' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:04 - Jumlah data jadwal: 0
+2025-05-26 19:54:04 - Jumlah data gabungan: 0
+2025-05-26 19:54:04 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-14' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:04 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:04 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-14' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:04 - Jumlah data jadwal: 0
+2025-05-26 19:54:04 - Jumlah data gabungan: 0
+2025-05-26 19:54:04 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-15' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:04 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:04 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-15' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:04 - Jumlah data jadwal: 0
+2025-05-26 19:54:04 - Jumlah data gabungan: 0
+2025-05-26 19:54:05 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-16' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:05 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:05 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-16' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:05 - Jumlah data jadwal: 0
+2025-05-26 19:54:05 - Jumlah data gabungan: 0
+2025-05-26 19:54:05 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-17' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:05 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:05 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-17' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:05 - Jumlah data jadwal: 0
+2025-05-26 19:54:05 - Jumlah data gabungan: 0
+2025-05-26 19:54:05 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-18' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:05 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:05 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-18' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:05 - Jumlah data jadwal: 0
+2025-05-26 19:54:05 - Jumlah data gabungan: 0
+2025-05-26 19:54:05 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-19' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:05 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:05 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-19' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:05 - Jumlah data jadwal: 0
+2025-05-26 19:54:05 - Jumlah data gabungan: 0
+2025-05-26 19:54:05 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-20' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:05 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:05 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-20' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:05 - Jumlah data jadwal: 0
+2025-05-26 19:54:05 - Jumlah data gabungan: 0
+2025-05-26 19:54:05 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-21' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:05 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:05 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-21' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:05 - Jumlah data jadwal: 0
+2025-05-26 19:54:05 - Jumlah data gabungan: 0
+2025-05-26 19:54:06 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-22' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:06 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:06 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-22' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:06 - Jumlah data jadwal: 0
+2025-05-26 19:54:06 - Jumlah data gabungan: 0
+2025-05-26 19:54:06 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-23' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:06 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:06 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-23' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:06 - Jumlah data jadwal: 0
+2025-05-26 19:54:06 - Jumlah data gabungan: 0
+2025-05-26 19:54:06 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-25' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:06 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:06 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-25' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:06 - Jumlah data jadwal: 0
+2025-05-26 19:54:06 - Jumlah data gabungan: 0
+2025-05-26 19:54:07 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-26' AND u.outlet = 'Bintaro' AND a.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:07 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:07 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-26' AND j.status = 'masuk' AND u.outlet = 'Bintaro' AND j.id_karyawan = '090903' ORDER BY u.nama
+2025-05-26 19:54:07 - Jumlah data jadwal: 0
+2025-05-26 19:54:07 - Jumlah data gabungan: 0
+2025-05-26 19:54:07 - Query Absensi: SELECT a.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                 FROM absensi a 
+                 LEFT JOIN users u ON a.id_karyawan = u.id_karyawan 
+                 LEFT JOIN shift s ON a.id_shift = s.id 
+                 WHERE a.tanggal = '2025-05-26' ORDER BY u.nama
+2025-05-26 19:54:07 - Jumlah data absensi (fixed): 0
+2025-05-26 19:54:07 - Query Jadwal: SELECT j.*, u.nama, u.outlet, s.nama_shift, s.jam_mulai, s.jam_selesai 
+                FROM jadwal j 
+                LEFT JOIN users u ON j.id_karyawan = u.id_karyawan 
+                LEFT JOIN shift s ON j.id_shift = s.id 
+                WHERE j.tanggal = '2025-05-26' AND j.status = 'masuk' ORDER BY u.nama
+2025-05-26 19:54:07 - Jumlah data jadwal: 0
+2025-05-26 19:54:07 - Jumlah data gabungan: 0

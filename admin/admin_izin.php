@@ -77,10 +77,7 @@ $result = mysqli_query($koneksi, $query);
     <?php include_once 'navbar.php'; ?>
 <<<<<<< HEAD
     <?php include_once 'sidebar.php'; ?>
-=======
-    <?php include 'sidebar.php'; ?>
->>>>>>> a6dfb2b27c368d07d46ae4928abd46a5faa196fc
-    <!-- partial -->
+    
     <div class="main-panel">
       <div class="content-wrapper">
         <div class="row">

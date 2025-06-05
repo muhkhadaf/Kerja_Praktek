@@ -147,6 +147,10 @@ if (isset($_GET['action']) && $_GET['action'] === 'delete' && isset($_GET['id'])
         $query_delete_izin = "DELETE FROM izin WHERE id_karyawan = '$id_karyawan'";
         mysqli_query($koneksi, $query_delete_izin);
         
+        // Hapus data laporan yang terkait
+        $query_delete_laporan = "DELETE FROM laporan WHERE id_user = $id";
+        mysqli_query($koneksi, $query_delete_laporan);
+        
         // Hapus data users
         $query_delete_user = "DELETE FROM users WHERE id = $id";
         if (mysqli_query($koneksi, $query_delete_user)) {
