@@ -175,22 +175,22 @@ if ($result_jadwal) {
                 <div class="card-body">
                   <p class="card-title">Menu Cepat</p>
                   <div class="d-flex flex-wrap mb-5">
-                    <a href="pages/user/manage_shift.php" class="btn btn-primary mr-3 mb-3">
+                    <a href="../pages/user/manage_shift.php" class="btn btn-primary mr-3 mb-3">
                       <i class="ti-time mr-1"></i> Kelola Shift
                     </a>
-                    <a href="pages/user/manage_schedule.php" class="btn btn-success mr-3 mb-3">
+                    <a href="../pages/user/manage_schedule.php" class="btn btn-success mr-3 mb-3">
                       <i class="ti-calendar mr-1"></i> Atur Jadwal
                     </a>
-                    <a href="pages/user/approval_requests.php" class="btn btn-info mr-3 mb-3">
+                    <a href="../pages/user/approval_requests.php" class="btn btn-info mr-3 mb-3">
                       <i class="ti-check-box mr-1"></i> Setujui Izin
                     </a>
-                    <a href="pages/user/reports.php" class="btn btn-warning mr-3 mb-3">
+                    <a href="../pages/user/reports.php" class="btn btn-warning mr-3 mb-3">
                       <i class="ti-bar-chart mr-1"></i> Lihat Laporan
                     </a>
-                    <a href="pages/user/manage_employee.php" class="btn btn-danger mr-3 mb-3">
+                    <a href="../pages/user/manage_employee.php" class="btn btn-danger mr-3 mb-3">
                       <i class="ti-user mr-1"></i> Tambah Karyawan
                     </a>
-                    <a href="pages/user/settings.php" class="btn btn-secondary mr-3 mb-3">
+                    <a href="../pages/user/settings.php" class="btn btn-secondary mr-3 mb-3">
                       <i class="ti-settings mr-1"></i> Pengaturan
                     </a>
                   </div>
